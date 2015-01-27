@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+    http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<context:component-scan base-package="com.intalio.bpms.console"/>
+	<context:annotation-config />
+	<mvc:annotation-driven>
+		<mvc:argument-resolvers>
+			<bean class="com.intalio.bpms.console.utils.SessionAttributeArgumentResolver" />
+		</mvc:argument-resolvers>
+	</mvc:annotation-driven>
+
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+
+	<import resource="classpath:bpms-cases/bpms-cases-config.xml" />
+
+	<bean id="multipartResolver"
+        class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+
+	<bean id="messageSource"
+	class="org.springframework.context.support.ResourceBundleMessageSource">
+	<property name="basename" value="messages" />
+	</bean>
+
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+	<property name="defaultLocale" value="en_UK" />
+	</bean>
+
+	<bean id="tokenService" class="org.intalio.tempo.security.ws.TokenClient">
+		<constructor-arg value="http://localhost:8080/intalio/ode/processes/TokenService" />
+	</bean>
+
+	<bean id="webAuthFilter" class="org.intalio.tempo.web.LoginFilter" />
+
+	<bean id="applicationState"
+		class="com.intalio.bpms.console.utils.BPMSConsoleApplicationState" />
+
+	<!-- Login section -->
+	<bean id="loginController" class="org.intalio.tempo.web.controller.LoginController">
+		<constructor-arg index="0" ref="tokenService" />
+		<constructor-arg index="1" value="collab.htm" />
+		<property name="commandName">
+			<value>login</value>
+		</property>
+		<property name="commandClass"
+			value="org.intalio.tempo.web.controller.LoginCommand" />
+		<property name="validator">
+			<bean id="loginValidator"
+				class="org.intalio.tempo.web.controller.LoginController$LoginValidator" />
+		</property>
+		<property name="loginPageURL" value="../../login.htm" />
+	</bean>
+</beans>

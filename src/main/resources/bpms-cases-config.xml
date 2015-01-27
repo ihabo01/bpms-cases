@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.1.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+
+	<context:component-scan base-package="com.intalio.bpms.cases" >
+	  <context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+
+	<context:annotation-config />
+
+	<tx:annotation-driven transaction-manager="cases.transactionManager" />
+	<import resource="file:${INTALIO_CONF}/hibernate/hibernate-properties.xml" />
+
+        <bean class="com.intalio.bpms.console.utils.ServiceInstanceHolder" />
+
+        <bean id="cases.messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>bpms-cases/cases-messages</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="console.documentsRepository" class="com.intalio.bpms.console.repository.DocumentsRepository">
+		<constructor-arg value="${java.io.tmpdir}/bpms/console/images" />
+	</bean>
+
+	<bean id="console.consoleConfiguration" class="com.intalio.bpms.console.utils.Configuration">
+		<property name="deploymentServiceURI" value="http://${com.intalio.bpms.server.baseUrl}/${com.intalio.bpms.endpoint.deployment-service}" />
+		<property name="deploymentTimeout" value="${com.intalio.bpms.timeout.deployment-service}" />
+		<property name="eventRetrievalThreadNum" value="${com.intalio.bpms.threads.event-retrieval}" />
+		<property name="wsiURI" value="${com.intalio.bpms.base.wsi}" />
+		<property name="configurationFilePath" value="${com.intalio.bpms.path.config-file}" />
+		<property name="bpmsConfigurationDirectory" value="${INTALIO_CONF}" />
+		<property name="defaultRealm" value="${com.intalio.bpms.realm.default}" />
+		<property name="buildInfoFile" value="server-build.properties" />
+		<property name="buildInfoKeysFile" value="server-build.keys" />
+	</bean>
+
+	<bean id="console.dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+			<value>${com.intalio.bpms.jndi.bpmsdb}</value>
+		</property>
+	</bean>
+
+	<bean id="console.sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource">
+			<ref local="console.dataSource" />
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<value>com.intalio.bpms.console.model.State</value>
+				<value>com.intalio.bpms.console.model.FilterState</value>
+				<value>com.intalio.bpms.console.model.FilterProcess</value>
+				<value>com.intalio.bpms.console.model.FilterProperty</value>
+				<value>com.intalio.bpms.console.model.Filter</value>
+				<value>com.intalio.bpms.console.model.ModuleAction</value>
+				<value>com.intalio.bpms.console.model.ModuleActionAccess</value>
+				<value>com.intalio.bpms.console.model.WorkflowAudit</value>
+				<value>com.intalio.bpms.console.model.WorkflowTask</value>
+				<value>com.intalio.bpms.console.model.BpelProcessInstance</value>
+				<value>com.intalio.bpms.console.model.BpelProcess</value>
+				<value>com.intalio.bpms.dashboard.model.DashboardState</value>
+				<value>com.intalio.bpms.dt.deploy.pojo.BreAccessHolder</value>
+				<value>com.intalio.bpms.dt.deploy.pojo.BreDecisionTable</value>
+				<value>com.intalio.bpms.dt.deploy.pojo.BreAccessLock</value>
+			</list>
+		</property>
+		<property name="hibernateProperties" ref="hibernateProperties" />
+	</bean>
+
+	<!-- Spring Data Access Exception Translator Defintion -->
+	<bean id="console.jdbcExceptionTranslator"
+		class="org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator">
+		<property name="dataSource">
+			<ref bean="console.dataSource" />
+		</property>
+	</bean>
+
+	<!-- Hibernate Template Defintion -->
+	<bean id="console.hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory">
+			<ref bean="console.sessionFactory" />
+		</property>
+		<property name="jdbcExceptionTranslator">
+			<ref bean="console.jdbcExceptionTranslator" />
+		</property>
+	</bean>
+
+	<bean id="console.filterDao" class="com.intalio.bpms.console.dao.FilterDao">
+		<property name="hibernateTemplate">
+			<ref bean="console.hibernateTemplate" />
+		</property>
+	</bean>
+
+	<bean id="console.stateDao" class="com.intalio.bpms.console.dao.StateDao">
+		<property name="hibernateTemplate">
+			<ref bean="console.hibernateTemplate" />
+		</property>
+	</bean>
+
+	<bean id="console.accessDao" class="com.intalio.bpms.console.dao.AccessDao">
+		<property name="hibernateTemplate">
+			<ref bean="console.hibernateTemplate" />
+		</property>
+	</bean>
+
+	<bean id="console.workflowAuditDao" class="com.intalio.bpms.console.dao.WorkflowAuditDao">
+		<property name="hibernateTemplate">
+			<ref bean="console.hibernateTemplate" />
+		</property>
+	</bean>
+
+	<bean id="console.odeJobsDAO" class="com.intalio.bpms.console.dao.OdeJobsDAO">
+		<constructor-arg ref="console.dataSource"  />
+	</bean>
+	<bean id="console.systemAuditDAO" class="com.intalio.bpms.console.dao.SystemAuditDAO">
+		<constructor-arg ref="console.dataSource"  />
+	</bean>
+
+	<bean id="console.transactionManager"
+		class="org.springframework.transaction.jta.JtaTransactionManager">
+		<property name="transactionManagerName" value="${com.intalio.bpms.jndi.txmanager}" />
+		<property name="userTransactionName" value="${com.intalio.bpms.jndi.usertx}" />
+	</bean>
+
+	<bean id="console.rbacAdminClient" class="org.intalio.tempo.security.ws.RBACAdminClient">
+		<constructor-arg value="http://${com.intalio.bpms.server.baseUrl}/${com.intalio.bpms.endpoint.rbacadmin-service}" />
+	</bean>
+
+	<bean id="console.pmapi"
+		class="org.apache.ode.bpel.engine.ProcessAndInstanceManagementImpl"
+		factory-method="getInstance" lazy-init="true" />
+
+	<bean id="console.auditAspect"
+		class="com.intalio.bpms.console.aspect.ProcessVariableAuditLoggingAspect" />
+
+	<bean id="dtdeployment.breUpdationService" class="com.intalio.bpms.dt.deploy.service.BreUpdationService">
+		<property name="breDao">
+			<ref bean="dtdeployment.breDecisionTableDao" />
+		</property>
+	</bean>
+
+	<bean id="dtdeployment.breDecisionTableDao" class="com.intalio.bpms.dt.deploy.dao.BreDecisionTableDao">
+		<property name="hibernateTemplate">
+			<ref bean="console.hibernateTemplate" />
+		</property>
+	</bean>
+
+	<beans profile="instance-audit">
+		<aop:aspectj-autoproxy />
+	</beans>
+</beans>
