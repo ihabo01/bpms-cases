@@ -70,19 +70,14 @@ var taskData;
 
 
 
-function parse(val) {
+function parse(index) {
 
     var result = "Not found",
         tmp = [];
-    location.href.substring(location.href.indexOf("?")+1)
-    //.replace ( "?", "" ) 
-    // this is better, there might be a question mark inside
-        .split("&")
-        .forEach(function (item) {
-        tmp = item.split("=");
-        if (tmp[0] === val) result = decodeURIComponent(tmp[1]);
-    });
-    return result;
+		var hash=location.href.substring(location.href.indexOf("#")+1);
+		var arguments=hash.substring(location.href.indexOf("//")+3);
+ 
+    return arguments.split("/")[index];
 }
 function updateCasesTable(caseType){
 var getCases=getCasesByType(caseType);

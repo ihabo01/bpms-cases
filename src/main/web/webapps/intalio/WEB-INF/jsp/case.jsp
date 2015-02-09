@@ -13,8 +13,8 @@
 	</head>
 	<body>
 		<script type="text/javascript">
-			var caseType=parse("type");
-			var caseId=parse("id");
+			var caseType=parse(0);
+			var caseId=parse(1);
 			var caseTypeDetails=getCaseTypeDetails();
 			$(document).ready(function(){
 

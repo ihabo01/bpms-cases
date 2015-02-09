@@ -11,16 +11,18 @@
 <script type="text/javascript">
 
 $(document).ready(function(){
-caseType=parse("type");
+caseType=parse(0);
+if(parse(1))selectMenuAndChangepage(this,'case','case.htm');
+else{
 updateCasesTable(caseType);
  $('#workflow_cases tbody').on( 'click', 'tr', function () {
      
-		var newLocation="#cases?type="+caseType+"&id="+this.id;
+		var newLocation="#/cases//"+caseType+"/"+this.id;
 
 		selectMenuAndChangepage(this,'case','case.htm');
 		location.href=newLocation;
     } );
-
+}
 });
 </script>
 <div id="breadcrumbs" class="breadcrumbs">
