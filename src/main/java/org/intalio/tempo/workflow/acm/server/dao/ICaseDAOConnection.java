@@ -16,8 +16,11 @@
 package org.intalio.tempo.workflow.acm.server.dao;
 
 
+import java.util.List;
+
 import org.intalio.tempo.acm.server.CaseType;
 import org.intalio.tempo.workflow.auth.UserRoles;
+import org.intalio.tempo.workflow.tms.UnavailableTaskException;
 
 
 public interface ICaseDAOConnection {
@@ -25,6 +28,13 @@ public interface ICaseDAOConnection {
     public void close();
 
     public CaseType[] fetchAllCaseTypes(UserRoles user);
+	CaseList fetchAllCasesByType(UserRoles user, String caseType) throws UnavailableTaskException;
+	public CaseHistory fetchAllCaseHistory(UserRoles credentials,
+			String caseType, String caseId) throws UnavailableTaskException;
+	public Case fetchAllCaseData(UserRoles credentials, String caseType,
+			String caseId) throws UnavailableTaskException;
+	public CaseType fetchCaseTypeByID(UserRoles credentials,
+			String caseTypeId);
 
    
 }

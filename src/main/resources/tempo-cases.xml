@@ -27,6 +27,8 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
+
+
 	<context:property-placeholder
 		location="file:${INTALIO_CONF}/common/base-config.properties" order="1" ignore-unresolvable="false" />
 
@@ -48,9 +50,7 @@
 		<property name="authProvider">
 			<ref bean="acm.authProvider"/>
 		</property>
-		<property name="permissions">
-			<ref bean="acm.permissionsHandler"/>
-		</property>
+
 		<property name="httpTimeout" value="${com.intalio.bpms.timeout.tms}"/>
 
 		
@@ -63,14 +63,7 @@
 	</bean>
 
 
-	<bean id="tms.permissionsHandler" class="org.intalio.tempo.workflow.tms.server.permissions.TaskPermissions">
-		<constructor-arg>
-			<ref bean="toolbarIconSets"/>
-		</constructor-arg>
-		<constructor-arg>
-			<ref bean="bindIconSetToRole"/>
-		</constructor-arg>
-	</bean>
+	
 
 	<bean id="acm.authProvider" class="org.intalio.tempo.workflow.auth.n3.N3AuthProvider">
 		<property name="wsEndpoint">
@@ -97,46 +90,5 @@
 		<constructor-arg ref="hibernatePropertiesMap" />
 	</bean>
 
-	<!-- Comment below to disable workflow audit trail -->
-	<beans profile="workflow-audit">
-		<aop:config>
-			<aop:pointcut id="pointCutCreate"
-				expression="execution(* org.intalio.tempo.workflow.tms.server.ITMSServer.create(..))" />
-			<aop:pointcut id="pointCutComplete"
-				expression="execution(* org.intalio.tempo.workflow.tms.server.ITMSServer.complete(..))" />
-			<aop:pointcut id="pointCutReassign"
-				expression="execution(* org.intalio.tempo.workflow.tms.server.ITMSServer.reassign(..))" />
-			<aop:pointcut id="pointCutSkip"
-				expression="execution(* org.intalio.tempo.workflow.tms.server.ITMSServer.skip(..))" />
-			<aop:pointcut id="pointCutUpdate"
-				expression="execution(* org.intalio.tempo.workflow.tms.server.ITMSServer.update(..))" />
-			<aop:pointcut id="pointCutDelete"
-				expression="execution(* org.intalio.tempo.workflow.tms.server.ITMSServer.delete(..))" />
-			<aop:pointcut id="pointCutSetOutputAndComplete"
-				expression="execution(* org.intalio.tempo.workflow.tms.server.ITMSServer.setOutputAndComplete(..))" />
-			<aop:pointcut id="pointCutStorePipa"
-				expression="execution(* org.intalio.tempo.workflow.tms.server.ITMSServer.storePipa(..))" />
-			<aop:pointcut id="pointCutInsertVacation"
-			expression="execution(* org.intalio.tempo.workflow.tms.server.ITMSServer.insertVacation(..))" />
-			<aop:pointcut id="pointCutUpdateVacation"
-			expression="execution(* org.intalio.tempo.workflow.tms.server.ITMSServer.updateVacation(..))" />
-			<aop:pointcut id="pointCutDeleteVacation"
-			expression="execution(* org.intalio.tempo.workflow.tms.server.ITMSServer.deleteVacation(..))" />
-			<aop:aspect id="auditCreate" ref="auditTask">
-				<aop:after method="auditCreate" pointcut-ref="pointCutCreate" />
-				<aop:after method="auditComplete" pointcut-ref="pointCutComplete" />
-				<aop:after method="auditReassign" pointcut-ref="pointCutReassign" />
-				<aop:after method="auditSkip" pointcut-ref="pointCutSkip" />
-				<aop:after method="auditUpdate" pointcut-ref="pointCutUpdate" />
-				<aop:around method="auditDelete" pointcut-ref="pointCutDelete" />
-				<aop:after method="auditSetOutputAndComplete" pointcut-ref="pointCutSetOutputAndComplete" />
-				<aop:after method="auditStorePipa" pointcut-ref="pointCutStorePipa" />
-			</aop:aspect>
-			<aop:aspect id="auditCreateVacation" ref="auditVacation">
-			      <aop:after method="auditCreateVacation" pointcut-ref="pointCutInsertVacation" />
-			      <aop:after method="auditUpdateVacation" pointcut-ref="pointCutUpdateVacation" />
-			      <aop:after method="auditDeleteVacation" pointcut-ref="pointCutDeleteVacation" />
-			</aop:aspect>
-		</aop:config>
-	</beans>
+	
 </beans>

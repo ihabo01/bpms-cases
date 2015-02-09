@@ -39,7 +39,7 @@
 		<constructor-arg value="${java.io.tmpdir}/bpms/console/images" />
 	</bean>
 
-	<bean id="console.consoleConfiguration" class="com.intalio.bpms.console.utils.Configuration">
+	<bean id="cases.consoleConfiguration" class="com.intalio.bpms.console.utils.Configuration">
 		<property name="deploymentServiceURI" value="http://${com.intalio.bpms.server.baseUrl}/${com.intalio.bpms.endpoint.deployment-service}" />
 		<property name="deploymentTimeout" value="${com.intalio.bpms.timeout.deployment-service}" />
 		<property name="eventRetrievalThreadNum" value="${com.intalio.bpms.threads.event-retrieval}" />

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:tns="http://www.intalio.com/BPMS/ACMServices-2015/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.intalio.com/BPMS/ACMServices-2015/">
+	<wsdl:documentation>AdvancedCaseManagementServices</wsdl:documentation>
+	<wsdl:types>
+		<xsd:schema attributeFormDefault="unqualified"
+			elementFormDefault="qualified" targetNamespace="http://www.intalio.com/BPMS/ACMServices-2015/">
+			<xsd:element name="getCaseTypeListResponse">
+				<xsd:complexType>
+					<xsd:sequence maxOccurs="unbounded">
+						<xsd:element maxOccurs="unbounded" name="caseType"
+							type="tns:caseType" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+					<xsd:element name="getCaseTypeByIdRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="participantToken" type="xsd:string" />
+						<xsd:element name="caseType" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getCaseTypeByIdResponse">
+				<xsd:complexType>
+					<xsd:sequence maxOccurs="unbounded">
+						<xsd:element maxOccurs="unbounded" name="case" type="xsd:anyType" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getCaseTypeListRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="participantToken" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getCasesByTypeResponse">
+				<xsd:complexType>
+					<xsd:sequence maxOccurs="unbounded">
+						<xsd:element maxOccurs="unbounded" name="case" type="xsd:anyType" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getCasesByTypeRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="participantToken" type="xsd:string" />
+						<xsd:element name="caseType" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+			<xsd:element name="getCaseHistoryResponse">
+				<xsd:complexType>
+					<xsd:sequence maxOccurs="unbounded">
+						<xsd:element maxOccurs="unbounded" name="case" type="xsd:anyType" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getCaseHistoryRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="participantToken" type="xsd:string" />
+						<xsd:element name="caseType" type="xsd:string" />
+						<xsd:element name="caseId" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+						<xsd:element name="getCaseDataRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="participantToken" type="xsd:string" />
+						<xsd:element name="caseType" type="xsd:string" />
+						<xsd:element name="caseId" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getCaseDataResponse" type="xsd:anyType">
+
+			</xsd:element>
+			<xsd:complexType name="caseType">
+				<xsd:sequence>
+					<xsd:element name="Id" type="xsd:string" />
+					<xsd:element name="description" type="xsd:string" />
+					<xsd:element name="status_diagram" type="xsd:string" />
+
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="invalidInputMessageFault">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="reason" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="invalidParticipantTokenFault">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="reason" type="xsd:string" />
+						<xsd:element name="invalidToken" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+
+	</wsdl:types>
+
+	<wsdl:message name="invalidParticipantTokenFault">
+		<wsdl:part name="invalidParticipantTokenFault" element="tns:invalidParticipantTokenFault" />
+	</wsdl:message>
+	<wsdl:message name="invalidInputMessageFault">
+		<wsdl:part name="invalidInputMessageFault" element="tns:invalidInputMessageFault" />
+	</wsdl:message>
+	<wsdl:message name="getCaseTypeByIdResponse">
+		<wsdl:part name="getCaseTypeByIdResponse" element="tns:getCaseTypeByIdResponse" />
+	</wsdl:message>
+	<wsdl:message name="getCaseTypeByIdRequest">
+		<wsdl:part name="getCaseTypeByIdRequest" element="tns:getCaseTypeByIdRequest" />
+	</wsdl:message>
+	<wsdl:message name="getCaseTypeListResponse">
+		<wsdl:part name="getCaseTypeListResponse" element="tns:getCaseTypeListResponse" />
+	</wsdl:message>
+	<wsdl:message name="getCaseTypeListRequest">
+		<wsdl:part name="getCaseTypeListRequest" element="tns:getCaseTypeListRequest" />
+	</wsdl:message>
+	<wsdl:message name="getCasesByTypeResponse">
+		<wsdl:part name="getCasesByTypeResponse" element="tns:getCasesByTypeResponse" />
+	</wsdl:message>
+	<wsdl:message name="getCasesByTypeRequest">
+		<wsdl:part name="getCasesByTypeRequest" element="tns:getCasesByTypeRequest" />
+	</wsdl:message>
+		<wsdl:message name="getCaseHistoryResponse">
+		<wsdl:part name="getCaseHistoryResponse" element="tns:getCaseHistoryResponse" />
+	</wsdl:message>
+	<wsdl:message name="getCaseHistoryRequest">
+		<wsdl:part name="getCaseHistoryRequest" element="tns:getCaseHistoryRequest" />
+	</wsdl:message>
+			<wsdl:message name="getCaseDataResponse">
+		<wsdl:part name="getCaseDataResponse" element="tns:getCaseDataResponse" />
+	</wsdl:message>
+	<wsdl:message name="getCaseDataRequest">
+		<wsdl:part name="getCaseDataRequest" element="tns:getCaseDataRequest" />
+	</wsdl:message>
+
+	<wsdl:portType name="AdvancedCaseManagementServicesPortType">
+
+
+<wsdl:operation name="getCaseTypeById">
+			<wsdl:input message="tns:getCaseTypeByIdRequest"
+				wsaw:Action="http://www.intalio.com/BPMS/ACMServices-2015/getCaseTypeById" />
+			<wsdl:output message="tns:getCaseTypeByIdResponse"
+				wsaw:Action="http://www.intalio.com/BPMS/ACMServices-2015/getCaseTypeByIdResponse" />
+			<wsdl:fault message="tns:invalidParticipantTokenFault"
+				name="invalidParticipantTokenFault" wsaw:Action="urn:getAvailableTasksinvalidParticipantTokenFault" />
+			<wsdl:fault message="tns:invalidInputMessageFault" name="invalidInputMessageFault"
+				wsaw:Action="urn:getAvailableTasksinvalidInputMessageFault" />
+		</wsdl:operation>
+		<wsdl:operation name="getCaseTypeList">
+			<wsdl:input message="tns:getCaseTypeListRequest"
+				wsaw:Action="http://www.intalio.com/BPMS/ACMServices-2015/getCaseTypeList" />
+			<wsdl:output message="tns:getCaseTypeListResponse"
+				wsaw:Action="http://www.intalio.com/BPMS/ACMServices-2015/getCaseTypeListResponse" />
+			<wsdl:fault message="tns:invalidParticipantTokenFault"
+				name="invalidParticipantTokenFault" wsaw:Action="urn:getAvailableTasksinvalidParticipantTokenFault" />
+			<wsdl:fault message="tns:invalidInputMessageFault" name="invalidInputMessageFault"
+				wsaw:Action="urn:getAvailableTasksinvalidInputMessageFault" />
+		</wsdl:operation>
+
+		<wsdl:operation name="getCasesByType">
+			<wsdl:input message="tns:getCasesByTypeRequest"
+				wsaw:Action="http://www.intalio.com/BPMS/ACMServices-2015/getCasesByType" />
+			<wsdl:output message="tns:getCasesByTypeResponse"
+				wsaw:Action="http://www.intalio.com/BPMS/ACMServices-2015/getCasesByTypeResponse" />
+			<wsdl:fault message="tns:invalidParticipantTokenFault"
+				name="invalidParticipantTokenFault" wsaw:Action="urn:getAvailableTasksinvalidParticipantTokenFault" />
+			<wsdl:fault message="tns:invalidInputMessageFault" name="invalidInputMessageFault"
+				wsaw:Action="urn:getAvailableTasksinvalidInputMessageFault" />
+		</wsdl:operation>
+		<wsdl:operation name="getCaseHistory">
+			<wsdl:input message="tns:getCaseHistoryRequest"
+				wsaw:Action="http://www.intalio.com/BPMS/ACMServices-2015/getCaseHistory" />
+			<wsdl:output message="tns:getCaseHistoryResponse"
+				wsaw:Action="http://www.intalio.com/BPMS/ACMServices-2015/getCaseHistoryResponse" />
+			<wsdl:fault message="tns:invalidParticipantTokenFault"
+				name="invalidParticipantTokenFault" wsaw:Action="urn:getAvailableTasksinvalidParticipantTokenFault" />
+			<wsdl:fault message="tns:invalidInputMessageFault" name="invalidInputMessageFault"
+				wsaw:Action="urn:getAvailableTasksinvalidInputMessageFault" />
+		</wsdl:operation>
+		<wsdl:operation name="getCaseData">
+			<wsdl:input message="tns:getCaseDataRequest"
+				wsaw:Action="http://www.intalio.com/BPMS/ACMServices-2015/getCaseData" />
+			<wsdl:output message="tns:getCaseDataResponse"
+				wsaw:Action="http://www.intalio.com/BPMS/ACMServices-2015/getCaseDataResponse" />
+			<wsdl:fault message="tns:invalidParticipantTokenFault"
+				name="invalidParticipantTokenFault" wsaw:Action="urn:getAvailableTasksinvalidParticipantTokenFault" />
+			<wsdl:fault message="tns:invalidInputMessageFault" name="invalidInputMessageFault"
+				wsaw:Action="urn:getAvailableTasksinvalidInputMessageFault" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="AdvancedCaseManagementServicesSOAP"
+		type="tns:AdvancedCaseManagementServicesPortType">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="document" />
+
+		<wsdl:operation name="getCaseTypeById">
+			<soap:operation
+				soapAction="http://www.intalio.com/BPMS/ACMServices-2015/getCaseTypeById"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="invalidInputMessageFault">
+				<soap:fault use="literal" name="invalidInputMessageFault" />
+			</wsdl:fault>
+			<wsdl:fault name="invalidParticipantTokenFault">
+				<soap:fault use="literal" name="invalidParticipantTokenFault" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getCaseTypeList">
+			<soap:operation
+				soapAction="http://www.intalio.com/BPMS/ACMServices-2015/getCaseTypeList"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="invalidInputMessageFault">
+				<soap:fault use="literal" name="invalidInputMessageFault" />
+			</wsdl:fault>
+			<wsdl:fault name="invalidParticipantTokenFault">
+				<soap:fault use="literal" name="invalidParticipantTokenFault" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getCasesByType">
+			<soap:operation
+				soapAction="http://www.intalio.com/BPMS/ACMServices-2015/getCasesByType"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="invalidInputMessageFault">
+				<soap:fault use="literal" name="invalidInputMessageFault" />
+			</wsdl:fault>
+			<wsdl:fault name="invalidParticipantTokenFault">
+				<soap:fault use="literal" name="invalidParticipantTokenFault" />
+			</wsdl:fault>
+		</wsdl:operation>
+				<wsdl:operation name="getCaseHistory">
+			<soap:operation
+				soapAction="http://www.intalio.com/BPMS/ACMServices-2015/getCaseHistory"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="invalidInputMessageFault">
+				<soap:fault use="literal" name="invalidInputMessageFault" />
+			</wsdl:fault>
+			<wsdl:fault name="invalidParticipantTokenFault">
+				<soap:fault use="literal" name="invalidParticipantTokenFault" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getCaseData">
+			<soap:operation
+				soapAction="http://www.intalio.com/BPMS/ACMServices-2015/getCaseData"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="invalidInputMessageFault">
+				<soap:fault use="literal" name="invalidInputMessageFault" />
+			</wsdl:fault>
+			<wsdl:fault name="invalidParticipantTokenFault">
+				<soap:fault use="literal" name="invalidParticipantTokenFault" />
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="AdvancedCaseManagementServices">
+		<wsdl:port name="AdvancedCaseManagementServicesSOAP"
+			binding="tns:AdvancedCaseManagementServicesSOAP">
+			<soap:address
+				location="http://localhost:8080/intalio/ode/processes/AdvancedCaseManagementServices.AdvancedCaseManagementServicesSOAP/" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

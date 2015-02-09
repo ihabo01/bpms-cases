@@ -22,11 +22,11 @@ import org.intalio.tempo.workflow.dao.AbstractJPAConnectionFactory;
 public class JPACaseDaoConnectionFactory extends AbstractJPAConnectionFactory implements ICaseDAOConnectionFactory {
 
 	public JPACaseDaoConnectionFactory() {
-		super("org.intalio.tempo.tms");
+		super("org.intalio.tempo.acm");
 	}
 
 	public JPACaseDaoConnectionFactory(Map<String, Object> properties) {
-		super("org.intalio.tempo.tms", properties);
+		super("org.intalio.tempo.acm", properties);
 	}
 
 	public JPACaseDaoConnectionFactory(String tms, Map<String, Object> properties) {

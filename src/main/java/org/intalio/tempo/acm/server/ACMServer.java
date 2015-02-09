@@ -15,11 +15,16 @@
 
 package org.intalio.tempo.acm.server;
 
+import java.util.List;
+
+import org.intalio.tempo.workflow.acm.server.dao.Case;
+import org.intalio.tempo.workflow.acm.server.dao.CaseHistory;
+import org.intalio.tempo.workflow.acm.server.dao.CaseList;
 import org.intalio.tempo.workflow.acm.server.dao.ICaseDAOConnection;
 import org.intalio.tempo.workflow.auth.AuthException;
 import org.intalio.tempo.workflow.auth.IAuthProvider;
 import org.intalio.tempo.workflow.auth.UserRoles;
-import org.intalio.tempo.workflow.tms.server.permissions.TaskPermissions;
+import org.intalio.tempo.workflow.tms.UnavailableTaskException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.access.BeanFactoryLocator;
@@ -33,7 +38,7 @@ public class ACMServer implements IACMServer {
 
     private static final Logger _logger = LoggerFactory.getLogger(ACMServer.class);
     private IAuthProvider _authProvider;
-    private TaskPermissions _permissions;
+ //   private TaskPermissions _permissions;
     private int _httpTimeout = 30000;
 
     private String httpChunking = "true";
@@ -88,18 +93,16 @@ public class ACMServer implements IACMServer {
                 .getBean("orgMapping.userService");
     }
 
-    public ACMServer(IAuthProvider authProvider, TaskPermissions permissions) {
+    public ACMServer(IAuthProvider authProvider) {
         this();
         _logger.info("New ACM Instance");
         assert authProvider != null : "IAuthProvider implementation is absent!";
         setAuthProvider(authProvider);
-        setPermissions(permissions);
+
 
     }
 
-    public void setPermissions(TaskPermissions permissions) {
-        this._permissions = permissions;
-    }
+
 
     public int getHttpTimeout() {
         return _httpTimeout;
@@ -122,7 +125,22 @@ public class ACMServer implements IACMServer {
 
         return result;
     }
+    @Override
+    public CaseType getCaseTypeById(ICaseDAOConnection dao,String participantToken,String caseTypeId) throws ACMException, AuthException {
+        UserRoles credentials = this.getUserRoles(participantToken);
+        CaseType result = dao.fetchCaseTypeByID(credentials,caseTypeId);
 
+        return result;
+    }
+    
+    @Override
+	public CaseList getCasesByType(ICaseDAOConnection dao,
+			String participantToken,String caseType) throws AuthException, UnavailableTaskException {
+    	UserRoles credentials = this.getUserRoles(participantToken);
+        CaseList result = dao.fetchAllCasesByType(credentials, caseType);
+
+        return result;
+	}
 
 
 
@@ -131,4 +149,22 @@ public class ACMServer implements IACMServer {
  
         return user;
     }
+
+	@Override
+	public CaseHistory getCaseHistory(ICaseDAOConnection dao,
+			String participantToken, String caseType, String caseId) throws AuthException, UnavailableTaskException {
+		UserRoles credentials = this.getUserRoles(participantToken);
+        CaseHistory result = dao.fetchAllCaseHistory(credentials, caseType,caseId);
+
+        return result;
+	}
+
+	@Override
+	public Case getCaseData(ICaseDAOConnection dao,
+			String participantToken, String caseType, String caseId) throws AuthException, UnavailableTaskException {
+		UserRoles credentials = this.getUserRoles(participantToken);
+        Case result = dao.fetchAllCaseData(credentials, caseType,caseId);
+
+        return result;
+	}
 }

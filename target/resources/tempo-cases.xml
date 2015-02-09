@@ -48,9 +48,7 @@
 		<property name="authProvider">
 			<ref bean="acm.authProvider"/>
 		</property>
-		<property name="permissions">
-			<ref bean="acm.permissionsHandler"/>
-		</property>
+
 		<property name="httpTimeout" value="${com.intalio.bpms.timeout.tms}"/>
 
 		
@@ -78,16 +76,7 @@
 		</property>
 	</bean>
 
-	<!-- It's completely experimental so never enable it.
-	We are bypassing going for tokenservice via HTTP and directly instantiating a bean, in case we want to put tokenservices on different server then 		we should comment this line and use the  above bean -->	
-	<!--<import resource="file:${org.intalio.tempo.configDirectory}/securityConfig.xml"/>
-	<bean id="tms.authProvider" class="org.intalio.tempo.workflow.auth.LocalAuthProvider">
-		<property name="tokenService">
-			<ref bean="tokenService"/>
-		</property>
 
-	</bean>
-	-->
 
 
 

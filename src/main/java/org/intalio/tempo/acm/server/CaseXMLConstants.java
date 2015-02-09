@@ -24,7 +24,7 @@ public final class CaseXMLConstants {
 
     public static final String CASE_NAMESPACE = "http://www.intalio.com/BPMS/ACMServices-2015/";
 
-    public static final String CASE_NAMESPACE_PREFIX = "tms";
+    public static final String CASE_NAMESPACE_PREFIX = "Case";
     
     public static final String CASE_LOCAL_NAME = "CASE";
     
