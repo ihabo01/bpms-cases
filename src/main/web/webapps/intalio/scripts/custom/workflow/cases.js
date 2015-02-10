@@ -12,7 +12,7 @@ var casesOptions = {
     "bSort": false,
 	"aoColumns":[]
 }
-var tableWidth=$(window).width()-300;
+var tableWidth=100%;
 var relatedTaskOptions = {
     "bPaginate": false,
     "bStateSave": true,
@@ -138,7 +138,7 @@ var caseHistory=getCaseHistory(caseType,caseId);
 var caseHistoryColumns=caseHistory.columns.column;
 var caseHistoryEntries=caseHistory.caseHistory.historyEntry;
 var headers="";
-tableWidth = $(window).width() - 224;
+
 var specialColumns=["id","status_activity","status_activity_type","caseid"];
  for (var i=0;i<caseHistoryColumns.length;i++){
 		

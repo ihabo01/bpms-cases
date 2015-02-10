@@ -60,7 +60,7 @@
 		</div>
 
 		<div class="page-content">
-			<div class="col-sm-11">
+			<div class="col-sm-12" style="float:left">
 				<div class="tabbable">
 					<ul class="nav nav-tabs" id="myTab">
 						<li class="active">
