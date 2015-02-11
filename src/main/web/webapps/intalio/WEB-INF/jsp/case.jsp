@@ -18,9 +18,9 @@
 			var caseTypeDetails=getCaseTypeDetails();
 			$(document).ready(function(){
 
-			updateCaseHomeTab(caseType,caseId);
+			updateCaseHomeTab(caseType,caseId,caseTypeDetails);
 			updateTasksTab(caseType,caseId);
-
+			
 
 			removeLoading();
 
@@ -111,8 +111,12 @@
 						</li>
 					</ul>
 					<div class="tab-content">
-						<div id="caseDetails" class="tab-pane fade in active">
-							caseDetails
+						<div id="caseDetails" class="tab-pane fade in active" style="height:100%">
+
+							<iframe src="" name="caseDetailsForm" frameborder="0" id="caseDetailsForm"
+								scrolling="auto" style="height:500px;width:100%">No Case Details have been found</iframe>
+							
+
 						</div>
 						<div id="tasks" class="tab-pane fade">
 							<div id="taskTableDiv" class="col-xs-12">
