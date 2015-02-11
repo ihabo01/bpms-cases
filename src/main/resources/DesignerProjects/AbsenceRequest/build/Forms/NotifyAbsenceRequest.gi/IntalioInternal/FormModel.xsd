@@ -1,0 +1,65 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:us="http://www.intalio.com/UserSchema" xmlns:NotifyAbsenceRequest="http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi" targetNamespace="http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi" elementFormDefault="unqualified">
+  <xs:element name="FormModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Outcome" type="NotifyAbsenceRequest:OutcomeType"/>
+        <xs:element name="PersonDetails" type="NotifyAbsenceRequest:PersonDetailsType"/>
+        <xs:element name="contactWhileAway" type="NotifyAbsenceRequest:contactWhileAwayType"/>
+        <xs:element name="LeaveDetails" type="NotifyAbsenceRequest:LeaveDetailsType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="OutcomeType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="ManagerDecision-map" minOccurs="0"/>
+      <xs:element name="ManagerComments" default="None" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="preserve"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PersonDetailsType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="PersonOnLeave-map" minOccurs="0"/>
+      <xs:element type="xs:string" name="Phone-map" minOccurs="0"/>
+      <xs:element type="xs:string" name="Email-map" minOccurs="0"/>
+      <xs:element type="xs:string" name="submitter-map" minOccurs="0"/>
+      <xs:element name="comments" default="None" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="preserve"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="contactWhileAwayType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="substitutename-map" minOccurs="0"/>
+      <xs:element type="xs:string" name="PhoneWhileAway-map" minOccurs="0"/>
+      <xs:element type="xs:string" name="emailWhileAway-map" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LeaveDetailsType">
+    <xs:sequence>
+      <xs:element name="LeaveList" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element type="xs:date" name="from" minOccurs="0"/>
+            <xs:element type="xs:date" name="to" minOccurs="0"/>
+            <xs:element type="xs:string" name="leaveType" minOccurs="0"/>
+            <xs:element type="xs:string" name="shortComment" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

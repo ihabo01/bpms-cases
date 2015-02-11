@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Copyright (c) 2005-2007 Intalio inc.
+
+	All rights reserved. This program and the accompanying materials
+	are made available under the terms of the Eclipse Public License v1.0
+	which accompanies this distribution, and is available at
+	http://www.eclipse.org/legal/epl-v10.html
+
+	Contributors:
+	Intalio inc. - initial API and implementation
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+
+
+	<context:property-placeholder
+		location="file:${INTALIO_CONF}/common/base-config.properties" order="1" ignore-unresolvable="false" />
+
+	<import resource="file:${INTALIO_CONF}/hibernate/hibernate-properties.xml" />
+
+	
+
+	<bean id="acm.serviceImplementation" class="org.intalio.tempo.acm.server.ACMRequestProcessor">
+		<constructor-arg>
+			<ref bean="acm.daoFactory"/>
+		</constructor-arg>
+		<property name="server">
+			<ref bean="acm.server"/>
+		</property>
+
+	</bean>
+
+	<bean id="acm.server" class="org.intalio.tempo.acm.server.ACMServer">
+		<property name="authProvider">
+			<ref bean="acm.authProvider"/>
+		</property>
+
+		<property name="httpTimeout" value="${com.intalio.bpms.timeout.tms}"/>
+
+		
+
+		<!-- This should be set to false when using proxy which doesnt support HTTP chunk e.g. Lighttpd -->
+		<property name="httpChunking" value="false"/>
+		<!-- Enter the url where ODE server is running -->
+
+
+	</bean>
+
+
+	
+
+	<bean id="acm.authProvider" class="org.intalio.tempo.workflow.auth.n3.N3AuthProvider">
+		<property name="wsEndpoint">
+			<value>http://${com.intalio.bpms.server.baseUrl}/${com.intalio.bpms.endpoint.token-service}</value>
+		</property>
+	</bean>
+
+	<!-- It's completely experimental so never enable it.
+	We are bypassing going for tokenservice via HTTP and directly instantiating a bean, in case we want to put tokenservices on different server then 		we should comment this line and use the  above bean -->	
+	<!--<import resource="file:${org.intalio.tempo.configDirectory}/securityConfig.xml"/>
+	<bean id="tms.authProvider" class="org.intalio.tempo.workflow.auth.LocalAuthProvider">
+		<property name="tokenService">
+			<ref bean="tokenService"/>
+		</property>
+
+	</bean>
+	-->
+
+
+
+
+
+	<bean id="acm.daoFactory" class="org.intalio.tempo.workflow.acm.server.dao.JPACaseDaoConnectionFactory">
+		<constructor-arg ref="hibernatePropertiesMap" />
+	</bean>
+
+	
+</beans>

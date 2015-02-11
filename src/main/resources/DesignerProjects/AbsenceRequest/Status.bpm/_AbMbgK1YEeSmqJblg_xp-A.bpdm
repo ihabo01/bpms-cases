@@ -1,0 +1,29 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:this="http://thisdiagram/Pool" xmlns:diag="http://thisdiagram" xmlns:Absence_Request="http://thisdiagram/Absence_Request" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Pool">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Pool" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_E0ey4KuKEeSVx5_1YiyjiQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Absence_Request" bpdm:prefix="Absence_Request" bpdm:comment="contrib=&apos;partner-pool:///_E0ey4KuKEeSVx5_1YiyjiQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_E0ey4KuKEeSVx5_1YiyjiQ" bpdm:label="Absence Request"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Pool" bpdm:ID="_AbMbgK1YEeSmqJblg_xp-A">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="absence_RequestAndPoolPlkVar" partnerLinkType="diag:Absence_RequestAndPool" initializePartnerRole="yes" partnerRole="Absence_Request_for_Pool" bpdm:invokedService="Absence_Request:CanonicServiceForPool" bpdm:invokedPort="canonicPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Absence_Request/Pool" bpdm:invokedIsDefault="true" bpdm:clientTasks="_AbMbgK1YEeSmqJblg_xp-A:_BM2h8K1YEeSmqJblg_xp-A" bpdm:isManaged="true" bpdm:otherPoolId="_E0ey4KuKEeSVx5_1YiyjiQ"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="absence_RequestSubmittedRequestMsg" messageType="Absence_Request:SubmittedRequest" bpdm:id="_Bt8c0K1YEeSmqJblg_xp-A" bpdm:messageIds=" out:_Bt4LYK1YEeSmqJblg_xp-A">
+                <bpel:from bpdm:toPart="body">
+                    <bpel:literal bpdm:linkedMessageType="Absence_Request:SubmittedRequest" bpdm:linkedPart="body"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="Submitted" partnerLink="absence_RequestAndPoolPlkVar" portType="Absence_Request:ForPool" isMyRole="false" enableSharing="false" bpdm:label="Task" bpdm:ID="_BM2h8K1YEeSmqJblg_xp-A">
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="absence_RequestSubmittedRequestMsg" bpdm:msgVarScopeId="_AbMbgK1YEeSmqJblg_xp-A" bpdm:variableIsManaged="true" bpdm:messageType="Absence_Request:SubmittedRequest" bpdm:ID="_Bt4LYK1YEeSmqJblg_xp-A"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

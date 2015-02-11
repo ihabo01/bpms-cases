@@ -1,0 +1,57 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:ApproveAbsenceRequest="http://www.intalio.com/gi/Forms/ApproveAbsenceRequest.gi/attachments" xmlns:NotifyAbsenceRequest1="http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:diag="http://absencerequest.com/Processes/AbsenceRequest" xmlns:tns="http://test.com/xvar/example" xmlns:Absence_RequestimplicitPartner="http://absencerequest.com/Processes/AbsenceRequest/Absence_RequestimplicitPartner" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:attachments="http://www.intalio.com/gi/Forms/SubmitAbsenceRequest.gi/attachments" xmlns:SubmitAbsenceRequest="http://www.intalio.com/gi/Forms/SubmitAbsenceRequest.gi" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:NotifyAbsenceRequest="http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi/attachments" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:this="http://absencerequest.com/Processes/AbsenceRequest/Absence_Request" xmlns:ApproveAbsenceRequest1="http://www.intalio.com/gi/Forms/ApproveAbsenceRequest.gi" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://absencerequest.com/Processes/AbsenceRequest/Absence_Request">
+    <wsdl:import namespace="http://www.intalio.com/gi/Forms/ApproveAbsenceRequest.gi" location="../Forms/ApproveAbsenceRequest.gi.wsdl"/>
+    <wsdl:import namespace="http://www.intalio.com/gi/Forms/SubmitAbsenceRequest.gi" location="../Forms/SubmitAbsenceRequest.gi.wsdl"/>
+    <wsdl:binding name="Absence_RequestimplicitPartnerAndAbsence_RequestForPortTypeProcessPlkServiceBinding" type="SubmitAbsenceRequest:Process">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="initProcess">
+            <soap:operation style="document" soapAction="http://www.intalio.com/gi/Forms/SubmitAbsenceRequest.gi/Process/initProcess"/>
+            <wsdl:input name="initProcessRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="initProcessResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="notifyTaskCompletion">
+            <soap:operation style="document" soapAction="http://www.intalio.com/gi/Forms/SubmitAbsenceRequest.gi/Process/notifyTaskCompletion"/>
+            <wsdl:input name="notifyTaskCompletionRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="notifyTaskCompletionResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="WFmagic_FAliEIA4EeOyNLOFBEJoPgServiceBinding" type="ApproveAbsenceRequest1:Process">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="initProcess">
+            <soap:operation style="document" soapAction="http://www.intalio.com/gi/Forms/ApproveAbsenceRequest.gi/Process/initProcess"/>
+            <wsdl:input name="initProcessRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="initProcessResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="notifyTaskCompletion">
+            <soap:operation style="document" soapAction="http://www.intalio.com/gi/Forms/ApproveAbsenceRequest.gi/Process/notifyTaskCompletion"/>
+            <wsdl:input name="notifyTaskCompletionRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="notifyTaskCompletionResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="Absence_RequestimplicitPartnerAndAbsence_RequestForPortTypeProcessPlkService">
+        <wsdl:port name="Absence_Request_for_Absence_RequestimplicitPartnerPort" binding="this:Absence_RequestimplicitPartnerAndAbsence_RequestForPortTypeProcessPlkServiceBinding">
+            <soap:address location="http://localhost:8080/intalio/ode/processes/AbsenceRequest/Processes/AbsenceRequest/Absence_Request/Absence_RequestimplicitPartner/Absence_RequestimplicitPartnerAndAbsence_RequestForPortTypeProcessPlk"/>
+        </wsdl:port>
+    </wsdl:service>
+    <wsdl:service name="WFmagic_FAliEIA4EeOyNLOFBEJoPgService">
+        <wsdl:port name="Absence_Request_for_Absence_RequestimplicitPartnerForThePortTypeProcessPort" binding="this:WFmagic_FAliEIA4EeOyNLOFBEJoPgServiceBinding">
+            <soap:address location="http://localhost:8080/intalio/ode/processes/AbsenceRequest/Processes/AbsenceRequest/Absence_Request/Absence_RequestimplicitPartner/WFmagic_FAliEIA4EeOyNLOFBEJoPg"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

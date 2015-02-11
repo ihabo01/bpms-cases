@@ -1,0 +1,607 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ode="http://www.apache.org/ode/type/extension" xmlns:tns="http://test.com/xvar/example" xmlns:NotifyAbsenceRequest1="http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi" xmlns:Absence_RequestimplicitPartner="http://absencerequest.com/Processes/AbsenceRequest/Absence_RequestimplicitPartner" xmlns:diag="http://absencerequest.com/Processes/AbsenceRequest" xmlns:this="http://absencerequest.com/Processes/AbsenceRequest/Absence_Request" xmlns:ApproveAbsenceRequest="http://www.intalio.com/gi/Forms/ApproveAbsenceRequest.gi/attachments" xmlns:SubmitAbsenceRequest="http://www.intalio.com/gi/Forms/SubmitAbsenceRequest.gi" xmlns:ApproveAbsenceRequest1="http://www.intalio.com/gi/Forms/ApproveAbsenceRequest.gi" xmlns:attachments="http://www.intalio.com/gi/Forms/SubmitAbsenceRequest.gi/attachments" xmlns:NotifyAbsenceRequest="http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi/attachments" xmlns:bpmn="http://www.intalio.com/bpms" xmlns:atomic="http://ode.apache.org/atomicScope" queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" bpmn:label="Absence Request" name="Absence_Request" bpmn:id="_ttz_MH9zEeOyNLOFBEJoPg" targetNamespace="http://absencerequest.com/Processes/AbsenceRequest/Absence_Request">
+  <bpel:import namespace="http://absencerequest.com/Processes/AbsenceRequest" location="AbsenceRequest.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://www.intalio.com/gi/Forms/ApproveAbsenceRequest.gi" location="../Forms/ApproveAbsenceRequest.gi.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi" location="../Forms/NotifyAbsenceRequest.gi.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://www.intalio.com/gi/Forms/SubmitAbsenceRequest.gi" location="../Forms/SubmitAbsenceRequest.gi.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:partnerLinks>
+    <bpel:partnerLink name="absence_RequestimplicitPartnerAndAbsence_RequestForPortTypeProcessPlkVar" partnerLinkType="diag:Absence_RequestimplicitPartnerAndAbsence_RequestForPortTypeProcessPlk" myRole="Absence_Request_for_Absence_RequestimplicitPartner"></bpel:partnerLink>
+    <bpel:partnerLink name="wFmagic_FAliEIA4EeOyNLOFBEJoPgPlkVar" partnerLinkType="diag:WFmagic_FAliEIA4EeOyNLOFBEJoPg" initializePartnerRole="no" myRole="Absence_Request_for_Absence_RequestimplicitPartnerForThePortTypeProcess" partnerRole="Absence_RequestimplicitPartner_for_Absence_RequestForApproveAbsenceRequestPort"></bpel:partnerLink>
+    <bpel:partnerLink name="absence_RequestimplicitPartnerAndAbsence_RequestForNotifyAbsenceRequestPortPlkVar" partnerLinkType="diag:Absence_RequestimplicitPartnerAndAbsence_RequestForNotifyAbsenceRequestPortPlk" initializePartnerRole="yes" partnerRole="Absence_RequestimplicitPartner_for_Absence_Request"></bpel:partnerLink>
+  </bpel:partnerLinks>
+  <bpel:variables xmlns:xvar="http://ode.apache.org/externalVariables">
+    <bpel:variable name="EmployeeRequest" messageType="SubmitAbsenceRequest:initProcessRequest"></bpel:variable>
+    <bpel:variable name="EmployeeRequest-ACK" messageType="SubmitAbsenceRequest:initProcessResponse"></bpel:variable>
+    <bpel:variable name="RequestManagerDecision-ACK" messageType="ApproveAbsenceRequest1:createTaskResponse"></bpel:variable>
+    <bpel:variable name="RequestManagerDecision" messageType="ApproveAbsenceRequest1:createTaskRequest"></bpel:variable>
+    <bpel:variable name="ManagerDecision" messageType="ApproveAbsenceRequest1:notifyTaskCompletionRequest"></bpel:variable>
+    <bpel:variable name="ManagerDecision-ACK" messageType="ApproveAbsenceRequest1:notifyTaskCompletionResponse"></bpel:variable>
+    <bpel:variable name="EmployeeDecisionNotification-ACK" messageType="NotifyAbsenceRequest1:notifyResponse"></bpel:variable>
+    <bpel:variable name="EmployeeDecisionNotification" messageType="NotifyAbsenceRequest1:notifyRequest"></bpel:variable>
+    <bpel:variable name="Absence_Request-keys" element="tns:Absence_Request-keys"></bpel:variable>
+    <bpel:variable name="Absence_Request" element="tns:Absence_Request" xvar:id="Absence_Request-_YTIlcKLuEeSh7dy_Qr-xcA" xvar:relates-to="Absence_Request-keys"></bpel:variable>
+    <bpel:variable name="Absence_Request_History-keys" element="tns:Absence_Request_History-keys"></bpel:variable>
+    <bpel:variable name="Absence_Request_History" element="tns:Absence_Request_History" xvar:id="Absence_Request_History-_GzIN0KxvEeSs4eQh3WpYig" xvar:relates-to="Absence_Request_History-keys"></bpel:variable>
+  </bpel:variables>
+  <bpel:sequence>
+    <bpel:receive partnerLink="absence_RequestimplicitPartnerAndAbsence_RequestForPortTypeProcessPlkVar" portType="SubmitAbsenceRequest:Process" operation="initProcess" variable="EmployeeRequest" createInstance="yes" bpmn:label="Submit absence leave request" name="Submit_absence_leave_request" bpmn:id="_o_--EIA3EeOyNLOFBEJoPg"></bpel:receive>
+    <bpel:assign name="init-variables-Absence_Request" bpmn:id="_o_--EIA3EeOyNLOFBEJoPg">
+      <bpel:copy bpmn:label="$EmployeeRequest-ACK">
+        <bpel:from>
+          <bpel:literal>
+<SubmitAbsenceRequest:initProcessResponse>
+  <SubmitAbsenceRequest:status>OK</SubmitAbsenceRequest:status>
+  <SubmitAbsenceRequest:errorCode></SubmitAbsenceRequest:errorCode>
+  <SubmitAbsenceRequest:errorReason></SubmitAbsenceRequest:errorReason>
+  <SubmitAbsenceRequest:taskMetaData>
+    <SubmitAbsenceRequest:nextTaskId></SubmitAbsenceRequest:nextTaskId>
+    <SubmitAbsenceRequest:nextTaskURL></SubmitAbsenceRequest:nextTaskURL>
+    <SubmitAbsenceRequest:instanceId></SubmitAbsenceRequest:instanceId>
+  </SubmitAbsenceRequest:taskMetaData>
+</SubmitAbsenceRequest:initProcessResponse></bpel:literal>
+        </bpel:from>
+        <bpel:to>$EmployeeRequest-ACK.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$RequestManagerDecision">
+        <bpel:from>
+          <bpel:literal>
+<ApproveAbsenceRequest1:createTaskRequest>
+  <ApproveAbsenceRequest1:taskMetaData>
+    <ApproveAbsenceRequest1:taskId>_FAliEIA4EeOyNLOFBEJoPg</ApproveAbsenceRequest1:taskId>
+    <ApproveAbsenceRequest1:taskState></ApproveAbsenceRequest1:taskState>
+    <ApproveAbsenceRequest1:taskType></ApproveAbsenceRequest1:taskType>
+    <ApproveAbsenceRequest1:description/>
+    <ApproveAbsenceRequest1:processId></ApproveAbsenceRequest1:processId>
+    <ApproveAbsenceRequest1:instanceId></ApproveAbsenceRequest1:instanceId>
+    <ApproveAbsenceRequest1:business>
+      <ApproveAbsenceRequest1:processName></ApproveAbsenceRequest1:processName>
+      <ApproveAbsenceRequest1:instanceId></ApproveAbsenceRequest1:instanceId>
+      <ApproveAbsenceRequest1:stepName></ApproveAbsenceRequest1:stepName>
+      <ApproveAbsenceRequest1:customData></ApproveAbsenceRequest1:customData>
+    </ApproveAbsenceRequest1:business>
+    <ApproveAbsenceRequest1:creationDate></ApproveAbsenceRequest1:creationDate>
+    <ApproveAbsenceRequest1:userOwner/>
+    <ApproveAbsenceRequest1:roleOwner>examples\manager</ApproveAbsenceRequest1:roleOwner>
+    <ApproveAbsenceRequest1:claimAction>
+      <ApproveAbsenceRequest1:user></ApproveAbsenceRequest1:user>
+      <ApproveAbsenceRequest1:role></ApproveAbsenceRequest1:role>
+    </ApproveAbsenceRequest1:claimAction>
+    <ApproveAbsenceRequest1:revokeAction>
+      <ApproveAbsenceRequest1:user></ApproveAbsenceRequest1:user>
+      <ApproveAbsenceRequest1:role></ApproveAbsenceRequest1:role>
+    </ApproveAbsenceRequest1:revokeAction>
+    <ApproveAbsenceRequest1:saveAction>
+      <ApproveAbsenceRequest1:user></ApproveAbsenceRequest1:user>
+      <ApproveAbsenceRequest1:role></ApproveAbsenceRequest1:role>
+    </ApproveAbsenceRequest1:saveAction>
+    <ApproveAbsenceRequest1:completeAction>
+      <ApproveAbsenceRequest1:user></ApproveAbsenceRequest1:user>
+      <ApproveAbsenceRequest1:role></ApproveAbsenceRequest1:role>
+    </ApproveAbsenceRequest1:completeAction>
+    <ApproveAbsenceRequest1:formUrl>/intalio/gi/apppath/AbsenceRequest/Forms/ApproveAbsenceRequest.gi/IntalioInternal/ServerLaunch.html</ApproveAbsenceRequest1:formUrl>
+    <ApproveAbsenceRequest1:failureCode></ApproveAbsenceRequest1:failureCode>
+    <ApproveAbsenceRequest1:failureReason></ApproveAbsenceRequest1:failureReason>
+    <ApproveAbsenceRequest1:priority></ApproveAbsenceRequest1:priority>
+    <ApproveAbsenceRequest1:scheduledActions>
+      <ApproveAbsenceRequest1:expiration>
+        <ApproveAbsenceRequest1:until></ApproveAbsenceRequest1:until>
+        <ApproveAbsenceRequest1:for></ApproveAbsenceRequest1:for>
+      </ApproveAbsenceRequest1:expiration>
+      <ApproveAbsenceRequest1:deferActivation>
+        <ApproveAbsenceRequest1:until></ApproveAbsenceRequest1:until>
+        <ApproveAbsenceRequest1:for></ApproveAbsenceRequest1:for>
+      </ApproveAbsenceRequest1:deferActivation>
+    </ApproveAbsenceRequest1:scheduledActions>
+    <ApproveAbsenceRequest1:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description/>
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </ApproveAbsenceRequest1:attachments>
+    <ApproveAbsenceRequest1:userProcessCompleteSOAPAction>http://www.intalio.com/gi/Forms/ApproveAbsenceRequest.gi/Process/notifyTaskCompletion</ApproveAbsenceRequest1:userProcessCompleteSOAPAction>
+    <ApproveAbsenceRequest1:isChainedBefore></ApproveAbsenceRequest1:isChainedBefore>
+    <ApproveAbsenceRequest1:previousTaskId></ApproveAbsenceRequest1:previousTaskId>
+    <ApproveAbsenceRequest1:userProcessEndpoint>/intalio/ode/processes/AbsenceRequest/Processes/AbsenceRequest/Absence_Request/Absence_RequestimplicitPartner/WFmagic_FAliEIA4EeOyNLOFBEJoPg</ApproveAbsenceRequest1:userProcessEndpoint>
+    <ApproveAbsenceRequest1:userProcessNamespaceURI>http://www.intalio.com/gi/Forms/ApproveAbsenceRequest.gi</ApproveAbsenceRequest1:userProcessNamespaceURI>
+    <ApproveAbsenceRequest1:customMetaData></ApproveAbsenceRequest1:customMetaData>
+  </ApproveAbsenceRequest1:taskMetaData>
+  <ApproveAbsenceRequest1:participantToken></ApproveAbsenceRequest1:participantToken>
+  <ApproveAbsenceRequest1:taskInput>
+    <ApproveAbsenceRequest1:FormModel>
+      <PersonDetails>
+        <PersonOnLeave-map></PersonOnLeave-map>
+        <Phone-map></Phone-map>
+        <Email-map></Email-map>
+        <submitter-map></submitter-map>
+        <comments>None</comments>
+      </PersonDetails>
+      <contactWhileAway>
+        <substitutename-map></substitutename-map>
+        <PhoneWhileAway-map></PhoneWhileAway-map>
+        <emailWhileAway-map></emailWhileAway-map>
+      </contactWhileAway>
+      <LeaveDetails>
+        <LeaveList>
+          <from></from>
+          <to></to>
+          <leaveType></leaveType>
+          <shortComment></shortComment>
+        </LeaveList>
+      </LeaveDetails>
+      <ManagerDecision>
+        <Decision></Decision>
+        <ManagerComments></ManagerComments>
+      </ManagerDecision>
+      <caseType></caseType>
+      <caseId></caseId>
+    </ApproveAbsenceRequest1:FormModel>
+  </ApproveAbsenceRequest1:taskInput>
+</ApproveAbsenceRequest1:createTaskRequest></bpel:literal>
+        </bpel:from>
+        <bpel:to>$RequestManagerDecision.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$ManagerDecision-ACK">
+        <bpel:from>
+          <bpel:literal>
+<ApproveAbsenceRequest1:response>
+  <ApproveAbsenceRequest1:isChainedAfter></ApproveAbsenceRequest1:isChainedAfter>
+  <ApproveAbsenceRequest1:taskMetaData>
+    <ApproveAbsenceRequest1:taskId></ApproveAbsenceRequest1:taskId>
+    <ApproveAbsenceRequest1:taskState></ApproveAbsenceRequest1:taskState>
+    <ApproveAbsenceRequest1:taskType></ApproveAbsenceRequest1:taskType>
+    <ApproveAbsenceRequest1:description></ApproveAbsenceRequest1:description>
+    <ApproveAbsenceRequest1:processId></ApproveAbsenceRequest1:processId>
+    <ApproveAbsenceRequest1:instanceId></ApproveAbsenceRequest1:instanceId>
+    <ApproveAbsenceRequest1:business>
+      <ApproveAbsenceRequest1:processName></ApproveAbsenceRequest1:processName>
+      <ApproveAbsenceRequest1:instanceId></ApproveAbsenceRequest1:instanceId>
+      <ApproveAbsenceRequest1:stepName></ApproveAbsenceRequest1:stepName>
+      <ApproveAbsenceRequest1:customData></ApproveAbsenceRequest1:customData>
+    </ApproveAbsenceRequest1:business>
+    <ApproveAbsenceRequest1:creationDate></ApproveAbsenceRequest1:creationDate>
+    <ApproveAbsenceRequest1:userOwner></ApproveAbsenceRequest1:userOwner>
+    <ApproveAbsenceRequest1:roleOwner></ApproveAbsenceRequest1:roleOwner>
+    <ApproveAbsenceRequest1:claimAction>
+      <ApproveAbsenceRequest1:user></ApproveAbsenceRequest1:user>
+      <ApproveAbsenceRequest1:role></ApproveAbsenceRequest1:role>
+    </ApproveAbsenceRequest1:claimAction>
+    <ApproveAbsenceRequest1:revokeAction>
+      <ApproveAbsenceRequest1:user></ApproveAbsenceRequest1:user>
+      <ApproveAbsenceRequest1:role></ApproveAbsenceRequest1:role>
+    </ApproveAbsenceRequest1:revokeAction>
+    <ApproveAbsenceRequest1:saveAction>
+      <ApproveAbsenceRequest1:user></ApproveAbsenceRequest1:user>
+      <ApproveAbsenceRequest1:role></ApproveAbsenceRequest1:role>
+    </ApproveAbsenceRequest1:saveAction>
+    <ApproveAbsenceRequest1:completeAction>
+      <ApproveAbsenceRequest1:user></ApproveAbsenceRequest1:user>
+      <ApproveAbsenceRequest1:role></ApproveAbsenceRequest1:role>
+    </ApproveAbsenceRequest1:completeAction>
+    <ApproveAbsenceRequest1:formUrl></ApproveAbsenceRequest1:formUrl>
+    <ApproveAbsenceRequest1:failureCode></ApproveAbsenceRequest1:failureCode>
+    <ApproveAbsenceRequest1:failureReason></ApproveAbsenceRequest1:failureReason>
+    <ApproveAbsenceRequest1:priority></ApproveAbsenceRequest1:priority>
+    <ApproveAbsenceRequest1:scheduledActions>
+      <ApproveAbsenceRequest1:expiration>
+        <ApproveAbsenceRequest1:until></ApproveAbsenceRequest1:until>
+        <ApproveAbsenceRequest1:for></ApproveAbsenceRequest1:for>
+      </ApproveAbsenceRequest1:expiration>
+      <ApproveAbsenceRequest1:deferActivation>
+        <ApproveAbsenceRequest1:until></ApproveAbsenceRequest1:until>
+        <ApproveAbsenceRequest1:for></ApproveAbsenceRequest1:for>
+      </ApproveAbsenceRequest1:deferActivation>
+    </ApproveAbsenceRequest1:scheduledActions>
+    <ApproveAbsenceRequest1:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description></description>
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </ApproveAbsenceRequest1:attachments>
+    <ApproveAbsenceRequest1:userProcessCompleteSOAPAction></ApproveAbsenceRequest1:userProcessCompleteSOAPAction>
+    <ApproveAbsenceRequest1:isChainedBefore></ApproveAbsenceRequest1:isChainedBefore>
+    <ApproveAbsenceRequest1:previousTaskId></ApproveAbsenceRequest1:previousTaskId>
+    <ApproveAbsenceRequest1:userProcessEndpoint></ApproveAbsenceRequest1:userProcessEndpoint>
+    <ApproveAbsenceRequest1:userProcessNamespaceURI></ApproveAbsenceRequest1:userProcessNamespaceURI>
+    <ApproveAbsenceRequest1:customMetaData></ApproveAbsenceRequest1:customMetaData>
+  </ApproveAbsenceRequest1:taskMetaData>
+  <ApproveAbsenceRequest1:status>OK</ApproveAbsenceRequest1:status>
+  <ApproveAbsenceRequest1:errorCode></ApproveAbsenceRequest1:errorCode>
+  <ApproveAbsenceRequest1:errorReason></ApproveAbsenceRequest1:errorReason>
+</ApproveAbsenceRequest1:response></bpel:literal>
+        </bpel:from>
+        <bpel:to>$ManagerDecision-ACK.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$EmployeeDecisionNotification">
+        <bpel:from>
+          <bpel:literal>
+<NotifyAbsenceRequest1:notifyRequest>
+  <NotifyAbsenceRequest1:metadata>
+    <NotifyAbsenceRequest1:description/>
+    <NotifyAbsenceRequest1:creationDate></NotifyAbsenceRequest1:creationDate>
+    <NotifyAbsenceRequest1:processId></NotifyAbsenceRequest1:processId>
+    <NotifyAbsenceRequest1:instanceId></NotifyAbsenceRequest1:instanceId>
+    <NotifyAbsenceRequest1:userOwner/>
+    <NotifyAbsenceRequest1:roleOwner/>
+    <NotifyAbsenceRequest1:formUrl>/intalio/gi/apppath/AbsenceRequest/Forms/NotifyAbsenceRequest.gi/IntalioInternal/ServerLaunch.html</NotifyAbsenceRequest1:formUrl>
+    <NotifyAbsenceRequest1:dismissAction>
+      <NotifyAbsenceRequest1:user></NotifyAbsenceRequest1:user>
+      <NotifyAbsenceRequest1:role></NotifyAbsenceRequest1:role>
+    </NotifyAbsenceRequest1:dismissAction>
+    <NotifyAbsenceRequest1:priority></NotifyAbsenceRequest1:priority>
+  </NotifyAbsenceRequest1:metadata>
+  <NotifyAbsenceRequest1:input>
+    <NotifyAbsenceRequest1:FormModel>
+      <Outcome>
+        <ManagerDecision-map></ManagerDecision-map>
+        <ManagerComments>None</ManagerComments>
+      </Outcome>
+      <PersonDetails>
+        <PersonOnLeave-map></PersonOnLeave-map>
+        <Phone-map></Phone-map>
+        <Email-map></Email-map>
+        <submitter-map></submitter-map>
+        <comments>None</comments>
+      </PersonDetails>
+      <contactWhileAway>
+        <substitutename-map></substitutename-map>
+        <PhoneWhileAway-map></PhoneWhileAway-map>
+        <emailWhileAway-map></emailWhileAway-map>
+      </contactWhileAway>
+      <LeaveDetails>
+        <LeaveList>
+          <from></from>
+          <to></to>
+          <leaveType></leaveType>
+          <shortComment></shortComment>
+        </LeaveList>
+      </LeaveDetails>
+    </NotifyAbsenceRequest1:FormModel>
+  </NotifyAbsenceRequest1:input>
+</NotifyAbsenceRequest1:notifyRequest></bpel:literal>
+        </bpel:from>
+        <bpel:to>$EmployeeDecisionNotification.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>
+          <bpel:literal><tns:Absence_Request><tns:id></tns:id></tns:Absence_Request></bpel:literal>
+        </bpel:from>
+        <bpel:to>$Absence_Request-keys</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>
+          <bpel:literal><tns:Absence_Request_History><tns:id></tns:id></tns:Absence_Request_History></bpel:literal>
+        </bpel:from>
+        <bpel:to>$Absence_Request_History-keys</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:reply partnerLink="absence_RequestimplicitPartnerAndAbsence_RequestForPortTypeProcessPlkVar" portType="SubmitAbsenceRequest:Process" operation="initProcess" variable="EmployeeRequest-ACK" bpmn:label="Submit absence leave request" name="Submit_absence_leave_request-1" bpmn:id="_o_--EIA3EeOyNLOFBEJoPg"></bpel:reply>
+    <bpel:assign bpmn:label="Submitted" name="Submitted" bpmn:id="_ZgqIgKLuEeSh7dy_Qr-xcA">
+      <bpel:copy>
+        <bpel:from>$ode:pid</bpel:from>
+        <bpel:to>$Absence_Request/tns:Request_Identifier</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>"In Review"</bpel:from>
+        <bpel:to>$Absence_Request/tns:Status</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>current-dateTime()</bpel:from>
+        <bpel:to>$Absence_Request/tns:Submited_On</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$EmployeeRequest.root/SubmitAbsenceRequest:user</bpel:from>
+        <bpel:to>$Absence_Request/tns:Requestor</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>"state"</bpel:from>
+        <bpel:to>$Absence_Request_History/tns:status_activity_type</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>current-dateTime()</bpel:from>
+        <bpel:to>$Absence_Request_History/tns:time</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>"Submitted"</bpel:from>
+        <bpel:to>$Absence_Request_History/tns:status</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>concat("By ", $EmployeeRequest.root/SubmitAbsenceRequest:user)</bpel:from>
+        <bpel:to>$Absence_Request_History/tns:notes</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>"Submitted"</bpel:from>
+        <bpel:to>$Absence_Request_History/tns:status_activity</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$Absence_Request-keys/tns:id</bpel:from>
+        <bpel:to>$Absence_Request_History/tns:caseId</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:scope bpmn:label="Approve absence request" name="Approve_absence_request" bpmn:id="_FAiewIA4EeOyNLOFBEJoPg">
+      <bpel:sequence>
+        <bpel:assign bpmn:label="Receive  leave approval request" name="Receive__leave_approval_request" bpmn:id="_FAliEIA4EeOyNLOFBEJoPg">
+          <bpel:copy>
+            <bpel:from>$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/PersonDetails/PersonOnLeave</bpel:from>
+            <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/PersonDetails/PersonOnLeave-map</bpel:to>
+          </bpel:copy>
+          <bpel:copy ignoreUninitializedFromVariable="yes" ignoreMissingFromData="yes">
+            <bpel:from>$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/PersonDetails/email</bpel:from>
+            <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/PersonDetails/Email-map</bpel:to>
+          </bpel:copy>
+          <bpel:copy>
+            <bpel:from>$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/PersonDetails/reporter-map</bpel:from>
+            <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/PersonDetails/submitter-map</bpel:to>
+          </bpel:copy>
+          <bpel:copy ignoreUninitializedFromVariable="yes" ignoreMissingFromData="yes">
+            <bpel:from>$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/PersonDetails/comments</bpel:from>
+            <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/PersonDetails/comments</bpel:to>
+          </bpel:copy>
+          <bpel:copy>
+            <bpel:from>$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/contactWhileAway/substitutename</bpel:from>
+            <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/contactWhileAway/substitutename-map</bpel:to>
+          </bpel:copy>
+          <bpel:copy ignoreUninitializedFromVariable="yes" ignoreMissingFromData="yes">
+            <bpel:from>$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/contactWhileAway/emailWhileAway</bpel:from>
+            <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/contactWhileAway/emailWhileAway-map</bpel:to>
+          </bpel:copy>
+          <bpel:copy>
+            <bpel:from>$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/LeaveDetails</bpel:from>
+            <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/LeaveDetails</bpel:to>
+          </bpel:copy>
+          <bpel:copy>
+            <bpel:from>concat($EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/PersonDetails/Phone/code, " ", $EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/PersonDetails/Phone/number)</bpel:from>
+            <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/PersonDetails/Phone-map</bpel:to>
+          </bpel:copy>
+          <bpel:copy>
+            <bpel:from>concat($EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/contactWhileAway/codewhileAway, " ", $EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/contactWhileAway/numberWhileAway)</bpel:from>
+            <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/contactWhileAway/PhoneWhileAway-map</bpel:to>
+          </bpel:copy>
+          <bpel:copy>
+            <bpel:from>concat("Approve Absence Requests for: ", $EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/PersonDetails/PersonOnLeave)</bpel:from>
+            <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:description</bpel:to>
+          </bpel:copy>
+          <bpel:copy>
+            <bpel:from>"Absence_Request"</bpel:from>
+            <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/caseType</bpel:to>
+          </bpel:copy>
+          <bpel:copy>
+            <bpel:from>$Absence_Request-keys/tns:id</bpel:from>
+            <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/caseId</bpel:to>
+          </bpel:copy>
+        </bpel:assign>
+        <bpel:assign>
+    <bpel:copy>
+        <bpel:from>$ode:pid</bpel:from>
+        <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:instanceId</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"/intalio/ode/processes/AbsenceRequest/Processes/AbsenceRequest/Absence_Request/Absence_RequestimplicitPartner/WFmagic_FAliEIA4EeOyNLOFBEJoPg"</bpel:from>
+        <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:userProcessEndpoint</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"http://www.intalio.com/gi/Forms/ApproveAbsenceRequest.gi/Process/notifyTaskCompletion"</bpel:from>
+        <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:userProcessCompleteSOAPAction</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"_FAsPwIA4EeOyNLOFBEJoPg"</bpel:from>
+        <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:taskId</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"examples\manager"</bpel:from>
+        <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:roleOwner</bpel:to>
+    </bpel:copy>
+  </bpel:assign>
+  <bpel:assign>
+    <bpel:copy>
+        <bpel:from>$ode:pid</bpel:from>
+        <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:instanceId</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"/intalio/ode/processes/AbsenceRequest/Processes/AbsenceRequest/Absence_Request/Absence_RequestimplicitPartner/WFmagic_FAliEIA4EeOyNLOFBEJoPg"</bpel:from>
+        <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:userProcessEndpoint</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"http://www.intalio.com/gi/Forms/ApproveAbsenceRequest.gi/Process/notifyTaskCompletion"</bpel:from>
+        <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:userProcessCompleteSOAPAction</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"_FAsPwIA4EeOyNLOFBEJoPg"</bpel:from>
+        <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:taskId</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"examples\manager"</bpel:from>
+        <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:roleOwner</bpel:to>
+    </bpel:copy>
+  </bpel:assign>
+  <bpel:assign>
+    <bpel:copy>
+        <bpel:from>$ode:pid</bpel:from>
+        <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:instanceId</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"/intalio/ode/processes/AbsenceRequest/Processes/AbsenceRequest/Absence_Request/Absence_RequestimplicitPartner/WFmagic_FAliEIA4EeOyNLOFBEJoPg"</bpel:from>
+        <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:userProcessEndpoint</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"http://www.intalio.com/gi/Forms/ApproveAbsenceRequest.gi/Process/notifyTaskCompletion"</bpel:from>
+        <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:userProcessCompleteSOAPAction</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"_FAsPwIA4EeOyNLOFBEJoPg"</bpel:from>
+        <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:taskId</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"examples\manager"</bpel:from>
+        <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:roleOwner</bpel:to>
+    </bpel:copy>
+  </bpel:assign>
+  <bpel:invoke partnerLink="wFmagic_FAliEIA4EeOyNLOFBEJoPgPlkVar" portType="ApproveAbsenceRequest1:Workflow" operation="createTask" inputVariable="RequestManagerDecision" outputVariable="RequestManagerDecision-ACK" bpmn:label="Receive  leave approval request" name="Receive__leave_approval_request-1" bpmn:id="_FAliEIA4EeOyNLOFBEJoPg"></bpel:invoke>
+        <bpel:assign bpmn:label="In Review" name="In_Review" bpmn:id="_JKeDMKxwEeSs4eQh3WpYig">
+          <bpel:copy>
+            <bpel:from>""</bpel:from>
+            <bpel:to>$Absence_Request_History-keys/tns:id</bpel:to>
+          </bpel:copy>
+          <bpel:copy>
+            <bpel:from>"start_activity"</bpel:from>
+            <bpel:to>$Absence_Request_History/tns:status_activity_type</bpel:to>
+          </bpel:copy>
+          <bpel:copy>
+            <bpel:from>"Review"</bpel:from>
+            <bpel:to>$Absence_Request_History/tns:status_activity</bpel:to>
+          </bpel:copy>
+          <bpel:copy>
+            <bpel:from>current-dateTime()</bpel:from>
+            <bpel:to>$Absence_Request_History/tns:time</bpel:to>
+          </bpel:copy>
+          <bpel:copy>
+            <bpel:from>"In Review"</bpel:from>
+            <bpel:to>$Absence_Request_History/tns:status</bpel:to>
+          </bpel:copy>
+          <bpel:copy>
+            <bpel:from>$Absence_Request-keys/tns:id</bpel:from>
+            <bpel:to>$Absence_Request_History/tns:caseId</bpel:to>
+          </bpel:copy>
+        </bpel:assign>
+        <bpel:receive partnerLink="wFmagic_FAliEIA4EeOyNLOFBEJoPgPlkVar" portType="ApproveAbsenceRequest1:Process" operation="notifyTaskCompletion" variable="ManagerDecision" bpmn:label="Send leave  approval decison" name="Send_leave__approval_decison" bpmn:id="_FAsPwIA4EeOyNLOFBEJoPg"></bpel:receive>
+        <bpel:reply partnerLink="wFmagic_FAliEIA4EeOyNLOFBEJoPgPlkVar" portType="ApproveAbsenceRequest1:Process" operation="notifyTaskCompletion" variable="ManagerDecision-ACK" bpmn:label="Send leave  approval decison" name="Send_leave__approval_decison-1" bpmn:id="_FAsPwIA4EeOyNLOFBEJoPg"></bpel:reply>
+      </bpel:sequence>
+    </bpel:scope>
+    <bpel:assign bpmn:label="Empty_Intermediate_Event" name="Empty_Intermediate_Event" bpmn:id="_a_QNcKLuEeSh7dy_Qr-xcA">
+      <bpel:copy>
+        <bpel:from>$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/ManagerDecision/Decision</bpel:from>
+        <bpel:to>$Absence_Request/tns:Status</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>current-dateTime()</bpel:from>
+        <bpel:to>$Absence_Request/tns:Validated_On</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$ManagerDecision.root/ApproveAbsenceRequest1:user</bpel:from>
+        <bpel:to>$Absence_Request/tns:Validator</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>""</bpel:from>
+        <bpel:to>$Absence_Request_History-keys/tns:id</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>"end_activity,state"</bpel:from>
+        <bpel:to>$Absence_Request_History/tns:status_activity_type</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>current-dateTime()</bpel:from>
+        <bpel:to>$Absence_Request_History/tns:time</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>concat("Review,", $ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/ManagerDecision/Decision)</bpel:from>
+        <bpel:to>$Absence_Request_History/tns:status_activity</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/ManagerDecision/Decision</bpel:from>
+        <bpel:to>$Absence_Request_History/tns:status</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>concat("Reviewed By: ", $ManagerDecision.root/ApproveAbsenceRequest1:user)</bpel:from>
+        <bpel:to>$Absence_Request_History/tns:notes</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$Absence_Request-keys/tns:id</bpel:from>
+        <bpel:to>$Absence_Request_History/tns:caseId</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign bpmn:label="Receive decision notification" name="Receive_decision_notification" bpmn:id="_LfYKcIA4EeOyNLOFBEJoPg">
+      <bpel:copy>
+        <bpel:from>concat("Your absence request is ", $ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/ManagerDecision/Decision)</bpel:from>
+        <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:metadata/NotifyAbsenceRequest1:description</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$EmployeeRequest.root/SubmitAbsenceRequest:user</bpel:from>
+        <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:metadata/NotifyAbsenceRequest1:userOwner</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/ManagerDecision/Decision</bpel:from>
+        <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:input/NotifyAbsenceRequest1:FormModel/Outcome/ManagerDecision-map</bpel:to>
+      </bpel:copy>
+      <bpel:copy ignoreUninitializedFromVariable="yes" ignoreMissingFromData="yes">
+        <bpel:from>$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/ManagerDecision/ManagerComments</bpel:from>
+        <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:input/NotifyAbsenceRequest1:FormModel/Outcome/ManagerComments</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/LeaveDetails</bpel:from>
+        <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:input/NotifyAbsenceRequest1:FormModel/LeaveDetails</bpel:to>
+      </bpel:copy>
+      <bpel:copy ignoreUninitializedFromVariable="yes" ignoreMissingFromData="yes">
+        <bpel:from>$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/contactWhileAway/substitutename-map</bpel:from>
+        <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:input/NotifyAbsenceRequest1:FormModel/contactWhileAway/substitutename-map</bpel:to>
+      </bpel:copy>
+      <bpel:copy ignoreUninitializedFromVariable="yes" ignoreMissingFromData="yes">
+        <bpel:from>$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/contactWhileAway/PhoneWhileAway-map</bpel:from>
+        <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:input/NotifyAbsenceRequest1:FormModel/contactWhileAway/PhoneWhileAway-map</bpel:to>
+      </bpel:copy>
+      <bpel:copy ignoreUninitializedFromVariable="yes" ignoreMissingFromData="yes">
+        <bpel:from>$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/contactWhileAway/emailWhileAway-map</bpel:from>
+        <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:input/NotifyAbsenceRequest1:FormModel/contactWhileAway/emailWhileAway-map</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/PersonDetails</bpel:from>
+        <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:input/NotifyAbsenceRequest1:FormModel/PersonDetails</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign>
+    <bpel:copy>
+        <bpel:from>$ode:pid</bpel:from>
+        <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:metadata/NotifyAbsenceRequest1:instanceId</bpel:to>
+    </bpel:copy>
+  </bpel:assign>
+  <bpel:assign>
+    <bpel:copy>
+        <bpel:from>$ode:pid</bpel:from>
+        <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:metadata/NotifyAbsenceRequest1:instanceId</bpel:to>
+    </bpel:copy>
+  </bpel:assign>
+  <bpel:assign>
+    <bpel:copy>
+        <bpel:from>$ode:pid</bpel:from>
+        <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:metadata/NotifyAbsenceRequest1:instanceId</bpel:to>
+    </bpel:copy>
+  </bpel:assign>
+  <bpel:invoke partnerLink="absence_RequestimplicitPartnerAndAbsence_RequestForNotifyAbsenceRequestPortPlkVar" portType="NotifyAbsenceRequest1:Workflow" operation="notify" inputVariable="EmployeeDecisionNotification" outputVariable="EmployeeDecisionNotification-ACK" bpmn:label="Receive decision notification" name="Receive_decision_notification-1" bpmn:id="_LfYKcIA4EeOyNLOFBEJoPg"></bpel:invoke>
+    <bpel:assign bpmn:label="Empty_End_Event" name="Empty_End_Event" bpmn:id="_KIZ1oKxxEeSs4eQh3WpYig">
+      <bpel:copy>
+        <bpel:from>""</bpel:from>
+        <bpel:to>$Absence_Request_History-keys/tns:id</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>"state"</bpel:from>
+        <bpel:to>$Absence_Request_History/tns:status_activity_type</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>"Notified"</bpel:from>
+        <bpel:to>$Absence_Request_History/tns:status_activity</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>current-dateTime()</bpel:from>
+        <bpel:to>$Absence_Request_History/tns:time</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>"Completed"</bpel:from>
+        <bpel:to>$Absence_Request_History/tns:status</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$Absence_Request-keys/tns:id</bpel:from>
+        <bpel:to>$Absence_Request_History/tns:caseId</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+  </bpel:sequence>
+</bpel:process>

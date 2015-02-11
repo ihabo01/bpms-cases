@@ -1,0 +1,300 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<data jsxid="jsxroot" jsxnamespace="jsx3.ide.mapper.Mapper" jsxversion="1.0">
+  <record jsxid="mi_1" jxstext="Operation (Transaction)" type="T" jsxopen="1" opname="jsxtransaction">
+    <headers jsxid="mi_2">
+      <record jsxid="mi_3" name="Content-Type" value="text/xml"/>
+    </headers>
+    <record jsxid="mi_4" jsxtext="Input (request)" type="I" jsxopen="1" src="../../../Forms/NotifyAbsenceRequest.gi/IntalioInternal/FormModel.xsd">
+      <record jsxid="mi_5" jsxtext="FormModel" type="C" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='FormModel']" datatype="" tns="http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi">
+        <record jsxid="mi_6" jsxtext="Outcome" type="C" datatype="" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='Outcome']">
+          <restrictions>
+            <record jsxid="mi_7" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_8" jsxtext="ManagerDecision-map" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='ManagerDecision-map']">
+            <restrictions>
+              <record jsxid="mi_9" name="minoccur" value="0"/>
+            </restrictions>
+            <mappings jsxid="mi_10">
+              <record jsxid="mi_11" name="DOM" value="ManagerDecision-map"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_12" jsxtext="ManagerComments" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='ManagerComments']">
+            <restrictions>
+              <record jsxid="mi_13" name="minoccur" value="0"/>
+            </restrictions>
+            <mappings jsxid="mi_14">
+              <record jsxid="mi_15" name="DOM" value="ManagerComments"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_16" jsxtext="PersonDetails" type="C" datatype="" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='PersonDetails']">
+          <restrictions>
+            <record jsxid="mi_17" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_18" jsxtext="PersonOnLeave-map" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='PersonOnLeave-map']">
+            <restrictions>
+              <record jsxid="mi_19" name="minoccur" value="0"/>
+            </restrictions>
+            <mappings jsxid="mi_20">
+              <record jsxid="mi_21" name="DOM" value="PersonOnLeave-map"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_22" jsxtext="Phone-map" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='Phone-map']">
+            <restrictions>
+              <record jsxid="mi_23" name="minoccur" value="0"/>
+            </restrictions>
+            <mappings jsxid="mi_24">
+              <record jsxid="mi_25" name="DOM" value="Phone-map"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_26" jsxtext="Email-map" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='Email-map']">
+            <restrictions>
+              <record jsxid="mi_27" name="minoccur" value="0"/>
+            </restrictions>
+            <mappings jsxid="mi_28">
+              <record jsxid="mi_29" name="DOM" value="Email-map"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_30" jsxtext="submitter-map" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='submitter-map']">
+            <restrictions>
+              <record jsxid="mi_31" name="minoccur" value="0"/>
+            </restrictions>
+            <mappings jsxid="mi_32">
+              <record jsxid="mi_33" name="DOM" value="submitter-map"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_34" jsxtext="comments" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='comments']">
+            <restrictions>
+              <record jsxid="mi_35" name="minoccur" value="0"/>
+            </restrictions>
+            <mappings jsxid="mi_36">
+              <record jsxid="mi_37" name="DOM" value="comments"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_38" jsxtext="contactWhileAway" type="C" datatype="" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='contactWhileAway']">
+          <restrictions>
+            <record jsxid="mi_39" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_40" jsxtext="substitutename-map" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='substitutename-map']">
+            <restrictions>
+              <record jsxid="mi_41" name="minoccur" value="0"/>
+            </restrictions>
+            <mappings jsxid="mi_42">
+              <record jsxid="mi_43" name="DOM" value="substitutename-map"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_44" jsxtext="PhoneWhileAway-map" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='PhoneWhileAway-map']">
+            <restrictions>
+              <record jsxid="mi_45" name="minoccur" value="0"/>
+            </restrictions>
+            <mappings jsxid="mi_46">
+              <record jsxid="mi_47" name="DOM" value="PhoneWhileAway-map"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_48" jsxtext="emailWhileAway-map" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='emailWhileAway-map']">
+            <restrictions>
+              <record jsxid="mi_49" name="minoccur" value="0"/>
+            </restrictions>
+            <mappings jsxid="mi_50">
+              <record jsxid="mi_51" name="DOM" value="emailWhileAway-map"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_52" jsxtext="LeaveDetails" type="C" datatype="" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='LeaveDetails']">
+          <restrictions>
+            <record jsxid="mi_53" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_54" jsxtext="LeaveList" type="C" datatype="" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='LeaveList']">
+            <restrictions>
+              <record jsxid="mi_55" name="maxoccur" value="unbounded"/>
+              <record jsxid="mi_56" name="minoccur" value="0"/>
+            </restrictions>
+            <record jsxid="mi_57" jsxtext="from" type="E" datatype="date" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='from']">
+              <restrictions>
+                <record jsxid="mi_58" name="minoccur" value="0"/>
+              </restrictions>
+              <mappings jsxid="mi_59">
+                <record jsxid="mi_60" name="Script" value="setValue(Intalio.Internal.Utilities.fixDateOutputMatrix(CDFCONTEXT.getAttribute('from')));"/>
+              </mappings>
+            </record>
+            <record jsxid="mi_61" jsxtext="to" type="E" datatype="date" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='to']">
+              <restrictions>
+                <record jsxid="mi_62" name="minoccur" value="0"/>
+              </restrictions>
+              <mappings jsxid="mi_63">
+                <record jsxid="mi_64" name="Script" value="setValue(Intalio.Internal.Utilities.fixDateOutputMatrix(CDFCONTEXT.getAttribute('to')));"/>
+              </mappings>
+            </record>
+            <record jsxid="mi_65" jsxtext="leaveType" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='leaveType']">
+              <restrictions>
+                <record jsxid="mi_66" name="minoccur" value="0"/>
+              </restrictions>
+              <mappings jsxid="mi_67">
+                <record jsxid="mi_68" name="CDF Attribute" value="leaveType"/>
+              </mappings>
+            </record>
+            <record jsxid="mi_69" jsxtext="shortComment" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='shortComment']">
+              <restrictions>
+                <record jsxid="mi_70" name="minoccur" value="0"/>
+              </restrictions>
+              <mappings jsxid="mi_71">
+                <record jsxid="mi_72" name="CDF Attribute" value="shortComment"/>
+              </mappings>
+            </record>
+            <mappings jsxid="mi_73">
+              <record jsxid="mi_74" name="Script" value="if(typeof(this._i_74)=='undefined'){this._i_74=-1;my.getCDFDocument('LeaveList','OUTBOUND');}"/>
+              <record jsxid="mi_75" name="CDF Record"/>
+            </mappings>
+          </record>
+        </record>
+      </record>
+    </record>
+    <record jsxid="mi_76" jsxtext="Output (response)" type="O" jsxopen="1" src="../../../Forms/NotifyAbsenceRequest.gi/IntalioInternal/FormModel.xsd">
+      <record jsxid="mi_77" jsxtext="FormModel" type="C" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='FormModel']" datatype="" tns="http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi">
+        <record jsxid="mi_78" jsxtext="Outcome" type="C" datatype="" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='Outcome']">
+          <restrictions>
+            <record jsxid="mi_79" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_80" jsxtext="ManagerDecision-map" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='ManagerDecision-map']">
+            <restrictions>
+              <record jsxid="mi_81" name="minoccur" value="0"/>
+            </restrictions>
+            <mappings jsxid="mi_82">
+              <record jsxid="mi_83" name="DOM" value="ManagerDecision-map"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_84" jsxtext="ManagerComments" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='ManagerComments']">
+            <restrictions>
+              <record jsxid="mi_85" name="minoccur" value="0"/>
+            </restrictions>
+            <mappings jsxid="mi_86">
+              <record jsxid="mi_87" name="DOM" value="ManagerComments"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_88" jsxtext="PersonDetails" type="C" datatype="" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='PersonDetails']">
+          <restrictions>
+            <record jsxid="mi_89" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_90" jsxtext="PersonOnLeave-map" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='PersonOnLeave-map']">
+            <restrictions>
+              <record jsxid="mi_91" name="minoccur" value="0"/>
+            </restrictions>
+            <mappings jsxid="mi_92">
+              <record jsxid="mi_93" name="DOM" value="PersonOnLeave-map"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_94" jsxtext="Phone-map" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='Phone-map']">
+            <restrictions>
+              <record jsxid="mi_95" name="minoccur" value="0"/>
+            </restrictions>
+            <mappings jsxid="mi_96">
+              <record jsxid="mi_97" name="DOM" value="Phone-map"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_98" jsxtext="Email-map" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='Email-map']">
+            <restrictions>
+              <record jsxid="mi_99" name="minoccur" value="0"/>
+            </restrictions>
+            <mappings jsxid="mi_100">
+              <record jsxid="mi_101" name="DOM" value="Email-map"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_102" jsxtext="submitter-map" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='submitter-map']">
+            <restrictions>
+              <record jsxid="mi_103" name="minoccur" value="0"/>
+            </restrictions>
+            <mappings jsxid="mi_104">
+              <record jsxid="mi_105" name="DOM" value="submitter-map"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_106" jsxtext="comments" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='comments']">
+            <restrictions>
+              <record jsxid="mi_107" name="minoccur" value="0"/>
+            </restrictions>
+            <mappings jsxid="mi_108">
+              <record jsxid="mi_109" name="DOM" value="comments"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_110" jsxtext="contactWhileAway" type="C" datatype="" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='contactWhileAway']">
+          <restrictions>
+            <record jsxid="mi_111" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_112" jsxtext="substitutename-map" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='substitutename-map']">
+            <restrictions>
+              <record jsxid="mi_113" name="minoccur" value="0"/>
+            </restrictions>
+            <mappings jsxid="mi_114">
+              <record jsxid="mi_115" name="DOM" value="substitutename-map"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_116" jsxtext="PhoneWhileAway-map" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='PhoneWhileAway-map']">
+            <restrictions>
+              <record jsxid="mi_117" name="minoccur" value="0"/>
+            </restrictions>
+            <mappings jsxid="mi_118">
+              <record jsxid="mi_119" name="DOM" value="PhoneWhileAway-map"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_120" jsxtext="emailWhileAway-map" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='emailWhileAway-map']">
+            <restrictions>
+              <record jsxid="mi_121" name="minoccur" value="0"/>
+            </restrictions>
+            <mappings jsxid="mi_122">
+              <record jsxid="mi_123" name="DOM" value="emailWhileAway-map"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_124" jsxtext="LeaveDetails" type="C" datatype="" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='LeaveDetails']">
+          <restrictions>
+            <record jsxid="mi_125" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_126" jsxtext="LeaveList" type="C" datatype="" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='LeaveList']">
+            <restrictions>
+              <record jsxid="mi_127" name="maxoccur" value="unbounded"/>
+              <record jsxid="mi_128" name="minoccur" value="0"/>
+            </restrictions>
+            <record jsxid="mi_129" jsxtext="from" type="E" datatype="date" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='from']">
+              <restrictions>
+                <record jsxid="mi_130" name="minoccur" value="0"/>
+              </restrictions>
+              <mappings jsxid="mi_131">
+                <record jsxid="mi_132" name="Script" value="CDFCONTEXT.setAttribute('from', Intalio.Internal.Utilities.fixDateInputMatrix(MESSAGENODE.getValue()));"/>
+              </mappings>
+            </record>
+            <record jsxid="mi_133" jsxtext="to" type="E" datatype="date" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='to']">
+              <restrictions>
+                <record jsxid="mi_134" name="minoccur" value="0"/>
+              </restrictions>
+              <mappings jsxid="mi_135">
+                <record jsxid="mi_136" name="Script" value="CDFCONTEXT.setAttribute('to', Intalio.Internal.Utilities.fixDateInputMatrix(MESSAGENODE.getValue()));"/>
+              </mappings>
+            </record>
+            <record jsxid="mi_137" jsxtext="leaveType" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='leaveType']">
+              <restrictions>
+                <record jsxid="mi_138" name="minoccur" value="0"/>
+              </restrictions>
+              <mappings jsxid="mi_139">
+                <record jsxid="mi_140" name="CDF Attribute" value="leaveType"/>
+              </mappings>
+            </record>
+            <record jsxid="mi_141" jsxtext="shortComment" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi']//jsx1:element[@name='shortComment']">
+              <restrictions>
+                <record jsxid="mi_142" name="minoccur" value="0"/>
+              </restrictions>
+              <mappings jsxid="mi_143">
+                <record jsxid="mi_144" name="CDF Attribute" value="shortComment"/>
+              </mappings>
+            </record>
+            <mappings jsxid="mi_145">
+              <record jsxid="mi_146" name="Script" value="if(typeof(this._i_146)=='undefined'){this._i_146=-1;my.getCDFDocument('LeaveList','INBOUND');}"/>
+              <record jsxid="mi_147" name="CDF Record"/>
+            </mappings>
+          </record>
+        </record>
+      </record>
+    </record>
+  </record>
+</data>

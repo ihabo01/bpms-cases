@@ -1,0 +1,24 @@
+#Wed Feb 11 16:18:29 CET 2015
+activity_renamed=true
+behind_proxy=false
+build.required=yes
+bundleExportPath=C\:/Intalio/Workspaces/DesignerWSs/Propects/ENHESA/AbsenceRequest
+deploy.fileRuntimeSelection=Forms\:Forms/ApproveAbsenceRequest.gi\:Forms/NotifyAbsenceRequest.gi\:Forms/SubmitAbsenceRequest.gi\:Metrics\:Metrics/metrics.xvar\:Metrics/metrics.xvar.sql\:Metrics/metrics2.xvar.sql\:Metrics/metrics3.xvar.sql\:Processes\:Processes/AbsenceRequest.bpm\:Status.bpm\:metadata.xml\:
+deploy_bundleNcName=AbsenceRequest
+deploy_bundleShouldBeArchived=false
+deploy_bundleShouldBeDeployed=true
+deploy_gi_serverUrl=http\://localhost\:8080/intalio/gi
+deploy_serverUrl=http\://localhost\:8080/intalio/ode
+deploymenttimeout=120
+diagram_baseUri=http\://absencerequest.com
+eclipse.preferences.version=1
+full.build.required=no
+full.build.required.deployment=yes
+implicit_task_deleted=false
+is.mapper.too.many.elements.exceeded=no
+is.timerstart.annotation.persistance.required=no
+is.timerstart.diagram.regeneration.required=no
+opening_process_diagram=false
+reset.node.cache=yes
+type=non.unique
+uuid=dbd7fe25-5db6-4695-9284-e004e3ff6e5d

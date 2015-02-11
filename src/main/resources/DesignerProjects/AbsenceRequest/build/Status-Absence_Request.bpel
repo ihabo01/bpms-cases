@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ode="http://www.apache.org/ode/type/extension" xmlns:Pool="http://absencerequest.com/Status/Pool" xmlns:diag="http://absencerequest.com/Status" xmlns:this="http://absencerequest.com/Status/Absence_Request" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpmn="http://www.intalio.com/bpms" xmlns:atomic="http://ode.apache.org/atomicScope" queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" bpmn:label="Absence Request" name="Absence_Request" bpmn:id="_E0ey4KuKEeSVx5_1YiyjiQ" targetNamespace="http://absencerequest.com/Status/Absence_Request">
+  <bpel:import namespace="http://absencerequest.com/Status" location="Status.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <bpel:import namespace="http://absencerequest.com/Status/Absence_Request" location="Status-Absence_Request.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <bpel:partnerLinks>
+    <bpel:partnerLink name="absence_RequestAndPoolPlkVar" partnerLinkType="diag:Absence_RequestAndPool" myRole="Absence_Request_for_Pool"/>
+  </bpel:partnerLinks>
+  <bpel:variables>
+    <bpel:variable name="thisSubmittedRequestMsg" messageType="this:SubmittedRequest"/>
+  </bpel:variables>
+  <bpel:sequence>
+    <bpel:receive partnerLink="absence_RequestAndPoolPlkVar" portType="this:ForPool" operation="Submitted" variable="thisSubmittedRequestMsg" createInstance="yes" bpmn:label="Submitted" name="Submitted" bpmn:id="_E0musKuKEeSVx5_1YiyjiQ"></bpel:receive>
+    <bpel:assign name="init-variables-Absence_Request" bpmn:id="_E0musKuKEeSVx5_1YiyjiQ"></bpel:assign>
+    <bpel:empty bpmn:label="Review" name="Review" bpmn:id="_UWrkUKxtEeSs4eQh3WpYig"/>
+    <bpel:if>
+      <bpel:condition>true()</bpel:condition>
+      <bpel:sequence>
+        <bpel:empty bpmn:label="Approved" name="Approved" bpmn:id="_NmFLYKuKEeSVx5_1YiyjiQ"/>
+      </bpel:sequence>
+      <bpel:else>
+        <bpel:sequence>
+          <bpel:empty bpmn:label="Rejected" name="Rejected" bpmn:id="_OfITQKuKEeSVx5_1YiyjiQ"/>
+        </bpel:sequence>
+      </bpel:else>
+    </bpel:if>
+    <bpel:empty bpmn:label="Exclusive_Data-Based_Gateway" name="Exclusive_Data-Based_Gateway" bpmn:id="_RH-k0KuKEeSVx5_1YiyjiQ">
+      <bpel:links>
+        <bpel:targets></bpel:targets>
+      </bpel:links>
+    </bpel:empty>
+    <bpel:empty bpmn:label="Notified" name="Notified" bpmn:id="_SFZPUKuKEeSVx5_1YiyjiQ"/>
+  </bpel:sequence>
+</bpel:process>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:BpmnDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:bpmn="http://stp.eclipse.org/bpmn" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_EzTuMquKEeSVx5_1YiyjiQ" iD="_EzTuMauKEeSVx5_1YiyjiQ">
+  <pools xmi:type="bpmn:Pool" xmi:id="_E0ey4auKEeSVx5_1YiyjiQ" iD="_E0ey4KuKEeSVx5_1YiyjiQ" name="Absence Request">
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_BuGN0a1YEeSmqJblg_xp-A" iD="_BuGN0K1YEeSmqJblg_xp-A" name="thisSubmittedRequestMsg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BuGN0q1YEeSmqJblg_xp-A" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BuGN061YEeSmqJblg_xp-A" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BuJ4Ma1YEeSmqJblg_xp-A" key="defaultDeclarationName" value="thisSubmittedRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BuNikK1YEeSmqJblg_xp-A" key="douri2" value="builtin:///diagram?wsdlmessage={http://thisdiagram/Absence_Request}SubmittedRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_BuKfQK1YEeSmqJblg_xp-A" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BuLtYK1YEeSmqJblg_xp-A" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BuM7gK1YEeSmqJblg_xp-A" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_E0musauKEeSVx5_1YiyjiQ" iD="_E0musKuKEeSVx5_1YiyjiQ" associations="_BuKfQK1YEeSmqJblg_xp-A" outgoingEdges="_M8xIoauKEeSVx5_1YiyjiQ" name="Submitted" activityType="EventStartEmpty" looping="false">
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_Bt4LYa1YEeSmqJblg_xp-A"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_M8rCAauKEeSVx5_1YiyjiQ" iD="_M8rCAKuKEeSVx5_1YiyjiQ" outgoingEdges="_NmKD4auKEeSVx5_1YiyjiQ _OfMksauKEeSVx5_1YiyjiQ" incomingEdges="_WNMaAaxtEeSs4eQh3WpYig" activityType="GatewayDataBasedExclusive"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_NmFLYauKEeSVx5_1YiyjiQ" iD="_NmFLYKuKEeSVx5_1YiyjiQ" outgoingEdges="_RYlzsauKEeSVx5_1YiyjiQ" incomingEdges="_NmKD4auKEeSVx5_1YiyjiQ" name="Approved" activityType="EventIntermediateEmpty" looping="false"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_OfITQauKEeSVx5_1YiyjiQ" iD="_OfITQKuKEeSVx5_1YiyjiQ" outgoingEdges="_RIC2QauKEeSVx5_1YiyjiQ" incomingEdges="_OfMksauKEeSVx5_1YiyjiQ" name="Rejected" activityType="EventIntermediateEmpty" looping="false"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_RH-k0auKEeSVx5_1YiyjiQ" iD="_RH-k0KuKEeSVx5_1YiyjiQ" outgoingEdges="_SFdgwauKEeSVx5_1YiyjiQ" incomingEdges="_RIC2QauKEeSVx5_1YiyjiQ _RYlzsauKEeSVx5_1YiyjiQ" activityType="GatewayDataBasedExclusive"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_SFZPUauKEeSVx5_1YiyjiQ" iD="_SFZPUKuKEeSVx5_1YiyjiQ" incomingEdges="_SFdgwauKEeSVx5_1YiyjiQ" name="Notified" activityType="EventEndEmpty"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_UWrkUaxtEeSs4eQh3WpYig" iD="_UWrkUKxtEeSs4eQh3WpYig" outgoingEdges="_WNMaAaxtEeSs4eQh3WpYig" incomingEdges="_M8xIoauKEeSVx5_1YiyjiQ" name="Review" activityType="Task"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_M8xIoauKEeSVx5_1YiyjiQ" iD="_M8xIoKuKEeSVx5_1YiyjiQ"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_NmKD4auKEeSVx5_1YiyjiQ" iD="_NmKD4KuKEeSVx5_1YiyjiQ"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_OfMksauKEeSVx5_1YiyjiQ" iD="_OfMksKuKEeSVx5_1YiyjiQ" conditionType="Default" isDefault="true"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_RIC2QauKEeSVx5_1YiyjiQ" iD="_RIC2QKuKEeSVx5_1YiyjiQ"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_RYlzsauKEeSVx5_1YiyjiQ" iD="_RYlzsKuKEeSVx5_1YiyjiQ"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_SFdgwauKEeSVx5_1YiyjiQ" iD="_SFdgwKuKEeSVx5_1YiyjiQ"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_WNMaAaxtEeSs4eQh3WpYig" iD="_WNMaAKxtEeSs4eQh3WpYig"/>
+  </pools>
+  <pools xmi:type="bpmn:Pool" xmi:id="_AbMbga1YEeSmqJblg_xp-A" iD="_AbMbgK1YEeSmqJblg_xp-A" name="Pool">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BAHtgK1YEeSmqJblg_xp-A" source="executablepool">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BAHtga1YEeSmqJblg_xp-A" key="poolIsExecutable" value="false"/>
+    </eAnnotations>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_Bt8c0a1YEeSmqJblg_xp-A" iD="_Bt8c0K1YEeSmqJblg_xp-A" name="absence_RequestSubmittedRequestMsg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Bt8c0q1YEeSmqJblg_xp-A" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Bt8c061YEeSmqJblg_xp-A" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Bt-5Eq1YEeSmqJblg_xp-A" key="defaultDeclarationName" value="absence_RequestSubmittedRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BuDKgK1YEeSmqJblg_xp-A" key="douri2" value="builtin:///diagram?wsdlmessage={http://thisdiagram/Absence_Request}SubmittedRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_BuAHMK1YEeSmqJblg_xp-A" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BuBVUK1YEeSmqJblg_xp-A" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BuB8YK1YEeSmqJblg_xp-A" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_BM2h8a1YEeSmqJblg_xp-A" iD="_BM2h8K1YEeSmqJblg_xp-A" associations="_BuAHMK1YEeSmqJblg_xp-A" activityType="Task">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_Bt4LYa1YEeSmqJblg_xp-A"/>
+    </vertices>
+  </pools>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_Bt4LYa1YEeSmqJblg_xp-A" iD="_Bt4LYK1YEeSmqJblg_xp-A" source="_BM2h8a1YEeSmqJblg_xp-A" target="_E0musauKEeSVx5_1YiyjiQ"/>
+</bpmn:BpmnDiagram>

@@ -1,0 +1,329 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:tns="http://test.com/xvar/example" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:NotifyAbsenceRequest1="http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi" xmlns:Absence_RequestimplicitPartner="http://thisdiagram/Absence_RequestimplicitPartner" xmlns:diag="http://thisdiagram" xmlns:this="http://thisdiagram/Absence_Request" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ApproveAbsenceRequest="http://www.intalio.com/gi/Forms/ApproveAbsenceRequest.gi/attachments" xmlns:SubmitAbsenceRequest="http://www.intalio.com/gi/Forms/SubmitAbsenceRequest.gi" xmlns:ApproveAbsenceRequest1="http://www.intalio.com/gi/Forms/ApproveAbsenceRequest.gi" xmlns:attachments="http://www.intalio.com/gi/Forms/SubmitAbsenceRequest.gi/attachments" xmlns:NotifyAbsenceRequest="http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi/attachments" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Absence_Request">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://test.com/xvar/example" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///Metrics/metrics.xvar"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi" bpdm:prefix="NotifyAbsenceRequest1" bpdm:comment="contrib=&apos;project:///Forms/NotifyAbsenceRequest.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Absence_RequestimplicitPartner" bpdm:prefix="Absence_RequestimplicitPartner" bpdm:comment="contrib=&apos;partner-pool:///_ttz_MH9zEeOyNLOFBEJoPgimplicitPartner"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_ttz_MH9zEeOyNLOFBEJoPgimplicitPartner"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Absence_Request" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/ApproveAbsenceRequest.gi/attachments" bpdm:prefix="ApproveAbsenceRequest" bpdm:comment="contrib=&apos;project:///Forms/ApproveAbsenceRequest.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/SubmitAbsenceRequest.gi" bpdm:prefix="SubmitAbsenceRequest" bpdm:comment="contrib=&apos;project:///Forms/SubmitAbsenceRequest.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/ApproveAbsenceRequest.gi" bpdm:prefix="ApproveAbsenceRequest1" bpdm:comment="contrib=&apos;project:///Forms/ApproveAbsenceRequest.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/SubmitAbsenceRequest.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///Forms/SubmitAbsenceRequest.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi/attachments" bpdm:prefix="NotifyAbsenceRequest" bpdm:comment="contrib=&apos;project:///Forms/NotifyAbsenceRequest.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types">
+            <wsdl:service name="WFmagic_FAliEIA4EeOyNLOFBEJoPgService">
+                <wsdl:port name="Absence_Request_for_Absence_RequestimplicitPartnerForThePortTypeProcessPort" binding="this:WFmagic_FAliEIA4EeOyNLOFBEJoPgServiceBinding">
+                    <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Absence_Request/Absence_RequestimplicitPartner/WFmagic_FAliEIA4EeOyNLOFBEJoPg"/>
+                </wsdl:port>
+            </wsdl:service>
+            <wsdl:service name="Absence_RequestimplicitPartnerAndAbsence_RequestForPortTypeProcessPlkService">
+                <wsdl:port name="Absence_Request_for_Absence_RequestimplicitPartnerPort" binding="this:Absence_RequestimplicitPartnerAndAbsence_RequestForPortTypeProcessPlkServiceBinding">
+                    <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Absence_Request/Absence_RequestimplicitPartner/Absence_RequestimplicitPartnerAndAbsence_RequestForPortTypeProcessPlk"/>
+                </wsdl:port>
+            </wsdl:service>
+            <bpel:binding name="WFmagic_FAliEIA4EeOyNLOFBEJoPgServiceBinding" type="ApproveAbsenceRequest1:Process" bpdm:isSynchronized="true"/>
+            <bpel:binding name="Absence_RequestimplicitPartnerAndAbsence_RequestForPortTypeProcessPlkServiceBinding" type="SubmitAbsenceRequest:Process" bpdm:isSynchronized="true"/>
+        </bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_ttz_MH9zEeOyNLOFBEJoPgimplicitPartner" bpdm:label="Absence RequestimplicitPartner"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/SubmitAbsenceRequest.gi.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/ApproveAbsenceRequest.gi.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/ApproveAbsenceRequest.gi/IntalioInternal/FormModel.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/NotifyAbsenceRequest.gi.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/NotifyAbsenceRequest.gi/IntalioInternal/FormModel.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/SubmitAbsenceRequest.gi/IntalioInternal/FormModel.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Metrics/metrics.xvar"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Metrics/metrics.xvar.xsd"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Absence Request" bpdm:ID="_ttz_MH9zEeOyNLOFBEJoPg">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="absence_RequestimplicitPartnerAndAbsence_RequestForPortTypeProcessPlkVar" partnerLinkType="diag:Absence_RequestimplicitPartnerAndAbsence_RequestForPortTypeProcessPlk" myRole="Absence_Request_for_Absence_RequestimplicitPartner" bpdm:enableSharing="false" bpdm:providedService="this:Absence_RequestimplicitPartnerAndAbsence_RequestForPortTypeProcessPlkService" bpdm:providedPort="Absence_Request_for_Absence_RequestimplicitPartnerPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Absence_Request/Absence_RequestimplicitPartner/Absence_RequestimplicitPartnerAndAbsence_RequestForPortTypeProcessPlk" bpdm:providedIsDefault="true" bpdm:clientTasks="_ttz_MH9zEeOyNLOFBEJoPg:_o_--EIA3EeOyNLOFBEJoPg" bpdm:isManaged="true" bpdm:otherPoolId="_ttz_MH9zEeOyNLOFBEJoPgimplicitPartner"/>
+            <bpel:partnerLink name="wFmagic_FAliEIA4EeOyNLOFBEJoPgPlkVar" partnerLinkType="diag:WFmagic_FAliEIA4EeOyNLOFBEJoPg" initializePartnerRole="no" myRole="Absence_Request_for_Absence_RequestimplicitPartnerForThePortTypeProcess" bpdm:enableSharing="false" bpdm:providedService="this:WFmagic_FAliEIA4EeOyNLOFBEJoPgService" bpdm:providedPort="Absence_Request_for_Absence_RequestimplicitPartnerForThePortTypeProcessPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Absence_Request/Absence_RequestimplicitPartner/WFmagic_FAliEIA4EeOyNLOFBEJoPg" bpdm:providedIsDefault="true" partnerRole="Absence_RequestimplicitPartner_for_Absence_RequestForApproveAbsenceRequestPort" bpdm:invokedService="ApproveAbsenceRequest1:WorkflowSoapService" bpdm:invokedPort="ApproveAbsenceRequestPort" bpdm:invokedSOAPAddress="http://localhost:8080/fds/workflow/ApproveAbsenceRequest" bpdm:invokedIsDefault="true" bpdm:clientTasks="_FAiewIA4EeOyNLOFBEJoPg:_FAsPwIA4EeOyNLOFBEJoPg, _FAiewIA4EeOyNLOFBEJoPg:_FAliEIA4EeOyNLOFBEJoPg" bpdm:isManaged="true" bpdm:otherPoolId="_ttz_MH9zEeOyNLOFBEJoPgimplicitPartner"/>
+            <bpel:partnerLink name="absence_RequestimplicitPartnerAndAbsence_RequestForNotifyAbsenceRequestPortPlkVar" partnerLinkType="diag:Absence_RequestimplicitPartnerAndAbsence_RequestForNotifyAbsenceRequestPortPlk" initializePartnerRole="yes" partnerRole="Absence_RequestimplicitPartner_for_Absence_Request" bpdm:invokedService="NotifyAbsenceRequest1:WorkflowSoapService" bpdm:invokedPort="NotifyAbsenceRequestPort" bpdm:invokedSOAPAddress="http://localhost:8080/fds/workflow/NotifyAbsenceRequest" bpdm:invokedIsDefault="true" bpdm:clientTasks="_ttz_MH9zEeOyNLOFBEJoPg:_LfYKcIA4EeOyNLOFBEJoPg" bpdm:isManaged="true" bpdm:otherPoolId="_ttz_MH9zEeOyNLOFBEJoPgimplicitPartner"/>
+        </bpel:partnerLinks>
+        <bpel:variables xmlns:xvar="http://ode.apache.org/externalVariables">
+            <bpel:variable name="EmployeeRequest" messageType="SubmitAbsenceRequest:initProcessRequest" bpdm:messageIds="inc:_o_--EIA3EeOyNLOFBEJoPgIncoming"/>
+            <bpel:variable name="EmployeeRequest-ACK" messageType="SubmitAbsenceRequest:initProcessResponse" bpdm:messageIds=" out:_o_--EIA3EeOyNLOFBEJoPgOutgoing">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="SubmitAbsenceRequest:initProcessResponse" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="RequestManagerDecision-ACK" messageType="ApproveAbsenceRequest1:createTaskResponse" binding="ApproveAbsenceRequest1:WorkflowSoapBinding" operation="createTask" opMsgType="1" bpdm:messageIds="inc:_FAliEIA4EeOyNLOFBEJoPgIncoming"/>
+            <bpel:variable name="RequestManagerDecision" messageType="ApproveAbsenceRequest1:createTaskRequest" binding="ApproveAbsenceRequest1:WorkflowSoapBinding" operation="createTask" opMsgType="0" bpdm:messageIds=" out:_FAliEIA4EeOyNLOFBEJoPgOutgoing">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="ApproveAbsenceRequest1:createTaskRequest" bpdm:linkedPart="root" bpdm:binding="ApproveAbsenceRequest1:WorkflowSoapBinding" bpdm:opMsgType="0" bpdm:operation="createTask"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="ManagerDecision" messageType="ApproveAbsenceRequest1:notifyTaskCompletionRequest" bpdm:messageIds="inc:_FAsPwIA4EeOyNLOFBEJoPgIncoming"/>
+            <bpel:variable name="ManagerDecision-ACK" messageType="ApproveAbsenceRequest1:notifyTaskCompletionResponse" bpdm:messageIds=" out:_FAsPwIA4EeOyNLOFBEJoPgOutgoing">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="ApproveAbsenceRequest1:notifyTaskCompletionResponse" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="EmployeeDecisionNotification-ACK" messageType="NotifyAbsenceRequest1:notifyResponse" binding="NotifyAbsenceRequest1:WorkflowSoapBinding" operation="notify" opMsgType="1" bpdm:messageIds="inc:_LfYKcIA4EeOyNLOFBEJoPgIncoming"/>
+            <bpel:variable name="EmployeeDecisionNotification" messageType="NotifyAbsenceRequest1:notifyRequest" binding="NotifyAbsenceRequest1:WorkflowSoapBinding" operation="notify" opMsgType="0" bpdm:messageIds=" out:_LfYKcIA4EeOyNLOFBEJoPgOutgoing">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="NotifyAbsenceRequest1:notifyRequest" bpdm:linkedPart="root" bpdm:binding="NotifyAbsenceRequest1:WorkflowSoapBinding" bpdm:opMsgType="0" bpdm:operation="notify"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="Absence_Request" element="tns:Absence_Request" xvar:id="Absence_Request-_YTIlcKLuEeSh7dy_Qr-xcA" xvar:relates-to="Absence_Request-keys" bpdm:xvarType="tns:Absence_Request" bpdm:id="_YTIlcKLuEeSh7dy_Qr-xcA"/>
+            <bpel:variable name="Absence_Request_History" element="tns:Absence_Request_History" xvar:id="Absence_Request_History-_GzIN0KxvEeSs4eQh3WpYig" xvar:relates-to="Absence_Request_History-keys" bpdm:xvarType="tns:Absence_Request_History" bpdm:id="_GzIN0KxvEeSs4eQh3WpYig"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="initProcess" partnerLink="absence_RequestimplicitPartnerAndAbsence_RequestForPortTypeProcessPlkVar" portType="SubmitAbsenceRequest:Process" isMyRole="true" enableSharing="false" bpdm:label="Submit absence leave request" bpdm:ID="_o_--EIA3EeOyNLOFBEJoPg">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="EmployeeRequest" bpdm:variableIsManaged="true" bpdm:messageType="SubmitAbsenceRequest:initProcessRequest" bpdm:ID="_o_--EIA3EeOyNLOFBEJoPgIncoming"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="EmployeeRequest-ACK" bpdm:variableIsManaged="true" bpdm:messageType="SubmitAbsenceRequest:initProcessResponse" bpdm:ID="_o_--EIA3EeOyNLOFBEJoPgOutgoing"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask eventType="intermediate: empty" bpdm:label="Submitted" bpdm:ID="_ZgqIgKLuEeSh7dy_Qr-xcA">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$ode:pid</bpel:from>
+                        <bpel:to>$Absence_Request/tns:Request_Identifier</bpel:to><mapper:mapperLink><mapper:vertice id="734000561" targetPath="$Absence_Request/tns:Request_Identifier" targetedBy="486074942-arg0"></mapper:vertice><mapper:vertice id="486074942" sourcePath="$ode:pid"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>"In Review"</bpel:from>
+                        <bpel:to>$Absence_Request/tns:Status</bpel:to><mapper:mapperLink><mapper:vertice id="50938096" targetPath="$Absence_Request/tns:Status" targetedBy="1689538967-arg0"></mapper:vertice><mapper:vertice id="1689538967" dimension="79x24" location="252,108"><mapper:value>"In Review"</mapper:value></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>current-dateTime()</bpel:from>
+                        <bpel:to>$Absence_Request/tns:Submited_On</bpel:to><mapper:mapperLink><mapper:vertice id="1229060153" targetPath="$Absence_Request/tns:Submited_On" targetedBy="1736842269-arg0"></mapper:vertice><mapper:vertice id="1736842269" dimension="109x24" location="180,216"><mapper:value>current-dateTime()</mapper:value></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$EmployeeRequest.root/SubmitAbsenceRequest:user</bpel:from>
+                        <bpel:to>$Absence_Request/tns:Requestor</bpel:to><mapper:mapperLink><mapper:vertice id="730200550" targetPath="$Absence_Request/tns:Requestor" targetedBy="1042235579-arg0"></mapper:vertice><mapper:vertice id="1042235579" sourcePath="$EmployeeRequest.root/SubmitAbsenceRequest:user"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>"state"</bpel:from>
+                        <bpel:to>$Absence_Request_History/tns:status_activity_type</bpel:to><mapper:mapperLink><mapper:vertice id="292106852" targetPath="$Absence_Request_History/tns:status_activity_type" targetedBy="854128981-arg0"></mapper:vertice><mapper:vertice id="854128981" dimension="79x24" location="324,300"><mapper:value>"state"</mapper:value></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>current-dateTime()</bpel:from>
+                        <bpel:to>$Absence_Request_History/tns:time</bpel:to><mapper:mapperLink><mapper:vertice id="1161287271" targetPath="$Absence_Request_History/tns:time" targetedBy="1306636045-arg0"></mapper:vertice><mapper:vertice id="1306636045" dimension="109x24" location="276,360"><mapper:value>current-dateTime()</mapper:value></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>"Submitted"</bpel:from>
+                        <bpel:to>$Absence_Request_History/tns:status</bpel:to><mapper:mapperLink><mapper:vertice id="1605224969" targetPath="$Absence_Request_History/tns:status" targetedBy="762727166-arg0"></mapper:vertice><mapper:vertice id="762727166" dimension="79x24" location="192,384"><mapper:value>"Submitted"</mapper:value></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>concat("By ", $EmployeeRequest.root/SubmitAbsenceRequest:user)</bpel:from>
+                        <bpel:to>$Absence_Request_History/tns:notes</bpel:to><mapper:mapperLink><mapper:vertice id="1694154971" targetPath="$Absence_Request_History/tns:notes" targetedBy="269425289-arg2"></mapper:vertice><mapper:vertice id="269425289" dimension="79x24" location="225,314"><mapper:value>concat()</mapper:value></mapper:vertice><mapper:vertice id="1411089920" dimension="79x24" location="108,336" targetedBy="269425289-arg0"><mapper:value>"By "</mapper:value></mapper:vertice><mapper:vertice id="2035637118" sourcePath="$EmployeeRequest.root/SubmitAbsenceRequest:user" targetedBy="269425289-arg1"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>"Submitted"</bpel:from>
+                        <bpel:to>$Absence_Request_History/tns:status_activity</bpel:to><mapper:mapperLink><mapper:vertice id="1418528721" targetPath="$Absence_Request_History/tns:status_activity" targetedBy="974702260-arg0"></mapper:vertice><mapper:vertice id="974702260" dimension="79x24" location="353,260"><mapper:value>"Submitted"</mapper:value></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$Absence_Request/tns:id</bpel:from>
+                        <bpel:to>$Absence_Request_History/tns:caseId</bpel:to><mapper:mapperLink><mapper:vertice id="1237762322" targetPath="$Absence_Request_History/tns:caseId" targetedBy="1115471624-arg0"></mapper:vertice><mapper:vertice id="1115471624" sourcePath="$Absence_Request/tns:id"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpel:scope bpdm:label="Approve absence request" bpdm:ID="_FAiewIA4EeOyNLOFBEJoPg">
+                <bpel:sequence>
+                    <bpdm:messagingtask operation="createTask" partnerLink="wFmagic_FAliEIA4EeOyNLOFBEJoPgPlkVar" portType="ApproveAbsenceRequest1:Workflow" isMyRole="false" enableSharing="false" bpdm:label="Receive  leave approval request" bpdm:ID="_FAliEIA4EeOyNLOFBEJoPg">
+                        <bpdm:linkset bpdm:type="assignments">
+                            <bpel:copy>
+                                <bpel:from>$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/PersonDetails/PersonOnLeave</bpel:from>
+                                <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/PersonDetails/PersonOnLeave-map</bpel:to><mapper:mapperLink><mapper:vertice id="1562003395" targetPath="$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/PersonDetails/PersonOnLeave-map" targetedBy="1251079599-arg0"></mapper:vertice><mapper:vertice id="1251079599" sourcePath="$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/PersonDetails/PersonOnLeave"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy ignoreMissingFromData="yes">
+                                <bpel:from>$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/PersonDetails/email</bpel:from>
+                                <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/PersonDetails/Email-map</bpel:to><mapper:mapperLink><mapper:vertice id="1098343320" targetPath="$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/PersonDetails/Email-map" targetedBy="1989118298-arg0"></mapper:vertice><mapper:vertice id="1989118298" sourcePath="$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/PersonDetails/email"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/PersonDetails/reporter-map</bpel:from>
+                                <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/PersonDetails/submitter-map</bpel:to><mapper:mapperLink><mapper:vertice id="1907623616" targetPath="$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/PersonDetails/submitter-map" targetedBy="1810785546-arg0"></mapper:vertice><mapper:vertice id="1810785546" sourcePath="$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/PersonDetails/reporter-map"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy ignoreMissingFromData="yes">
+                                <bpel:from>$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/PersonDetails/comments</bpel:from>
+                                <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/PersonDetails/comments</bpel:to><mapper:mapperLink><mapper:vertice id="1492546846" targetPath="$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/PersonDetails/comments" targetedBy="1828939607-arg0"></mapper:vertice><mapper:vertice id="1828939607" sourcePath="$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/PersonDetails/comments"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/contactWhileAway/substitutename</bpel:from>
+                                <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/contactWhileAway/substitutename-map</bpel:to><mapper:mapperLink><mapper:vertice id="278250439" targetPath="$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/contactWhileAway/substitutename-map" targetedBy="924190732-arg0"></mapper:vertice><mapper:vertice id="924190732" sourcePath="$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/contactWhileAway/substitutename"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy ignoreMissingFromData="yes">
+                                <bpel:from>$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/contactWhileAway/emailWhileAway</bpel:from>
+                                <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/contactWhileAway/emailWhileAway-map</bpel:to><mapper:mapperLink><mapper:vertice id="172639766" targetPath="$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/contactWhileAway/emailWhileAway-map" targetedBy="2119733202-arg0"></mapper:vertice><mapper:vertice id="2119733202" sourcePath="$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/contactWhileAway/emailWhileAway"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/LeaveDetails</bpel:from>
+                                <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/LeaveDetails</bpel:to><mapper:mapperLink><mapper:vertice id="828625918" targetPath="$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/LeaveDetails" targetedBy="195425092-arg0"></mapper:vertice><mapper:vertice id="195425092" sourcePath="$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/LeaveDetails"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>concat($EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/PersonDetails/Phone/code, " ", $EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/PersonDetails/Phone/number)</bpel:from>
+                                <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/PersonDetails/Phone-map</bpel:to><mapper:mapperLink><mapper:vertice id="856137959" targetPath="$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/PersonDetails/Phone-map" targetedBy="1988041902-arg3"></mapper:vertice><mapper:vertice id="1988041902" dimension="85x25" location="204,216"><mapper:value>concat()</mapper:value></mapper:vertice><mapper:vertice id="752279983" sourcePath="$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/PersonDetails/Phone/code" targetedBy="1988041902-arg0"></mapper:vertice><mapper:vertice id="134439545" dimension="26x25" location="143,260" targetedBy="1988041902-arg1"><mapper:value>" "</mapper:value></mapper:vertice><mapper:vertice id="60556252" sourcePath="$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/PersonDetails/Phone/number" targetedBy="1988041902-arg2"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>concat($EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/contactWhileAway/codewhileAway, " ", $EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/contactWhileAway/numberWhileAway)</bpel:from>
+                                <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/contactWhileAway/PhoneWhileAway-map</bpel:to><mapper:mapperLink><mapper:vertice id="1106170125" targetPath="$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/contactWhileAway/PhoneWhileAway-map" targetedBy="125742374-arg3"></mapper:vertice><mapper:vertice id="125742374" dimension="85x25" location="324,360"><mapper:value>concat()</mapper:value></mapper:vertice><mapper:vertice id="841927030" sourcePath="$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/contactWhileAway/codewhileAway" targetedBy="125742374-arg0"></mapper:vertice><mapper:vertice id="1238599929" dimension="30x25" location="271,370" targetedBy="125742374-arg1"><mapper:value>" "</mapper:value></mapper:vertice><mapper:vertice id="653146777" sourcePath="$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/contactWhileAway/numberWhileAway" targetedBy="125742374-arg2"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>concat("Approve Absence Requests for: ", $EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/PersonDetails/PersonOnLeave)</bpel:from>
+                                <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:description</bpel:to><mapper:mapperLink><mapper:vertice id="1695017774" targetPath="$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:description" targetedBy="1086167809-arg2"></mapper:vertice><mapper:vertice id="1086167809" dimension="61x25" location="372,132"><mapper:value>concat()</mapper:value></mapper:vertice><mapper:vertice id="914984461" dimension="175x25" location="168,48" targetedBy="1086167809-arg0"><mapper:value>"Approve Absence Requests for: "</mapper:value></mapper:vertice><mapper:vertice id="77251445" sourcePath="$EmployeeRequest.root/SubmitAbsenceRequest:taskOutput/SubmitAbsenceRequest:FormModel/PersonDetails/PersonOnLeave" targetedBy="1086167809-arg1"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>"Absence_Request"</bpel:from>
+                                <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/caseType</bpel:to><mapper:mapperLink><mapper:vertice id="1064685038" targetPath="$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/caseType" targetedBy="1543276240-arg0"></mapper:vertice><mapper:vertice id="1543276240" dimension="110x24" location="169,123"><mapper:value>"Absence_Request"</mapper:value></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>$Absence_Request/tns:id</bpel:from>
+                                <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/caseId</bpel:to><mapper:mapperLink><mapper:vertice id="922761572" targetPath="$RequestManagerDecision.root/ApproveAbsenceRequest1:taskInput/ApproveAbsenceRequest1:FormModel/caseId" targetedBy="1863064353-arg0"></mapper:vertice><mapper:vertice id="1863064353" sourcePath="$Absence_Request/tns:id"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                        </bpdm:linkset>
+                        <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="RequestManagerDecision" bpdm:msgVarScopeId="_ttz_MH9zEeOyNLOFBEJoPg" bpdm:variableIsManaged="true" bpdm:messageType="ApproveAbsenceRequest1:createTaskRequest" bpdm:binding="ApproveAbsenceRequest1:WorkflowSoapBinding" bpdm:ID="_FAliEIA4EeOyNLOFBEJoPgOutgoing"></bpdm:linkset>
+                        <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="RequestManagerDecision-ACK" bpdm:msgVarScopeId="_ttz_MH9zEeOyNLOFBEJoPg" bpdm:variableIsManaged="true" bpdm:messageType="ApproveAbsenceRequest1:createTaskResponse" bpdm:binding="ApproveAbsenceRequest1:WorkflowSoapBinding" bpdm:ID="_FAliEIA4EeOyNLOFBEJoPgIncoming"></bpdm:linkset>
+                    </bpdm:messagingtask>
+                    <bpdm:messagingtask eventType="intermediate: empty" bpdm:label="In Review" bpdm:ID="_JKeDMKxwEeSs4eQh3WpYig">
+                        <bpdm:linkset bpdm:type="assignments">
+                            <bpel:copy>
+                                <bpel:from>""</bpel:from>
+                                <bpel:to>$Absence_Request_History/tns:id</bpel:to><mapper:mapperLink><mapper:vertice id="1330362553" targetPath="$Absence_Request_History/tns:id" targetedBy="686802739-arg0"></mapper:vertice><mapper:vertice id="686802739" dimension="78x24" location="354,136"><mapper:value>""</mapper:value></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>"start_activity"</bpel:from>
+                                <bpel:to>$Absence_Request_History/tns:status_activity_type</bpel:to><mapper:mapperLink><mapper:vertice id="1237498472" targetPath="$Absence_Request_History/tns:status_activity_type" targetedBy="1359403534-arg0"></mapper:vertice><mapper:vertice id="1359403534" dimension="84x24" location="347,205"><mapper:value>"start_activity"</mapper:value></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>"Review"</bpel:from>
+                                <bpel:to>$Absence_Request_History/tns:status_activity</bpel:to><mapper:mapperLink><mapper:vertice id="1580446765" targetPath="$Absence_Request_History/tns:status_activity" targetedBy="402541863-arg0"></mapper:vertice><mapper:vertice id="402541863" dimension="79x24" location="336,240"><mapper:value>"Review"</mapper:value></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>current-dateTime()</bpel:from>
+                                <bpel:to>$Absence_Request_History/tns:time</bpel:to><mapper:mapperLink><mapper:vertice id="1455257753" targetPath="$Absence_Request_History/tns:time" targetedBy="1158328611-arg0"></mapper:vertice><mapper:vertice id="1158328611" dimension="109x24" location="300,264"><mapper:value>current-dateTime()</mapper:value></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>"In Review"</bpel:from>
+                                <bpel:to>$Absence_Request_History/tns:status</bpel:to><mapper:mapperLink><mapper:vertice id="526707270" targetPath="$Absence_Request_History/tns:status" targetedBy="1227023414-arg0"></mapper:vertice><mapper:vertice id="1227023414" dimension="79x24" location="204,276"><mapper:value>"In Review"</mapper:value></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>$Absence_Request/tns:id</bpel:from>
+                                <bpel:to>$Absence_Request_History/tns:caseId</bpel:to><mapper:mapperLink><mapper:vertice id="1506723148" targetPath="$Absence_Request_History/tns:caseId" targetedBy="1649955228-arg0"></mapper:vertice><mapper:vertice id="1649955228" sourcePath="$Absence_Request/tns:id"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                        </bpdm:linkset>
+                    </bpdm:messagingtask>
+                    <bpdm:messagingtask operation="notifyTaskCompletion" partnerLink="wFmagic_FAliEIA4EeOyNLOFBEJoPgPlkVar" portType="ApproveAbsenceRequest1:Process" isMyRole="true" enableSharing="false" bpdm:label="Send leave  approval decison" bpdm:ID="_FAsPwIA4EeOyNLOFBEJoPg">
+                        <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="ManagerDecision" bpdm:msgVarScopeId="_ttz_MH9zEeOyNLOFBEJoPg" bpdm:variableIsManaged="true" bpdm:messageType="ApproveAbsenceRequest1:notifyTaskCompletionRequest" bpdm:ID="_FAsPwIA4EeOyNLOFBEJoPgIncoming"></bpdm:linkset>
+                        <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="ManagerDecision-ACK" bpdm:msgVarScopeId="_ttz_MH9zEeOyNLOFBEJoPg" bpdm:variableIsManaged="true" bpdm:messageType="ApproveAbsenceRequest1:notifyTaskCompletionResponse" bpdm:ID="_FAsPwIA4EeOyNLOFBEJoPgOutgoing"></bpdm:linkset>
+                    </bpdm:messagingtask>
+                </bpel:sequence>
+            </bpel:scope>
+            <bpdm:messagingtask eventType="intermediate: empty" bpdm:label="Empty_Intermediate_Event" bpdm:ID="_a_QNcKLuEeSh7dy_Qr-xcA">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/ManagerDecision/Decision</bpel:from>
+                        <bpel:to>$Absence_Request/tns:Status</bpel:to><mapper:mapperLink><mapper:vertice id="21074958" targetPath="$Absence_Request/tns:Status" targetedBy="721482577-arg0"></mapper:vertice><mapper:vertice id="721482577" sourcePath="$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/ManagerDecision/Decision"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>current-dateTime()</bpel:from>
+                        <bpel:to>$Absence_Request/tns:Validated_On</bpel:to><mapper:mapperLink><mapper:vertice id="628814201" targetPath="$Absence_Request/tns:Validated_On" targetedBy="1456017242-arg0"></mapper:vertice><mapper:vertice id="1456017242" dimension="109x24" location="324,168"><mapper:value>current-dateTime()</mapper:value></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$ManagerDecision.root/ApproveAbsenceRequest1:user</bpel:from>
+                        <bpel:to>$Absence_Request/tns:Validator</bpel:to><mapper:mapperLink><mapper:vertice id="1057200707" targetPath="$Absence_Request/tns:Validator" targetedBy="1999848535-arg0"></mapper:vertice><mapper:vertice id="1999848535" sourcePath="$ManagerDecision.root/ApproveAbsenceRequest1:user"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>""</bpel:from>
+                        <bpel:to>$Absence_Request_History/tns:id</bpel:to><mapper:mapperLink><mapper:vertice id="649326518" targetPath="$Absence_Request_History/tns:id" targetedBy="1914248714-arg0"></mapper:vertice><mapper:vertice id="1914248714" dimension="78x24" location="180,48"><mapper:value>""</mapper:value></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>"end_activity,state"</bpel:from>
+                        <bpel:to>$Absence_Request_History/tns:status_activity_type</bpel:to><mapper:mapperLink><mapper:vertice id="1188413044" targetPath="$Absence_Request_History/tns:status_activity_type" targetedBy="316467824-arg0"></mapper:vertice><mapper:vertice id="316467824" dimension="109x24" location="204,192"><mapper:value>"end_activity,state"</mapper:value></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>current-dateTime()</bpel:from>
+                        <bpel:to>$Absence_Request_History/tns:time</bpel:to><mapper:mapperLink><mapper:vertice id="793571005" targetPath="$Absence_Request_History/tns:time" targetedBy="426284727-arg0"></mapper:vertice><mapper:vertice id="426284727" dimension="109x24" location="84,276"><mapper:value>current-dateTime()</mapper:value></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>concat("Review,", $ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/ManagerDecision/Decision)</bpel:from>
+                        <bpel:to>$Absence_Request_History/tns:status_activity</bpel:to><mapper:mapperLink><mapper:vertice id="2080299907" targetPath="$Absence_Request_History/tns:status_activity" targetedBy="966687228-arg2"></mapper:vertice><mapper:vertice id="966687228" dimension="79x24" location="344,259"><mapper:value>concat()</mapper:value></mapper:vertice><mapper:vertice id="783196886" dimension="79x24" location="228,228" targetedBy="966687228-arg0"><mapper:value>"Review,"</mapper:value></mapper:vertice><mapper:vertice id="821606299" sourcePath="$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/ManagerDecision/Decision" targetedBy="966687228-arg1"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/ManagerDecision/Decision</bpel:from>
+                        <bpel:to>$Absence_Request_History/tns:status</bpel:to><mapper:mapperLink><mapper:vertice id="1726182029" targetPath="$Absence_Request_History/tns:status" targetedBy="1403705462-arg0"></mapper:vertice><mapper:vertice id="1403705462" sourcePath="$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/ManagerDecision/Decision"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>concat("Reviewed By: ", $ManagerDecision.root/ApproveAbsenceRequest1:user)</bpel:from>
+                        <bpel:to>$Absence_Request_History/tns:notes</bpel:to><mapper:mapperLink><mapper:vertice id="299191503" targetPath="$Absence_Request_History/tns:notes" targetedBy="1490958045-arg1"></mapper:vertice><mapper:vertice id="1490958045" dimension="79x24" location="328,315"><mapper:value>concat()</mapper:value></mapper:vertice><mapper:vertice id="1294090827" dimension="90x24" location="180,300" targetedBy="1490958045-arg0"><mapper:value>"Reviewed By: "</mapper:value></mapper:vertice><mapper:vertice id="1686619237" sourcePath="$ManagerDecision.root/ApproveAbsenceRequest1:user" targetedBy="1490958045-arg2"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$Absence_Request/tns:id</bpel:from>
+                        <bpel:to>$Absence_Request_History/tns:caseId</bpel:to><mapper:mapperLink><mapper:vertice id="816233187" targetPath="$Absence_Request_History/tns:caseId" targetedBy="1566722462-arg0"></mapper:vertice><mapper:vertice id="1566722462" sourcePath="$Absence_Request/tns:id"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask operation="notify" partnerLink="absence_RequestimplicitPartnerAndAbsence_RequestForNotifyAbsenceRequestPortPlkVar" portType="NotifyAbsenceRequest1:Workflow" isMyRole="false" enableSharing="false" bpdm:label="Receive decision notification" bpdm:ID="_LfYKcIA4EeOyNLOFBEJoPg">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>concat("Your absence request is ", $ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/ManagerDecision/Decision)</bpel:from>
+                        <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:metadata/NotifyAbsenceRequest1:description</bpel:to><mapper:mapperLink><mapper:vertice id="279684390" targetPath="$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:metadata/NotifyAbsenceRequest1:description" targetedBy="2130290663-arg2"></mapper:vertice><mapper:vertice id="2130290663" dimension="61x25" location="504,96"><mapper:value>concat()</mapper:value></mapper:vertice><mapper:vertice id="570225249" dimension="145x25" location="324,48" targetedBy="2130290663-arg0"><mapper:value>"Your absence request is "</mapper:value></mapper:vertice><mapper:vertice id="1336554386" sourcePath="$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/ManagerDecision/Decision" targetedBy="2130290663-arg1"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$EmployeeRequest.root/SubmitAbsenceRequest:user</bpel:from>
+                        <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:metadata/NotifyAbsenceRequest1:userOwner</bpel:to><mapper:mapperLink><mapper:vertice id="283323909" targetPath="$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:metadata/NotifyAbsenceRequest1:userOwner" targetedBy="35371982-arg0"></mapper:vertice><mapper:vertice id="35371982" sourcePath="$EmployeeRequest.root/SubmitAbsenceRequest:user"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/ManagerDecision/Decision</bpel:from>
+                        <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:input/NotifyAbsenceRequest1:FormModel/Outcome/ManagerDecision-map</bpel:to><mapper:mapperLink><mapper:vertice id="283760163" targetPath="$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:input/NotifyAbsenceRequest1:FormModel/Outcome/ManagerDecision-map" targetedBy="277319244-arg0"></mapper:vertice><mapper:vertice id="277319244" sourcePath="$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/ManagerDecision/Decision"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy ignoreMissingFromData="yes">
+                        <bpel:from>$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/ManagerDecision/ManagerComments</bpel:from>
+                        <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:input/NotifyAbsenceRequest1:FormModel/Outcome/ManagerComments</bpel:to><mapper:mapperLink><mapper:vertice id="537507507" targetPath="$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:input/NotifyAbsenceRequest1:FormModel/Outcome/ManagerComments" targetedBy="1205731498-arg0"></mapper:vertice><mapper:vertice id="1205731498" sourcePath="$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/ManagerDecision/ManagerComments"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/LeaveDetails</bpel:from>
+                        <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:input/NotifyAbsenceRequest1:FormModel/LeaveDetails</bpel:to><mapper:mapperLink><mapper:vertice id="734694161" targetPath="$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:input/NotifyAbsenceRequest1:FormModel/LeaveDetails" targetedBy="2079440388-arg0"></mapper:vertice><mapper:vertice id="2079440388" sourcePath="$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/LeaveDetails"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy ignoreMissingFromData="yes">
+                        <bpel:from>$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/contactWhileAway/substitutename-map</bpel:from>
+                        <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:input/NotifyAbsenceRequest1:FormModel/contactWhileAway/substitutename-map</bpel:to><mapper:mapperLink><mapper:vertice id="899939604" targetPath="$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:input/NotifyAbsenceRequest1:FormModel/contactWhileAway/substitutename-map" targetedBy="1419232328-arg0"></mapper:vertice><mapper:vertice id="1419232328" sourcePath="$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/contactWhileAway/substitutename-map"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy ignoreMissingFromData="yes">
+                        <bpel:from>$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/contactWhileAway/PhoneWhileAway-map</bpel:from>
+                        <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:input/NotifyAbsenceRequest1:FormModel/contactWhileAway/PhoneWhileAway-map</bpel:to><mapper:mapperLink><mapper:vertice id="1670983016" targetPath="$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:input/NotifyAbsenceRequest1:FormModel/contactWhileAway/PhoneWhileAway-map" targetedBy="752452731-arg0"></mapper:vertice><mapper:vertice id="752452731" sourcePath="$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/contactWhileAway/PhoneWhileAway-map"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy ignoreMissingFromData="yes">
+                        <bpel:from>$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/contactWhileAway/emailWhileAway-map</bpel:from>
+                        <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:input/NotifyAbsenceRequest1:FormModel/contactWhileAway/emailWhileAway-map</bpel:to><mapper:mapperLink><mapper:vertice id="451141478" targetPath="$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:input/NotifyAbsenceRequest1:FormModel/contactWhileAway/emailWhileAway-map" targetedBy="1967316034-arg0"></mapper:vertice><mapper:vertice id="1967316034" sourcePath="$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/contactWhileAway/emailWhileAway-map"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/PersonDetails</bpel:from>
+                        <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:input/NotifyAbsenceRequest1:FormModel/PersonDetails</bpel:to><mapper:mapperLink><mapper:vertice id="1502219417" targetPath="$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:input/NotifyAbsenceRequest1:FormModel/PersonDetails" targetedBy="619200894-arg0"></mapper:vertice><mapper:vertice id="619200894" sourcePath="$ManagerDecision.root/ApproveAbsenceRequest1:taskOutput/ApproveAbsenceRequest1:FormModel/PersonDetails"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="EmployeeDecisionNotification" bpdm:variableIsManaged="true" bpdm:messageType="NotifyAbsenceRequest1:notifyRequest" bpdm:binding="NotifyAbsenceRequest1:WorkflowSoapBinding" bpdm:ID="_LfYKcIA4EeOyNLOFBEJoPgOutgoing"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="EmployeeDecisionNotification-ACK" bpdm:variableIsManaged="true" bpdm:messageType="NotifyAbsenceRequest1:notifyResponse" bpdm:binding="NotifyAbsenceRequest1:WorkflowSoapBinding" bpdm:ID="_LfYKcIA4EeOyNLOFBEJoPgIncoming"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask eventType="end: empty" bpdm:label="Empty_End_Event" bpdm:ID="_KIZ1oKxxEeSs4eQh3WpYig">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>""</bpel:from>
+                        <bpel:to>$Absence_Request_History/tns:id</bpel:to><mapper:mapperLink><mapper:vertice id="169371862" targetPath="$Absence_Request_History/tns:id" targetedBy="1149639761-arg0"></mapper:vertice><mapper:vertice id="1149639761" dimension="78x24" location="314,188"><mapper:value>""</mapper:value></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>"state"</bpel:from>
+                        <bpel:to>$Absence_Request_History/tns:status_activity_type</bpel:to><mapper:mapperLink><mapper:vertice id="2012575911" targetPath="$Absence_Request_History/tns:status_activity_type" targetedBy="851321605-arg0"></mapper:vertice><mapper:vertice id="851321605" dimension="79x24" location="228,204"><mapper:value>"state"</mapper:value></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>"Notified"</bpel:from>
+                        <bpel:to>$Absence_Request_History/tns:status_activity</bpel:to><mapper:mapperLink><mapper:vertice id="132898859" targetPath="$Absence_Request_History/tns:status_activity" targetedBy="1734539604-arg0"></mapper:vertice><mapper:vertice id="1734539604" dimension="79x24" location="323,230"><mapper:value>"Notified"</mapper:value></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>current-dateTime()</bpel:from>
+                        <bpel:to>$Absence_Request_History/tns:time</bpel:to><mapper:mapperLink><mapper:vertice id="1243254063" targetPath="$Absence_Request_History/tns:time" targetedBy="477481150-arg0"></mapper:vertice><mapper:vertice id="477481150" dimension="109x24" location="303,278"><mapper:value>current-dateTime()</mapper:value></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>"Completed"</bpel:from>
+                        <bpel:to>$Absence_Request_History/tns:status</bpel:to><mapper:mapperLink><mapper:vertice id="1389461168" targetPath="$Absence_Request_History/tns:status" targetedBy="957746190-arg0"></mapper:vertice><mapper:vertice id="957746190" dimension="79x24" location="288,312"><mapper:value>"Completed"</mapper:value></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$Absence_Request/tns:id</bpel:from>
+                        <bpel:to>$Absence_Request_History/tns:caseId</bpel:to><mapper:mapperLink><mapper:vertice id="296788355" targetPath="$Absence_Request_History/tns:caseId" targetedBy="1150857848-arg0"></mapper:vertice><mapper:vertice id="1150857848" sourcePath="$Absence_Request/tns:id"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:diag="http://thisdiagram" xmlns:Absence_Request="http://thisdiagram/Absence_Request" xmlns:Pool="http://thisdiagram/Pool" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://thisdiagram" bpdm:version="6000089" bpdm:canid="_EzTuMauKEeSVx5_1YiyjiQ" bpdm:displayName="diag">
+  <pnlk:partnerLinkType name="Absence_RequestAndPool" bpdm:poolOneId="_E0ey4KuKEeSVx5_1YiyjiQ" bpdm:poolOneIsExecutable="true" bpdm:poolOneName="Absence Request" bpdm:poolTwoId="_AbMbgK1YEeSmqJblg_xp-A" bpdm:poolTwoIsExecutable="false" bpdm:poolTwoName="Pool">
+    <pnlk:role name="Absence_Request_for_Pool" portType="Absence_Request:ForPool" bpdm:thisPoolId="_E0ey4KuKEeSVx5_1YiyjiQ">
+      <wsdl:portType name="ForPool">
+        <wsdl:operation name="Submitted" bpdm:canid="_BM2h8K1YEeSmqJblg_xp-A._E0musKuKEeSVx5_1YiyjiQ.">
+          <wsdl:input message="Absence_Request:SubmittedRequest" name="Submitted" bpdm:canid="_Bt4LYK1YEeSmqJblg_xp-A" bpdm:senderId="_BM2h8K1YEeSmqJblg_xp-A" bpdm:receiverId="_E0musKuKEeSVx5_1YiyjiQ" bpdm:senderName="Task" bpdm:receiverName="Submitted" bpdm:receiverPoolId="_E0ey4KuKEeSVx5_1YiyjiQ" bpdm:bodyPartElemName="SubmittedRequest" bpdm:bodyPartElemType="xs:string"></wsdl:input>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+  </pnlk:partnerLinkType>
+</wsdl:definitions>

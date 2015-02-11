@@ -1,0 +1,7 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:diag="http://absencerequest.com/Status" xmlns:Absence_Request="http://absencerequest.com/Status/Absence_Request" xmlns:Pool="http://absencerequest.com/Status/Pool" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://absencerequest.com/Status">
+    <wsdl:import namespace="http://absencerequest.com/Status/Absence_Request" location="Status-Absence_Request.wsdl"/>
+    <pnlk:partnerLinkType name="Absence_RequestAndPool">
+        <pnlk:role name="Absence_Request_for_Pool" portType="Absence_Request:ForPool"/>
+    </pnlk:partnerLinkType>
+</wsdl:definitions>

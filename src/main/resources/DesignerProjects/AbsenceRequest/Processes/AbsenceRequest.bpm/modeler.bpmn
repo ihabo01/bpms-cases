@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:BpmnDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:bpmn="http://stp.eclipse.org/bpmn" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_y05CMSBGEeOOOp5WJT5MBw" iD="_y05CMCBGEeOOOp5WJT5MBw">
+  <pools xmi:type="bpmn:Pool" xmi:id="_ttz_MX9zEeOyNLOFBEJoPg" iD="_ttz_MH9zEeOyNLOFBEJoPg" name="Absence Request">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NK8qYJohEeOCBvn1dZn2dw" source="participant">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_NK9RcJohEeOCBvn1dZn2dw" key="users" value=""/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_NK9RcZohEeOCBvn1dZn2dw" key="roles" value=""/>
+    </eAnnotations>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_YTP6OKLuEeSh7dy_Qr-xcA" iD="_YTIlcKLuEeSh7dy_Qr-xcA" name="Absence_Request">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_YTP6OaLuEeSh7dy_Qr-xcA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YTP6OqLuEeSh7dy_Qr-xcA" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YTP6O6LuEeSh7dy_Qr-xcA" key="douri" value="project:///Metrics/metrics.xvar?xvartype={http://test.com/xvar/example}Absence_Request"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YTVZwKLuEeSh7dy_Qr-xcA" key="defaultDeclarationName" value="Absence_Request"/>
+      </eAnnotations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_GzO7gKxvEeSs4eQh3WpYig" iD="_GzIN0KxvEeSs4eQh3WpYig" name="Absence_Request_History">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GzO7gaxvEeSs4eQh3WpYig" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GzO7gqxvEeSs4eQh3WpYig" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GzO7g6xvEeSs4eQh3WpYig" key="douri" value="project:///Metrics/metrics.xvar?xvartype={http://test.com/xvar/example}Absence_Request_History"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GzRXwKxvEeSs4eQh3WpYig" key="defaultDeclarationName" value="Absence_Request_History"/>
+      </eAnnotations>
+    </artifacts>
+    <vertices xmi:type="bpmn:ActivityUser" xmi:id="_pAf7cIA3EeOyNLOFBEJoPg" iD="_o_--EIA3EeOyNLOFBEJoPg" outgoingEdges="_JXfQ4YA4EeOyNLOFBEJoPg" name="Submit absence leave request" lanes="_wB3FcX9zEeOyNLOFBEJoPg _v9p64H9zEeOyNLOFBEJoPg" activityType="UserTask">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_pAf7cYA3EeOyNLOFBEJoPg" source="genericFile">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_pAf7coA3EeOyNLOFBEJoPg" key="projectRelativePath" value="Forms/SubmitAbsenceRequest.gi"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_pAf7c4A3EeOyNLOFBEJoPg" source="humanTask">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_pAf7dIA3EeOyNLOFBEJoPg" key="factoryId" value="gi"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_pAf7dYA3EeOyNLOFBEJoPg" key="taskType" value="init"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_pAf7doA3EeOyNLOFBEJoPg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_pAf7d4A3EeOyNLOFBEJoPg" key="douri" value="project:///Forms/SubmitAbsenceRequest.gi.wsdl?wsdloperation={http://www.intalio.com/gi/Forms/SubmitAbsenceRequest.gi}Process/initProcess"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_pAf7eIA3EeOyNLOFBEJoPg" key="blackbox" value="true"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_epOwMIA4EeOyNLOFBEJoPg" source="participant">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_epU20IA4EeOyNLOFBEJoPg" key="users" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_epX6IIA4EeOyNLOFBEJoPg" key="roles" value="examples/employee"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_epi5QIA4EeOyNLOFBEJoPg" source="pipa">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_epqOAIA4EeOyNLOFBEJoPg" key="description" value="Submit Absence Request"/>
+      </eAnnotations>
+    </vertices>
+    <vertices xmi:type="bpmn:SubProcess" xmi:id="_FBgIEIA4EeOyNLOFBEJoPg" iD="_FAiewIA4EeOyNLOFBEJoPg" outgoingEdges="_cXnHgaLuEeSh7dy_Qr-xcA" incomingEdges="_aQWgEaLuEeSh7dy_Qr-xcA" name="Approve absence request" lanes="_v9p64H9zEeOyNLOFBEJoPg" activityType="SubProcess">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FBgIEYA4EeOyNLOFBEJoPg" source="skipAsScope">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FBgIEoA4EeOyNLOFBEJoPg" key="skip" value="noVars"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FBgIE4A4EeOyNLOFBEJoPg" source="humanTask">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FBgIFIA4EeOyNLOFBEJoPg" key="factoryId" value="gi"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FBgIFYA4EeOyNLOFBEJoPg" key="taskType" value="create-and-complete"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FBgIFoA4EeOyNLOFBEJoPg" source="genericFile">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FBgIF4A4EeOyNLOFBEJoPg" key="projectRelativePath" value="Forms/ApproveAbsenceRequest.gi"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FqqiQJLuEeOGctuhOj5I7Q" source="participant">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FqzFIJLuEeOGctuhOj5I7Q" key="users" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Fq2vgJLuEeOGctuhOj5I7Q" key="roles" value="examples\manager"/>
+      </eAnnotations>
+      <vertices xmi:type="bpmn:ActivityUser" xmi:id="_FBgIGIA4EeOyNLOFBEJoPg" iD="_FAliEIA4EeOyNLOFBEJoPg" outgoingEdges="_FBgIKYA4EeOyNLOFBEJoPg" name="Receive  leave approval request" lanes="_v9p64H9zEeOyNLOFBEJoPg" activityType="UserTask">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FBgIGYA4EeOyNLOFBEJoPg" source="genericFile">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FBgIGoA4EeOyNLOFBEJoPg" key="projectRelativePath" value="Forms/ApproveAbsenceRequest.gi"/>
+        </eAnnotations>
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FBgIG4A4EeOyNLOFBEJoPg" source="humanTask">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FBgIHIA4EeOyNLOFBEJoPg" key="factoryId" value="gi"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FBgIHYA4EeOyNLOFBEJoPg" key="taskType" value="create-and-complete"/>
+        </eAnnotations>
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FBgIHoA4EeOyNLOFBEJoPg" source="attachedDataobject">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FBgIH4A4EeOyNLOFBEJoPg" key="partnerLinkTypeKey" value="WFmagic_FAliEIA4EeOyNLOFBEJoPg"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FBgIIIA4EeOyNLOFBEJoPg" key="douri" value="project:///Forms/ApproveAbsenceRequest.gi.wsdl?invokerequestresponsebound={http://www.intalio.com/gi/Forms/ApproveAbsenceRequest.gi}WorkflowSoapService/ApproveAbsenceRequestPort/createTask"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FBgIIYA4EeOyNLOFBEJoPg" key="blackbox" value="true"/>
+        </eAnnotations>
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AlDTUJLuEeOGctuhOj5I7Q" source="participant">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AlIL0JLuEeOGctuhOj5I7Q" key="users" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AlKoEJLuEeOGctuhOj5I7Q" key="roles" value="examples\manager"/>
+        </eAnnotations>
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AlR80JLuEeOGctuhOj5I7Q" source="pipa">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AlW1UJLuEeOGctuhOj5I7Q" key="description" value=""/>
+        </eAnnotations>
+      </vertices>
+      <vertices xmi:type="bpmn:ActivityUser" xmi:id="_FBgIIoA4EeOyNLOFBEJoPg" iD="_FAsPwIA4EeOyNLOFBEJoPg" incomingEdges="_J_kfMaxwEeSs4eQh3WpYig" name="Send leave  approval decison" lanes="_v9p64H9zEeOyNLOFBEJoPg" activityType="UserTask">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FBgII4A4EeOyNLOFBEJoPg" source="genericFile">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FBgIJIA4EeOyNLOFBEJoPg" key="projectRelativePath" value="Forms/ApproveAbsenceRequest.gi"/>
+        </eAnnotations>
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FBgIJYA4EeOyNLOFBEJoPg" source="attachedDataobject">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FBgIJoA4EeOyNLOFBEJoPg" key="partnerLinkTypeKey" value="WFmagic_FAliEIA4EeOyNLOFBEJoPg"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FBgIJ4A4EeOyNLOFBEJoPg" key="douri" value="project:///Forms/ApproveAbsenceRequest.gi.wsdl?wsdloperation={http://www.intalio.com/gi/Forms/ApproveAbsenceRequest.gi}Process/notifyTaskCompletion"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FBgIKIA4EeOyNLOFBEJoPg" key="blackbox" value="true"/>
+        </eAnnotations>
+      </vertices>
+      <vertices xmi:type="bpmn:Activity" xmi:id="_JKeDMaxwEeSs4eQh3WpYig" iD="_JKeDMKxwEeSs4eQh3WpYig" outgoingEdges="_J_kfMaxwEeSs4eQh3WpYig" incomingEdges="_FBgIKYA4EeOyNLOFBEJoPg" name="In Review" lanes="_v9p64H9zEeOyNLOFBEJoPg" activityType="EventIntermediateEmpty"/>
+      <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_FBgIKYA4EeOyNLOFBEJoPg" iD="_FA0yoIA4EeOyNLOFBEJoPg" name=""/>
+      <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_J_kfMaxwEeSs4eQh3WpYig" iD="_J_kfMKxwEeSs4eQh3WpYig"/>
+    </vertices>
+    <vertices xmi:type="bpmn:ActivityManual" xmi:id="_LfvW0IA4EeOyNLOFBEJoPg" iD="_LfYKcIA4EeOyNLOFBEJoPg" outgoingEdges="_KIi_kaxxEeSs4eQh3WpYig" incomingEdges="_MdHlEYA4EeOyNLOFBEJoPg" name="Receive decision notification" lanes="_wB3FcX9zEeOyNLOFBEJoPg _v9p64H9zEeOyNLOFBEJoPg" activityType="ManualTask">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LfvW0YA4EeOyNLOFBEJoPg" source="genericFile">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LfvW0oA4EeOyNLOFBEJoPg" key="projectRelativePath" value="Forms/NotifyAbsenceRequest.gi"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LfvW04A4EeOyNLOFBEJoPg" source="humanTask">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LfvW1IA4EeOyNLOFBEJoPg" key="factoryId" value="gi"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LfvW1YA4EeOyNLOFBEJoPg" key="taskType" value="notify"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LfvW1oA4EeOyNLOFBEJoPg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LfvW14A4EeOyNLOFBEJoPg" key="douri" value="project:///Forms/NotifyAbsenceRequest.gi.wsdl?invokerequestresponsebound={http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi}WorkflowSoapService/NotifyAbsenceRequestPort/notify"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LfvW2IA4EeOyNLOFBEJoPg" key="blackbox" value="true"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_N4UtwJohEeOCBvn1dZn2dw" source="participant">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_N4ZmQJohEeOCBvn1dZn2dw" key="users" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_N4a0YJohEeOCBvn1dZn2dw" key="roles" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_N4iwMJohEeOCBvn1dZn2dw" source="pipa">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_N4makJohEeOCBvn1dZn2dw" key="description" value=""/>
+      </eAnnotations>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_ZgqIgaLuEeSh7dy_Qr-xcA" iD="_ZgqIgKLuEeSh7dy_Qr-xcA" outgoingEdges="_aQWgEaLuEeSh7dy_Qr-xcA" incomingEdges="_JXfQ4YA4EeOyNLOFBEJoPg" name="Submitted" lanes="_v9p64H9zEeOyNLOFBEJoPg" activityType="EventIntermediateEmpty"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_a_QNcaLuEeSh7dy_Qr-xcA" iD="_a_QNcKLuEeSh7dy_Qr-xcA" outgoingEdges="_MdHlEYA4EeOyNLOFBEJoPg" incomingEdges="_cXnHgaLuEeSh7dy_Qr-xcA" lanes="_v9p64H9zEeOyNLOFBEJoPg" activityType="EventIntermediateEmpty"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_KIZ1oaxxEeSs4eQh3WpYig" iD="_KIZ1oKxxEeSs4eQh3WpYig" incomingEdges="_KIi_kaxxEeSs4eQh3WpYig" lanes="_wB3FcX9zEeOyNLOFBEJoPg" activityType="EventEndEmpty"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_JXfQ4YA4EeOyNLOFBEJoPg" iD="_JXfQ4IA4EeOyNLOFBEJoPg"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_MdHlEYA4EeOyNLOFBEJoPg" iD="_MdHlEIA4EeOyNLOFBEJoPg"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_aQWgEaLuEeSh7dy_Qr-xcA" iD="_aQWgEKLuEeSh7dy_Qr-xcA"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_cXnHgaLuEeSh7dy_Qr-xcA" iD="_cXnHgKLuEeSh7dy_Qr-xcA"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_KIi_kaxxEeSs4eQh3WpYig" iD="_KIi_kKxxEeSs4eQh3WpYig"/>
+    <lanes xmi:type="bpmn:Lane" xmi:id="_v9p64H9zEeOyNLOFBEJoPg" iD="_v9pT0H9zEeOyNLOFBEJoPg" name="Manager" activities="_FBgIIoA4EeOyNLOFBEJoPg _FBgIGIA4EeOyNLOFBEJoPg _FBgIEIA4EeOyNLOFBEJoPg _pAf7cIA3EeOyNLOFBEJoPg _ZgqIgaLuEeSh7dy_Qr-xcA _a_QNcaLuEeSh7dy_Qr-xcA _JKeDMaxwEeSs4eQh3WpYig _LfvW0IA4EeOyNLOFBEJoPg"/>
+    <lanes xmi:type="bpmn:Lane" xmi:id="_wB3FcX9zEeOyNLOFBEJoPg" iD="_wB3FcH9zEeOyNLOFBEJoPg" name="Employee" activities="_pAf7cIA3EeOyNLOFBEJoPg _LfvW0IA4EeOyNLOFBEJoPg _KIZ1oaxxEeSs4eQh3WpYig"/>
+  </pools>
+</bpmn:BpmnDiagram>

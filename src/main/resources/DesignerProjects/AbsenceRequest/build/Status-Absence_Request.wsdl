@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:this="http://absencerequest.com/Status/Absence_Request" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Pool="http://absencerequest.com/Status/Pool" xmlns:diag="http://absencerequest.com/Status" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://absencerequest.com/Status/Absence_Request">
+    <wsdl:types>
+        <xs:schema elementFormDefault="qualified" targetNamespace="http://absencerequest.com/Status/Absence_Request">
+            <xs:element name="SubmittedRequest" type="xs:string"/>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="SubmittedRequest">
+        <wsdl:part name="body" element="this:SubmittedRequest"/>
+    </wsdl:message>
+    <wsdl:portType name="ForPool">
+        <wsdl:operation name="Submitted">
+            <wsdl:input message="this:SubmittedRequest" name="Submitted"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="CanonicBindingForPool" type="this:ForPool">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="Submitted">
+            <soap:operation style="document" soapAction="http://absencerequest.com/Status/Absence_Request/ForPool/Submitted"/>
+            <wsdl:input name="Submitted">
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="CanonicServiceForPool">
+        <wsdl:port name="canonicPort" binding="this:CanonicBindingForPool">
+            <soap:address location="http://localhost:8080/intalio/ode/processes/AbsenceRequest/Status/Absence_Request/Pool"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

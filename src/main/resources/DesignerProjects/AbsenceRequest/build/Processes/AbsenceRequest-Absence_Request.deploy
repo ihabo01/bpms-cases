@@ -1,0 +1,45 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<dd:process xmlns:dd="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:diag="http://absencerequest.com/Processes/AbsenceRequest" xmlns:tns="http://test.com/xvar/example" xmlns:Absence_RequestimplicitPartner="http://absencerequest.com/Processes/AbsenceRequest/Absence_RequestimplicitPartner" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:attachments="http://www.intalio.com/gi/Forms/SubmitAbsenceRequest.gi/attachments" xmlns:SubmitAbsenceRequest="http://www.intalio.com/gi/Forms/SubmitAbsenceRequest.gi" xmlns:ApproveAbsenceRequest="http://www.intalio.com/gi/Forms/ApproveAbsenceRequest.gi/attachments" xmlns:NotifyAbsenceRequest="http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi/attachments" xmlns:this="http://absencerequest.com/Processes/AbsenceRequest/Absence_Request" xmlns:NotifyAbsenceRequest1="http://www.intalio.com/gi/Forms/NotifyAbsenceRequest.gi" xmlns:ApproveAbsenceRequest1="http://www.intalio.com/gi/Forms/ApproveAbsenceRequest.gi" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="this:Absence_Request" fileName="Processes/AbsenceRequest-Absence_Request.bpel">
+  <dd:property name="PATH">Processes/AbsenceRequest</dd:property>
+  <dd:property name="SVG">Processes/AbsenceRequest.svg</dd:property>
+  <xvar:externalVariable xmlns:xvar="http://ode.apache.org/externalVariables" id="Absence_Request-_YTIlcKLuEeSh7dy_Qr-xcA" xmlns:xbpms="http://bpms.intalio.com/externalVariables">
+    <xjdbc:jdbc xmlns:xjdbc="http://ode.apache.org/externalVariables/jdbc">
+      <xjdbc:datasource-jndi>java:comp/env/jdbc/BPMSDB</xjdbc:datasource-jndi>
+      <xjdbc:table xbpms:isDefault="true">Absence_Request</xjdbc:table>
+      <xjdbc:column generator="uuid" key="yes" name="id" xbpms:type-label="uuid"></xjdbc:column>
+      <xjdbc:column key="no" name="Request_Identifier" sql-type="VARCHAR" xbpms:ddl-size="250" xbpms:type-label="string" xsd-type="xs:string"></xjdbc:column>
+      <xjdbc:column key="no" name="Status" sql-type="VARCHAR" xbpms:ddl-size="250" xbpms:type-label="string" xsd-type="xs:string"></xjdbc:column>
+      <xjdbc:column key="no" name="Validated_On" sql-type="TIMESTAMP" xbpms:type-label="timestamp" xsd-type="xs:dateTime"></xjdbc:column>
+      <xjdbc:column key="no" name="Submited_On" sql-type="TIMESTAMP" xbpms:type-label="timestamp" xsd-type="xs:dateTime"></xjdbc:column>
+      <xjdbc:column key="no" name="Validator" sql-type="VARCHAR" xbpms:ddl-size="250" xbpms:type-label="string" xsd-type="xs:string"></xjdbc:column>
+      <xjdbc:column key="no" name="Requestor" sql-type="VARCHAR" xbpms:ddl-size="250" xbpms:type-label="string" xsd-type="xs:string"></xjdbc:column>
+      <xjdbc:init mode="update-insert"></xjdbc:init>
+    </xjdbc:jdbc>
+  </xvar:externalVariable>
+  <xvar:externalVariable xmlns:xvar="http://ode.apache.org/externalVariables" id="Absence_Request_History-_GzIN0KxvEeSs4eQh3WpYig" xmlns:xbpms="http://bpms.intalio.com/externalVariables">
+    <xjdbc:jdbc xmlns:xjdbc="http://ode.apache.org/externalVariables/jdbc">
+      <xjdbc:datasource-jndi>java:comp/env/jdbc/BPMSDB</xjdbc:datasource-jndi>
+      <xjdbc:table xbpms:isDefault="true">Absence_Request_History</xjdbc:table>
+      <xjdbc:column generator="uuid" key="yes" name="id" xbpms:type-label="uuid"></xjdbc:column>
+      <xjdbc:column key="no" name="caseId" sql-type="VARCHAR" xbpms:ddl-size="250" xbpms:type-label="string" xsd-type="xs:string"></xjdbc:column>
+      <xjdbc:column key="no" name="status_activity_type" sql-type="VARCHAR" xbpms:ddl-size="250" xbpms:type-label="string" xsd-type="xs:string"></xjdbc:column>
+      <xjdbc:column key="no" name="status_activity" sql-type="VARCHAR" xbpms:ddl-size="250" xbpms:type-label="string" xsd-type="xs:string"></xjdbc:column>
+      <xjdbc:column key="no" name="time" sql-type="TIMESTAMP" xbpms:type-label="timestamp" xsd-type="xs:dateTime"></xjdbc:column>
+      <xjdbc:column key="no" name="status" sql-type="VARCHAR" xbpms:ddl-size="250" xbpms:type-label="string" xsd-type="xs:string"></xjdbc:column>
+      <xjdbc:column key="no" name="notes" sql-type="VARCHAR" xbpms:ddl-size="250" xbpms:type-label="string" xsd-type="xs:string"></xjdbc:column>
+      <xjdbc:init mode="update-insert"></xjdbc:init>
+    </xjdbc:jdbc>
+  </xvar:externalVariable>
+  <dd:provide partnerLink="absence_RequestimplicitPartnerAndAbsence_RequestForPortTypeProcessPlkVar">
+    <dd:service name="this:Absence_RequestimplicitPartnerAndAbsence_RequestForPortTypeProcessPlkService" port="Absence_Request_for_Absence_RequestimplicitPartnerPort"></dd:service>
+  </dd:provide>
+  <dd:provide partnerLink="wFmagic_FAliEIA4EeOyNLOFBEJoPgPlkVar">
+    <dd:service name="this:WFmagic_FAliEIA4EeOyNLOFBEJoPgService" port="Absence_Request_for_Absence_RequestimplicitPartnerForThePortTypeProcessPort"></dd:service>
+  </dd:provide>
+  <dd:invoke partnerLink="wFmagic_FAliEIA4EeOyNLOFBEJoPgPlkVar">
+    <dd:service name="ApproveAbsenceRequest1:WorkflowSoapService" port="ApproveAbsenceRequestPort"/>
+  </dd:invoke>
+  <dd:invoke partnerLink="absence_RequestimplicitPartnerAndAbsence_RequestForNotifyAbsenceRequestPortPlkVar">
+    <dd:service name="NotifyAbsenceRequest1:WorkflowSoapService" port="NotifyAbsenceRequestPort"/>
+  </dd:invoke>
+</dd:process>

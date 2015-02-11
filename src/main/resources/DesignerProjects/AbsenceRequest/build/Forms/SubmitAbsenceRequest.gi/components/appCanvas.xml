@@ -1,0 +1,379 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.6">
+  <name/>
+  <icon/>
+  <description/>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.Block">
+    <variants jsxoverflow="1"/>
+    <strings jsxheight="100%" jsxwidth="100%" jsxstyleoverride="margin-top:0px;" jsxname="root"/>
+    <object type="jsx3.gui.Block">
+      <variants/>
+      <strings jsxwidth="100%" jsxname="IntalioInternal_SpacerBlockTop" jsxmargin="15 0 0 0" jsxborder="1px solid gray; 0px solid; 0px solid; 0px solid;"/>
+    </object>
+    <object type="jsx3.gui.Button">
+      <variants jsxenabled="0" jsxheight="20"/>
+      <strings jsxpadding="3 10 3 10" jsxdisplay="none" jsxname="IntalioInternal_StartButtonTop" jsxmargin="15 10 15 0"/>
+      <dynamics jsxtext="Intalio Start Button"/>
+      <events jsxexecute="Intalio.Internal.TMS.callInitProcess();"/>
+    </object>
+    <object type="jsx3.gui.Button">
+      <variants jsxenabled="0" jsxheight="20"/>
+      <strings jsxpadding="3 10 3 10" jsxdisplay="none" jsxname="IntalioInternal_DismissButtonTop" jsxmargin="15 10 15 0"/>
+      <dynamics jsxtext="Intalio Dismiss Button"/>
+      <events jsxexecute="Intalio.Internal.TMS.callComplete();"/>
+    </object>
+    <object type="jsx3.gui.Button">
+      <variants jsxenabled="0" jsxheight="20"/>
+      <strings jsxpadding="3 10 3 10" jsxdisplay="none" jsxname="IntalioInternal_SaveButtonTop" jsxmargin="15 10 15 0"/>
+      <dynamics jsxtext="Intalio Save Button"/>
+      <events jsxexecute="Intalio.Internal.TMS.callSetOutput();"/>
+    </object>
+    <object type="jsx3.gui.Button">
+      <variants jsxenabled="0" jsxheight="20"/>
+      <strings jsxpadding="3 10 3 10" jsxdisplay="none" jsxname="IntalioInternal_ClaimButtonTop" jsxmargin="15 10 15 0"/>
+      <dynamics jsxtext="Intalio Claim Button"/>
+      <events jsxexecute="Intalio.Internal.TMP.callClaimTask();"/>
+    </object>
+    <object type="jsx3.gui.Button">
+      <variants jsxenabled="0" jsxheight="20"/>
+      <strings jsxpadding="3 10 3 10" jsxdisplay="none" jsxname="IntalioInternal_RevokeButtonTop" jsxmargin="15 10 15 0"/>
+      <dynamics jsxtext="Intalio Revoke Button"/>
+      <events jsxexecute="Intalio.Internal.TMP.callRevokeTask();"/>
+    </object>
+    <object type="jsx3.gui.Button">
+      <variants jsxenabled="0" jsxheight="20"/>
+      <strings jsxpadding="3 10 3 10" jsxdisplay="none" jsxname="IntalioInternal_CompleteButtonTop" jsxmargin="15 10 15 0"/>
+      <dynamics jsxtext="Intalio Complete Button"/>
+      <events jsxexecute="Intalio.Internal.TMP.callCompleteTask();"/>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxheight="18" jsxoverflow="3"/>
+      <strings jsxwidth="100%" jsxdisplay="none" jsxname="IntalioInternal_AttachmentsImageBlock"/>
+      <object type="jsx3.gui.LayoutGrid">
+        <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
+        <strings jsxcols="16,*" jsxheight="100%" jsxwidth="100%" jsxname="IntalioInternal_Layout"/>
+        <object type="jsx3.gui.Block">
+          <variants/>
+          <strings jsxheight="100%" jsxwidth="100%" jsxname="IntalioInternal_Pane"/>
+          <object type="jsx3.gui.Image">
+            <variants/>
+            <strings jsxsrc="images/attachments.gif" jsxdisplay="" jsxname="IntalioInternal_Image"/>
+            <events jsxclick="Intalio.Internal.Attachments.displayAttachmentsBlock(true); "/>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants/>
+          <strings jsxheight="100%" jsxwidth="100%" jsxtextalign="right" jsxname="IntalioInternal_Pane"/>
+          <object type="jsx3.gui.Image">
+            <variants/>
+            <strings jsxsrc="images/close.png" jsxdisplay="none" jsxname="IntalioInternal_CloseImage"/>
+            <events jsxclick="Intalio.Internal.Attachments.displayAttachmentsBlock(false);"/>
+          </object>
+        </object>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="3"/>
+      <strings jsxwidth="100%" jsxdisplay="none" jsxname="IntalioInternal_AttachmentsBlock"/>
+      <object type="jsx3.gui.Block">
+        <variants/>
+        <strings jsxwidth="100%" jsxdisplay="" jsxname="IntalioInternal_AttachmentsMatrixBlock" jsxborder="1px solid black; 1px solid black; none; 1px solid black;"/>
+        <object type="jsx3.gui.Matrix">
+          <variants jsxsuppressvscroll="1" jsxreorder="0" jsxselectionmodel="0" jsxpagingmodel="0" jsxjsxxmlasync="1"/>
+          <strings jsxxmlid="IntalioInternal_Attachments" jsxname="IntalioInternal_AttachmentsMatrix"/>
+          <events jsxbeforeedit="false;"/>
+          <xslparameters jsx_rowbg2="#efefff" jsx_rowbg1="#ffffff"/>
+          <object type="jsx3.gui.Matrix.Column">
+            <variants/>
+            <strings jsxpath="IntalioInternal_RemoveImage" jsxwidth="5%" jsxcellborder="none; 1px solid black; 1px solid black; none;" jsxformathandler="@unescape" jsxcelltextalign="center" jsxname="IntalioInternal_TextColumn" jsxborder="none; 1px solid black; 1px solid black; none;" jsxvaluetemplate="@unescape" jsxcellvalign="middle"/>
+          </object>
+          <object type="jsx3.gui.Matrix.Column">
+            <variants/>
+            <strings jsxfontweight="bold" jsxpath="IntalioInternal_Title" jsxcellpadding="3" jsxwidth="55%" jsxtextalign="center" jsxcellborder="none; 1px solid black; 1px solid black; none;" jsxpadding="2" jsxformathandler="@unescape" jsxname="IntalioInternal_TextColumn" jsxborder="none; 1px solid black; 1px solid black; none;" jsxsortdatatype="text" jsxvaluetemplate="@unescape" jsxtext="Title"/>
+          </object>
+          <object type="jsx3.gui.Matrix.Column">
+            <variants/>
+            <strings jsxfontweight="bold" jsxpath="IntalioInternal_MimeType" jsxcellpadding="3" jsxwidth="20%" jsxtextalign="center" jsxcellborder="none; 1px solid black; 1px solid black; none;" jsxpadding="2" jsxformathandler="@unescape" jsxname="IntalioInternal_TextColumn" jsxborder="none; 1px solid black; 1px solid black; none;" jsxsortdatatype="text" jsxvaluetemplate="@unescape" jsxtext="MIME Type"/>
+          </object>
+          <object type="jsx3.gui.Matrix.Column">
+            <variants/>
+            <strings jsxfontweight="bold" jsxpath="IntalioInternal_CreationDate" jsxcellpadding="3" jsxwidth="20%" jsxtextalign="center" jsxcellborder="none; 1px solid black; 1px solid black; none;" jsxpadding="2" jsxformathandler="@unescape" jsxname="IntalioInternal_TextColumn" jsxborder="none; 1px solid black; 1px solid black; none;" jsxsortdatatype="text" jsxvaluetemplate="@unescape" jsxtext="Create Date"/>
+          </object>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="3"/>
+        <strings jsxwidth="100%" jsxdisplay="" jsxname="IntalioInternal_AttachmentsFormBlock"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="3"/>
+          <strings jsxwidth="100%" jsxdisplay="" jsxname="IntalioInternal_AttachmentsFormLabel"/>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="3"/>
+          <strings jsxdisplay="none" jsxname="IntalioInternal_AttachmentsUrl"/>
+        </object>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants/>
+      <strings jsxwidth="100%" jsxpadding="5 10 0 10" jsxname="header" jsxbgcolor="" jsxrelativeposition="1"/>
+      <object type="jsx3.gui.Block">
+        <variants jsxrelativeposition="1"/>
+        <strings jsxwidth="100%" jsxstyleoverride="color:white;padding:10px;" jsxbg="" jsxname="form-title" jsxbgcolor="#336699" jsxclassname="form-title" jsxtext="Submit Absence Request"/>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxrelativeposition="1"/>
+        <strings jsxwidth="100%" jsxname="required-note"/>
+        <dynamics jsxtext="Required Note"/>
+      </object>
+      <object type="jsx3.gui.Button">
+        <variants jsxindex="0" jsxheight="18"/>
+        <strings jsxname="autofillbtn" jsxmargin="0 4 0 0" jsxtext="Auto-Fill"/>
+        <events jsxexecute="autofill();"/>
+      </object>
+    </object>
+    <object type="com.intalio.ria.Section">
+      <variants/>
+      <strings jsxheight="" jsxwidth="100%" riaTitleText="Employee Details" jsxname="PersonDetails" jsxclassname="fieldset"/>
+      <object type="com.intalio.ria.Field">
+        <variants/>
+        <strings riaLabelText="" riaLayoutDirection="vertical" jsxname="RelationshipWithOnLeavePerson-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+        <object type="jsx3.gui.RadioButton">
+          <variants jsxheight="18" jsxselected="1" jsxdefaultselected="1" jsxrelativeposition="1"/>
+          <strings jsxgroupname="relationship" jsxvalue="myself" jsxname="Myself" jsxmargin="0 4 0 0"/>
+          <dynamics jsxtext="I am the person going on leave"/>
+          <events jsxselect="com.intalio.ria.validate(this, objEVENT);selfForm();"/>
+        </object>
+        <object type="jsx3.gui.RadioButton">
+          <variants jsxheight="18" jsxselected="0" jsxdefaultselected="1" jsxrelativeposition="1"/>
+          <strings jsxgroupname="relationship" jsxvalue="other" jsxname="Other" jsxmargin="0 4 0 0" jsxtext="I am submitting the request for another employee"/>
+          <events jsxselect="com.intalio.ria.validate(this, objEVENT);otherForm();"/>
+        </object>
+      </object>
+      <object type="com.intalio.ria.Field">
+        <variants/>
+        <strings jsxdisplay="none" jsxname="Reporter-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+        <dynamics riaLabelText="Reporter"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="3" jsxrelativeposition="1"/>
+          <strings jsxdisplay="none" jsxname="reporterid-map" jsxtext=""/>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="3" jsxrelativeposition="1"/>
+          <strings jsxdisplay="" jsxname="reporter-map" jsxtext=""/>
+        </object>
+      </object>
+      <object type="com.intalio.ria.Field">
+        <variants/>
+        <strings riaLabelText="Person on Leave" jsxname="PersonOnLeave-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+        <object type="jsx3.gui.Select">
+          <variants jsxheight="18" jsxwidth="250" jsxxmlasync="1" jsxtype="1"/>
+          <strings jsxvalue="" jsxxmlid="usersList" jsxxml="" jsxname="PersonOnLeave" jsxmargin="0 4 0 0"/>
+          <events jsxselect="com.intalio.ria.validate(this, objEVENT);"/>
+        </object>
+      </object>
+      <object type="com.intalio.ria.Field">
+        <variants/>
+        <strings jsxname="Phone" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+        <dynamics riaLabelText="Phone"/>
+        <object type="jsx3.gui.Select">
+          <variants jsxheight="18" jsxwidth="70" jsxxmlasync="0" jsxtype="1" jsxrequired="1"/>
+          <strings jsxvalue="" jsxxmlid="test" jsxxml="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&lt;data jsxid=&quot;jsxroot&quot;>   &lt;record jsxtext=&quot;+93&quot; jsxid=&quot;93&quot;/>   &lt;record jsxtext=&quot;+355&quot; jsxid=&quot;355&quot;/>   &lt;record jsxtext=&quot;+213&quot; jsxid=&quot;213&quot;/>   &lt;record jsxtext=&quot;+376&quot; jsxid=&quot;376&quot;/>   &lt;record jsxtext=&quot;+244&quot; jsxid=&quot;244&quot;/>   &lt;record jsxtext=&quot;+672&quot; jsxid=&quot;672&quot;/>   &lt;record jsxtext=&quot;+54&quot; jsxid=&quot;54&quot;/>   &lt;record jsxtext=&quot;+374&quot; jsxid=&quot;374&quot;/>   &lt;record jsxtext=&quot;+297&quot; jsxid=&quot;297&quot;/>   &lt;record jsxtext=&quot;+61&quot; jsxid=&quot;61&quot;/>   &lt;record jsxtext=&quot;+43&quot; jsxid=&quot;43&quot;/>   &lt;record jsxtext=&quot;+994&quot; jsxid=&quot;994&quot;/>   &lt;record jsxtext=&quot;+973&quot; jsxid=&quot;973&quot;/>   &lt;record jsxtext=&quot;+880&quot; jsxid=&quot;880&quot;/>   &lt;record jsxtext=&quot;+375&quot; jsxid=&quot;375&quot;/>   &lt;record jsxtext=&quot;+32&quot; jsxid=&quot;32&quot;/>   &lt;record jsxtext=&quot;+501&quot; jsxid=&quot;501&quot;/>   &lt;record jsxtext=&quot;+229&quot; jsxid=&quot;229&quot;/>   &lt;record jsxtext=&quot;+975&quot; jsxid=&quot;975&quot;/>   &lt;record jsxtext=&quot;+591&quot; jsxid=&quot;591&quot;/>   &lt;record jsxtext=&quot;+387&quot; jsxid=&quot;387&quot;/>   &lt;record jsxtext=&quot;+267&quot; jsxid=&quot;267&quot;/>   &lt;record jsxtext=&quot;+55&quot; jsxid=&quot;55&quot;/>   &lt;record jsxtext=&quot;+673&quot; jsxid=&quot;673&quot;/>   &lt;record jsxtext=&quot;+359&quot; jsxid=&quot;359&quot;/>   &lt;record jsxtext=&quot;+226&quot; jsxid=&quot;226&quot;/>   &lt;record jsxtext=&quot;+95&quot; jsxid=&quot;95&quot;/>   &lt;record jsxtext=&quot;+257&quot; jsxid=&quot;257&quot;/>   &lt;record jsxtext=&quot;+855&quot; jsxid=&quot;855&quot;/>   &lt;record jsxtext=&quot;+237&quot; jsxid=&quot;237&quot;/>   &lt;record jsxtext=&quot;+1&quot; jsxid=&quot;1&quot;/>   &lt;record jsxtext=&quot;+238&quot; jsxid=&quot;238&quot;/>   &lt;record jsxtext=&quot;+236&quot; jsxid=&quot;236&quot;/>   &lt;record jsxtext=&quot;+235&quot; jsxid=&quot;235&quot;/>   &lt;record jsxtext=&quot;+56&quot; jsxid=&quot;56&quot;/>   &lt;record jsxtext=&quot;+86&quot; jsxid=&quot;86&quot;/>   &lt;record jsxtext=&quot;+61&quot; jsxid=&quot;61&quot;/>   &lt;record jsxtext=&quot;+61&quot; jsxid=&quot;61&quot;/>   &lt;record jsxtext=&quot;+57&quot; jsxid=&quot;57&quot;/>   &lt;record jsxtext=&quot;+269&quot; jsxid=&quot;269&quot;/>   &lt;record jsxtext=&quot;+242&quot; jsxid=&quot;242&quot;/>   &lt;record jsxtext=&quot;+243&quot; jsxid=&quot;243&quot;/>   &lt;record jsxtext=&quot;+682&quot; jsxid=&quot;682&quot;/>   &lt;record jsxtext=&quot;+506&quot; jsxid=&quot;506&quot;/>   &lt;record jsxtext=&quot;+385&quot; jsxid=&quot;385&quot;/>   &lt;record jsxtext=&quot;+53&quot; jsxid=&quot;53&quot;/>   &lt;record jsxtext=&quot;+357&quot; jsxid=&quot;357&quot;/>   &lt;record jsxtext=&quot;+420&quot; jsxid=&quot;420&quot;/>   &lt;record jsxtext=&quot;+45&quot; jsxid=&quot;45&quot;/>   &lt;record jsxtext=&quot;+253&quot; jsxid=&quot;253&quot;/>   &lt;record jsxtext=&quot;+670&quot; jsxid=&quot;670&quot;/>   &lt;record jsxtext=&quot;+593&quot; jsxid=&quot;593&quot;/>   &lt;record jsxtext=&quot;+20&quot; jsxid=&quot;20&quot;/>   &lt;record jsxtext=&quot;+503&quot; jsxid=&quot;503&quot;/>   &lt;record jsxtext=&quot;+240&quot; jsxid=&quot;240&quot;/>   &lt;record jsxtext=&quot;+291&quot; jsxid=&quot;291&quot;/>   &lt;record jsxtext=&quot;+372&quot; jsxid=&quot;372&quot;/>   &lt;record jsxtext=&quot;+251&quot; jsxid=&quot;251&quot;/>   &lt;record jsxtext=&quot;+500&quot; jsxid=&quot;500&quot;/>   &lt;record jsxtext=&quot;+298&quot; jsxid=&quot;298&quot;/>   &lt;record jsxtext=&quot;+679&quot; jsxid=&quot;679&quot;/>   &lt;record jsxtext=&quot;+358&quot; jsxid=&quot;358&quot;/>   &lt;record jsxtext=&quot;+33&quot; jsxid=&quot;33&quot;/>   &lt;record jsxtext=&quot;+689&quot; jsxid=&quot;689&quot;/>   &lt;record jsxtext=&quot;+241&quot; jsxid=&quot;241&quot;/>   &lt;record jsxtext=&quot;+220&quot; jsxid=&quot;220&quot;/>   &lt;record jsxtext=&quot;+995&quot; jsxid=&quot;995&quot;/>   &lt;record jsxtext=&quot;+49&quot; jsxid=&quot;49&quot;/>   &lt;record jsxtext=&quot;+233&quot; jsxid=&quot;233&quot;/>   &lt;record jsxtext=&quot;+350&quot; jsxid=&quot;350&quot;/>   &lt;record jsxtext=&quot;+30&quot; jsxid=&quot;30&quot;/>   &lt;record jsxtext=&quot;+299&quot; jsxid=&quot;299&quot;/>   &lt;record jsxtext=&quot;+502&quot; jsxid=&quot;502&quot;/>   &lt;record jsxtext=&quot;+224&quot; jsxid=&quot;224&quot;/>   &lt;record jsxtext=&quot;+245&quot; jsxid=&quot;245&quot;/>   &lt;record jsxtext=&quot;+592&quot; jsxid=&quot;592&quot;/>   &lt;record jsxtext=&quot;+509&quot; jsxid=&quot;509&quot;/>   &lt;record jsxtext=&quot;+504&quot; jsxid=&quot;504&quot;/>   &lt;record jsxtext=&quot;+852&quot; jsxid=&quot;852&quot;/>   &lt;record jsxtext=&quot;+36&quot; jsxid=&quot;36&quot;/>   &lt;record jsxtext=&quot;+91&quot; jsxid=&quot;91&quot;/>   &lt;record jsxtext=&quot;+62&quot; jsxid=&quot;62&quot;/>   &lt;record jsxtext=&quot;+98&quot; jsxid=&quot;98&quot;/>   &lt;record jsxtext=&quot;+964&quot; jsxid=&quot;964&quot;/>   &lt;record jsxtext=&quot;+353&quot; jsxid=&quot;353&quot;/>   &lt;record jsxtext=&quot;+44&quot; jsxid=&quot;44&quot;/>   &lt;record jsxtext=&quot;+972&quot; jsxid=&quot;972&quot;/>   &lt;record jsxtext=&quot;+39&quot; jsxid=&quot;39&quot;/>   &lt;record jsxtext=&quot;+225&quot; jsxid=&quot;225&quot;/>   &lt;record jsxtext=&quot;+81&quot; jsxid=&quot;81&quot;/>   &lt;record jsxtext=&quot;+962&quot; jsxid=&quot;962&quot;/>   &lt;record jsxtext=&quot;+7&quot; jsxid=&quot;7&quot;/>   &lt;record jsxtext=&quot;+254&quot; jsxid=&quot;254&quot;/>   &lt;record jsxtext=&quot;+686&quot; jsxid=&quot;686&quot;/>   &lt;record jsxtext=&quot;+965&quot; jsxid=&quot;965&quot;/>   &lt;record jsxtext=&quot;+996&quot; jsxid=&quot;996&quot;/>   &lt;record jsxtext=&quot;+856&quot; jsxid=&quot;856&quot;/>   &lt;record jsxtext=&quot;+371&quot; jsxid=&quot;371&quot;/>   &lt;record jsxtext=&quot;+961&quot; jsxid=&quot;961&quot;/>   &lt;record jsxtext=&quot;+266&quot; jsxid=&quot;266&quot;/>   &lt;record jsxtext=&quot;+231&quot; jsxid=&quot;231&quot;/>   &lt;record jsxtext=&quot;+218&quot; jsxid=&quot;218&quot;/>   &lt;record jsxtext=&quot;+423&quot; jsxid=&quot;423&quot;/>   &lt;record jsxtext=&quot;+370&quot; jsxid=&quot;370&quot;/>   &lt;record jsxtext=&quot;+352&quot; jsxid=&quot;352&quot;/>   &lt;record jsxtext=&quot;+853&quot; jsxid=&quot;853&quot;/>   &lt;record jsxtext=&quot;+389&quot; jsxid=&quot;389&quot;/>   &lt;record jsxtext=&quot;+261&quot; jsxid=&quot;261&quot;/>   &lt;record jsxtext=&quot;+265&quot; jsxid=&quot;265&quot;/>   &lt;record jsxtext=&quot;+60&quot; jsxid=&quot;60&quot;/>   &lt;record jsxtext=&quot;+960&quot; jsxid=&quot;960&quot;/>   &lt;record jsxtext=&quot;+223&quot; jsxid=&quot;223&quot;/>   &lt;record jsxtext=&quot;+356&quot; jsxid=&quot;356&quot;/>   &lt;record jsxtext=&quot;+692&quot; jsxid=&quot;692&quot;/>   &lt;record jsxtext=&quot;+222&quot; jsxid=&quot;222&quot;/>   &lt;record jsxtext=&quot;+230&quot; jsxid=&quot;230&quot;/>   &lt;record jsxtext=&quot;+262&quot; jsxid=&quot;262&quot;/>   &lt;record jsxtext=&quot;+52&quot; jsxid=&quot;52&quot;/>   &lt;record jsxtext=&quot;+691&quot; jsxid=&quot;691&quot;/>   &lt;record jsxtext=&quot;+373&quot; jsxid=&quot;373&quot;/>   &lt;record jsxtext=&quot;+377&quot; jsxid=&quot;377&quot;/>   &lt;record jsxtext=&quot;+976&quot; jsxid=&quot;976&quot;/>   &lt;record jsxtext=&quot;+382&quot; jsxid=&quot;382&quot;/>   &lt;record jsxtext=&quot;+212&quot; jsxid=&quot;212&quot;/>   &lt;record jsxtext=&quot;+258&quot; jsxid=&quot;258&quot;/>   &lt;record jsxtext=&quot;+264&quot; jsxid=&quot;264&quot;/>   &lt;record jsxtext=&quot;+674&quot; jsxid=&quot;674&quot;/>   &lt;record jsxtext=&quot;+977&quot; jsxid=&quot;977&quot;/>   &lt;record jsxtext=&quot;+31&quot; jsxid=&quot;31&quot;/>   &lt;record jsxtext=&quot;+687&quot; jsxid=&quot;687&quot;/>   &lt;record jsxtext=&quot;+64&quot; jsxid=&quot;64&quot;/>   &lt;record jsxtext=&quot;+505&quot; jsxid=&quot;505&quot;/>   &lt;record jsxtext=&quot;+227&quot; jsxid=&quot;227&quot;/>   &lt;record jsxtext=&quot;+234&quot; jsxid=&quot;234&quot;/>   &lt;record jsxtext=&quot;+683&quot; jsxid=&quot;683&quot;/>   &lt;record jsxtext=&quot;+850&quot; jsxid=&quot;850&quot;/>   &lt;record jsxtext=&quot;+47&quot; jsxid=&quot;47&quot;/>   &lt;record jsxtext=&quot;+968&quot; jsxid=&quot;968&quot;/>   &lt;record jsxtext=&quot;+92&quot; jsxid=&quot;92&quot;/>   &lt;record jsxtext=&quot;+680&quot; jsxid=&quot;680&quot;/>   &lt;record jsxtext=&quot;+507&quot; jsxid=&quot;507&quot;/>   &lt;record jsxtext=&quot;+675&quot; jsxid=&quot;675&quot;/>   &lt;record jsxtext=&quot;+595&quot; jsxid=&quot;595&quot;/>   &lt;record jsxtext=&quot;+51&quot; jsxid=&quot;51&quot;/>   &lt;record jsxtext=&quot;+63&quot; jsxid=&quot;63&quot;/>   &lt;record jsxtext=&quot;+870&quot; jsxid=&quot;870&quot;/>   &lt;record jsxtext=&quot;+48&quot; jsxid=&quot;48&quot;/>   &lt;record jsxtext=&quot;+351&quot; jsxid=&quot;351&quot;/> &lt;record jsxtext=&quot;+974&quot; jsxid=&quot;974&quot;/>   &lt;record jsxtext=&quot;+40&quot; jsxid=&quot;40&quot;/>   &lt;record jsxtext=&quot;+7&quot; jsxid=&quot;7&quot;/>   &lt;record jsxtext=&quot;+250&quot; jsxid=&quot;250&quot;/>   &lt;record jsxtext=&quot;+590&quot; jsxid=&quot;590&quot;/>   &lt;record jsxtext=&quot;+685&quot; jsxid=&quot;685&quot;/>   &lt;record jsxtext=&quot;+378&quot; jsxid=&quot;378&quot;/>   &lt;record jsxtext=&quot;+239&quot; jsxid=&quot;239&quot;/>   &lt;record jsxtext=&quot;+966&quot; jsxid=&quot;966&quot;/>   &lt;record jsxtext=&quot;+221&quot; jsxid=&quot;221&quot;/>   &lt;record jsxtext=&quot;+381&quot; jsxid=&quot;381&quot;/>   &lt;record jsxtext=&quot;+248&quot; jsxid=&quot;248&quot;/>   &lt;record jsxtext=&quot;+232&quot; jsxid=&quot;232&quot;/>   &lt;record jsxtext=&quot;+65&quot; jsxid=&quot;65&quot;/>   &lt;record jsxtext=&quot;+421&quot; jsxid=&quot;421&quot;/>   &lt;record jsxtext=&quot;+386&quot; jsxid=&quot;386&quot;/>   &lt;record jsxtext=&quot;+677&quot; jsxid=&quot;677&quot;/>   &lt;record jsxtext=&quot;+252&quot; jsxid=&quot;252&quot;/>   &lt;record jsxtext=&quot;+27&quot; jsxid=&quot;27&quot;/>   &lt;record jsxtext=&quot;+82&quot; jsxid=&quot;82&quot;/>   &lt;record jsxtext=&quot;+34&quot; jsxid=&quot;34&quot;/>   &lt;record jsxtext=&quot;+94&quot; jsxid=&quot;94&quot;/>   &lt;record jsxtext=&quot;+290&quot; jsxid=&quot;290&quot;/>   &lt;record jsxtext=&quot;+508&quot; jsxid=&quot;508&quot;/>   &lt;record jsxtext=&quot;+249&quot; jsxid=&quot;249&quot;/>   &lt;record jsxtext=&quot;+597&quot; jsxid=&quot;597&quot;/>   &lt;record jsxtext=&quot;+268&quot; jsxid=&quot;268&quot;/>   &lt;record jsxtext=&quot;+46&quot; jsxid=&quot;46&quot;/>   &lt;record jsxtext=&quot;+41&quot; jsxid=&quot;41&quot;/>   &lt;record jsxtext=&quot;+963&quot; jsxid=&quot;963&quot;/>   &lt;record jsxtext=&quot;+886&quot; jsxid=&quot;886&quot;/>   &lt;record jsxtext=&quot;+992&quot; jsxid=&quot;992&quot;/>   &lt;record jsxtext=&quot;+255&quot; jsxid=&quot;255&quot;/>   &lt;record jsxtext=&quot;+66&quot; jsxid=&quot;66&quot;/>   &lt;record jsxtext=&quot;+228&quot; jsxid=&quot;228&quot;/>   &lt;record jsxtext=&quot;+690&quot; jsxid=&quot;690&quot;/>   &lt;record jsxtext=&quot;+676&quot; jsxid=&quot;676&quot;/>   &lt;record jsxtext=&quot;+216&quot; jsxid=&quot;216&quot;/>   &lt;record jsxtext=&quot;+90&quot; jsxid=&quot;90&quot;/>   &lt;record jsxtext=&quot;+993&quot; jsxid=&quot;993&quot;/>   &lt;record jsxtext=&quot;+688&quot; jsxid=&quot;688&quot;/>   &lt;record jsxtext=&quot;+971&quot; jsxid=&quot;971&quot;/>   &lt;record jsxtext=&quot;+256&quot; jsxid=&quot;256&quot;/>   &lt;record jsxtext=&quot;+44&quot; jsxid=&quot;44&quot;/>   &lt;record jsxtext=&quot;+380&quot; jsxid=&quot;380&quot;/>   &lt;record jsxtext=&quot;+598&quot; jsxid=&quot;598&quot;/>   &lt;record jsxtext=&quot;+998&quot; jsxid=&quot;998&quot;/>   &lt;record jsxtext=&quot;+678&quot; jsxid=&quot;678&quot;/>   &lt;record jsxtext=&quot;+39&quot; jsxid=&quot;39&quot;/>   &lt;record jsxtext=&quot;+58&quot; jsxid=&quot;58&quot;/>   &lt;record jsxtext=&quot;+84&quot; jsxid=&quot;84&quot;/>   &lt;record jsxtext=&quot;+681&quot; jsxid=&quot;681&quot;/>   &lt;record jsxtext=&quot;+967&quot; jsxid=&quot;967&quot;/>   &lt;record jsxtext=&quot;+260&quot; jsxid=&quot;260&quot;/>   &lt;record jsxtext=&quot;+263&quot; jsxid=&quot;263&quot;/> &lt;/data>" jsxname="code" jsxmargin="0 4 0 0"/>
+          <events jsxselect="com.intalio.ria.validate(this, objEVENT);"/>
+        </object>
+        <object type="jsx3.gui.TextBox">
+          <variants jsxwidth="165" jsxrequired="1"/>
+          <strings jsxvalidationexpression="[0-9]{4,12}" jsxvalue="" jsxpadding="2 2 0 0" jsxname="number" jsxmargin="0 4 0 0"/>
+          <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+        </object>
+      </object>
+      <object type="com.intalio.ria.Field">
+        <variants/>
+        <strings jsxname="Email-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+        <dynamics riaLabelText="Email"/>
+        <object type="jsx3.gui.TextBox">
+          <variants jsxrequired="1"/>
+          <strings jsxwidth="100%" jsxvalue="" jsxpadding="2 2 0 0" jsxvalidationtype="email" jsxname="email" jsxmargin="0 4 0 0"/>
+          <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+        </object>
+      </object>
+      <object type="com.intalio.ria.Field">
+        <variants/>
+        <strings jsxname="comments-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+        <dynamics riaLabelText="Comments"/>
+        <object type="jsx3.gui.TextBox">
+          <variants jsxtype="1"/>
+          <strings jsxvalue="" jsxname="comments" jsxmargin="0 4 0 0"/>
+          <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+        </object>
+      </object>
+    </object>
+    <object type="com.intalio.ria.Section">
+      <variants/>
+      <strings jsxstyleoverride="margin-top:0px;" riaTitleText="Contact While Away" jsxname="contactWhileAway" jsxclassname="fieldset"/>
+      <object type="com.intalio.ria.Field">
+        <variants/>
+        <strings jsxname="substitutename-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+        <dynamics riaLabelText="Name"/>
+        <object type="jsx3.gui.TextBox">
+          <variants jsxrequired="1"/>
+          <strings jsxvalue="" jsxpadding="2 2 0 0" jsxname="substitutename" jsxmargin="0 4 0 0"/>
+          <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+        </object>
+      </object>
+      <object type="com.intalio.ria.Field">
+        <variants/>
+        <strings jsxname="PhoneWhileAway-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+        <dynamics riaLabelText="Phone"/>
+        <object type="jsx3.gui.Select">
+          <variants jsxheight="18" jsxwidth="70" jsxxmlasync="0" jsxtype="1" jsxrequired="1"/>
+          <strings jsxvalue="" jsxxmlid="test" jsxxml="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&lt;data jsxid=&quot;jsxroot&quot;>   &lt;record jsxtext=&quot;+93&quot; jsxid=&quot;93&quot;/>   &lt;record jsxtext=&quot;+355&quot; jsxid=&quot;355&quot;/>   &lt;record jsxtext=&quot;+213&quot; jsxid=&quot;213&quot;/>   &lt;record jsxtext=&quot;+376&quot; jsxid=&quot;376&quot;/>   &lt;record jsxtext=&quot;+244&quot; jsxid=&quot;244&quot;/>   &lt;record jsxtext=&quot;+672&quot; jsxid=&quot;672&quot;/>   &lt;record jsxtext=&quot;+54&quot; jsxid=&quot;54&quot;/>   &lt;record jsxtext=&quot;+374&quot; jsxid=&quot;374&quot;/>   &lt;record jsxtext=&quot;+297&quot; jsxid=&quot;297&quot;/>   &lt;record jsxtext=&quot;+61&quot; jsxid=&quot;61&quot;/>   &lt;record jsxtext=&quot;+43&quot; jsxid=&quot;43&quot;/>   &lt;record jsxtext=&quot;+994&quot; jsxid=&quot;994&quot;/>   &lt;record jsxtext=&quot;+973&quot; jsxid=&quot;973&quot;/>   &lt;record jsxtext=&quot;+880&quot; jsxid=&quot;880&quot;/>   &lt;record jsxtext=&quot;+375&quot; jsxid=&quot;375&quot;/>   &lt;record jsxtext=&quot;+32&quot; jsxid=&quot;32&quot;/>   &lt;record jsxtext=&quot;+501&quot; jsxid=&quot;501&quot;/>   &lt;record jsxtext=&quot;+229&quot; jsxid=&quot;229&quot;/>   &lt;record jsxtext=&quot;+975&quot; jsxid=&quot;975&quot;/>   &lt;record jsxtext=&quot;+591&quot; jsxid=&quot;591&quot;/>   &lt;record jsxtext=&quot;+387&quot; jsxid=&quot;387&quot;/>   &lt;record jsxtext=&quot;+267&quot; jsxid=&quot;267&quot;/>   &lt;record jsxtext=&quot;+55&quot; jsxid=&quot;55&quot;/>   &lt;record jsxtext=&quot;+673&quot; jsxid=&quot;673&quot;/>   &lt;record jsxtext=&quot;+359&quot; jsxid=&quot;359&quot;/>   &lt;record jsxtext=&quot;+226&quot; jsxid=&quot;226&quot;/>   &lt;record jsxtext=&quot;+95&quot; jsxid=&quot;95&quot;/>   &lt;record jsxtext=&quot;+257&quot; jsxid=&quot;257&quot;/>   &lt;record jsxtext=&quot;+855&quot; jsxid=&quot;855&quot;/>   &lt;record jsxtext=&quot;+237&quot; jsxid=&quot;237&quot;/>   &lt;record jsxtext=&quot;+1&quot; jsxid=&quot;1&quot;/>   &lt;record jsxtext=&quot;+238&quot; jsxid=&quot;238&quot;/>   &lt;record jsxtext=&quot;+236&quot; jsxid=&quot;236&quot;/>   &lt;record jsxtext=&quot;+235&quot; jsxid=&quot;235&quot;/>   &lt;record jsxtext=&quot;+56&quot; jsxid=&quot;56&quot;/>   &lt;record jsxtext=&quot;+86&quot; jsxid=&quot;86&quot;/>   &lt;record jsxtext=&quot;+61&quot; jsxid=&quot;61&quot;/>   &lt;record jsxtext=&quot;+61&quot; jsxid=&quot;61&quot;/>   &lt;record jsxtext=&quot;+57&quot; jsxid=&quot;57&quot;/>   &lt;record jsxtext=&quot;+269&quot; jsxid=&quot;269&quot;/>   &lt;record jsxtext=&quot;+242&quot; jsxid=&quot;242&quot;/>   &lt;record jsxtext=&quot;+243&quot; jsxid=&quot;243&quot;/>   &lt;record jsxtext=&quot;+682&quot; jsxid=&quot;682&quot;/>   &lt;record jsxtext=&quot;+506&quot; jsxid=&quot;506&quot;/>   &lt;record jsxtext=&quot;+385&quot; jsxid=&quot;385&quot;/>   &lt;record jsxtext=&quot;+53&quot; jsxid=&quot;53&quot;/>   &lt;record jsxtext=&quot;+357&quot; jsxid=&quot;357&quot;/>   &lt;record jsxtext=&quot;+420&quot; jsxid=&quot;420&quot;/>   &lt;record jsxtext=&quot;+45&quot; jsxid=&quot;45&quot;/>   &lt;record jsxtext=&quot;+253&quot; jsxid=&quot;253&quot;/>   &lt;record jsxtext=&quot;+670&quot; jsxid=&quot;670&quot;/>   &lt;record jsxtext=&quot;+593&quot; jsxid=&quot;593&quot;/>   &lt;record jsxtext=&quot;+20&quot; jsxid=&quot;20&quot;/>   &lt;record jsxtext=&quot;+503&quot; jsxid=&quot;503&quot;/>   &lt;record jsxtext=&quot;+240&quot; jsxid=&quot;240&quot;/>   &lt;record jsxtext=&quot;+291&quot; jsxid=&quot;291&quot;/>   &lt;record jsxtext=&quot;+372&quot; jsxid=&quot;372&quot;/>   &lt;record jsxtext=&quot;+251&quot; jsxid=&quot;251&quot;/>   &lt;record jsxtext=&quot;+500&quot; jsxid=&quot;500&quot;/>   &lt;record jsxtext=&quot;+298&quot; jsxid=&quot;298&quot;/>   &lt;record jsxtext=&quot;+679&quot; jsxid=&quot;679&quot;/>   &lt;record jsxtext=&quot;+358&quot; jsxid=&quot;358&quot;/>   &lt;record jsxtext=&quot;+33&quot; jsxid=&quot;33&quot;/>   &lt;record jsxtext=&quot;+689&quot; jsxid=&quot;689&quot;/>   &lt;record jsxtext=&quot;+241&quot; jsxid=&quot;241&quot;/>   &lt;record jsxtext=&quot;+220&quot; jsxid=&quot;220&quot;/>   &lt;record jsxtext=&quot;+995&quot; jsxid=&quot;995&quot;/>   &lt;record jsxtext=&quot;+49&quot; jsxid=&quot;49&quot;/>   &lt;record jsxtext=&quot;+233&quot; jsxid=&quot;233&quot;/>   &lt;record jsxtext=&quot;+350&quot; jsxid=&quot;350&quot;/>   &lt;record jsxtext=&quot;+30&quot; jsxid=&quot;30&quot;/>   &lt;record jsxtext=&quot;+299&quot; jsxid=&quot;299&quot;/>   &lt;record jsxtext=&quot;+502&quot; jsxid=&quot;502&quot;/>   &lt;record jsxtext=&quot;+224&quot; jsxid=&quot;224&quot;/>   &lt;record jsxtext=&quot;+245&quot; jsxid=&quot;245&quot;/>   &lt;record jsxtext=&quot;+592&quot; jsxid=&quot;592&quot;/>   &lt;record jsxtext=&quot;+509&quot; jsxid=&quot;509&quot;/>   &lt;record jsxtext=&quot;+504&quot; jsxid=&quot;504&quot;/>   &lt;record jsxtext=&quot;+852&quot; jsxid=&quot;852&quot;/>   &lt;record jsxtext=&quot;+36&quot; jsxid=&quot;36&quot;/>   &lt;record jsxtext=&quot;+91&quot; jsxid=&quot;91&quot;/>   &lt;record jsxtext=&quot;+62&quot; jsxid=&quot;62&quot;/>   &lt;record jsxtext=&quot;+98&quot; jsxid=&quot;98&quot;/>   &lt;record jsxtext=&quot;+964&quot; jsxid=&quot;964&quot;/>   &lt;record jsxtext=&quot;+353&quot; jsxid=&quot;353&quot;/>   &lt;record jsxtext=&quot;+44&quot; jsxid=&quot;44&quot;/>   &lt;record jsxtext=&quot;+972&quot; jsxid=&quot;972&quot;/>   &lt;record jsxtext=&quot;+39&quot; jsxid=&quot;39&quot;/>   &lt;record jsxtext=&quot;+225&quot; jsxid=&quot;225&quot;/>   &lt;record jsxtext=&quot;+81&quot; jsxid=&quot;81&quot;/>   &lt;record jsxtext=&quot;+962&quot; jsxid=&quot;962&quot;/>   &lt;record jsxtext=&quot;+7&quot; jsxid=&quot;7&quot;/>   &lt;record jsxtext=&quot;+254&quot; jsxid=&quot;254&quot;/>   &lt;record jsxtext=&quot;+686&quot; jsxid=&quot;686&quot;/>   &lt;record jsxtext=&quot;+965&quot; jsxid=&quot;965&quot;/>   &lt;record jsxtext=&quot;+996&quot; jsxid=&quot;996&quot;/>   &lt;record jsxtext=&quot;+856&quot; jsxid=&quot;856&quot;/>   &lt;record jsxtext=&quot;+371&quot; jsxid=&quot;371&quot;/>   &lt;record jsxtext=&quot;+961&quot; jsxid=&quot;961&quot;/>   &lt;record jsxtext=&quot;+266&quot; jsxid=&quot;266&quot;/>   &lt;record jsxtext=&quot;+231&quot; jsxid=&quot;231&quot;/>   &lt;record jsxtext=&quot;+218&quot; jsxid=&quot;218&quot;/>   &lt;record jsxtext=&quot;+423&quot; jsxid=&quot;423&quot;/>   &lt;record jsxtext=&quot;+370&quot; jsxid=&quot;370&quot;/>   &lt;record jsxtext=&quot;+352&quot; jsxid=&quot;352&quot;/>   &lt;record jsxtext=&quot;+853&quot; jsxid=&quot;853&quot;/>   &lt;record jsxtext=&quot;+389&quot; jsxid=&quot;389&quot;/>   &lt;record jsxtext=&quot;+261&quot; jsxid=&quot;261&quot;/>   &lt;record jsxtext=&quot;+265&quot; jsxid=&quot;265&quot;/>   &lt;record jsxtext=&quot;+60&quot; jsxid=&quot;60&quot;/>   &lt;record jsxtext=&quot;+960&quot; jsxid=&quot;960&quot;/>   &lt;record jsxtext=&quot;+223&quot; jsxid=&quot;223&quot;/>   &lt;record jsxtext=&quot;+356&quot; jsxid=&quot;356&quot;/>   &lt;record jsxtext=&quot;+692&quot; jsxid=&quot;692&quot;/>   &lt;record jsxtext=&quot;+222&quot; jsxid=&quot;222&quot;/>   &lt;record jsxtext=&quot;+230&quot; jsxid=&quot;230&quot;/>   &lt;record jsxtext=&quot;+262&quot; jsxid=&quot;262&quot;/>   &lt;record jsxtext=&quot;+52&quot; jsxid=&quot;52&quot;/>   &lt;record jsxtext=&quot;+691&quot; jsxid=&quot;691&quot;/>   &lt;record jsxtext=&quot;+373&quot; jsxid=&quot;373&quot;/>   &lt;record jsxtext=&quot;+377&quot; jsxid=&quot;377&quot;/>   &lt;record jsxtext=&quot;+976&quot; jsxid=&quot;976&quot;/>   &lt;record jsxtext=&quot;+382&quot; jsxid=&quot;382&quot;/>   &lt;record jsxtext=&quot;+212&quot; jsxid=&quot;212&quot;/>   &lt;record jsxtext=&quot;+258&quot; jsxid=&quot;258&quot;/>   &lt;record jsxtext=&quot;+264&quot; jsxid=&quot;264&quot;/>   &lt;record jsxtext=&quot;+674&quot; jsxid=&quot;674&quot;/>   &lt;record jsxtext=&quot;+977&quot; jsxid=&quot;977&quot;/>   &lt;record jsxtext=&quot;+31&quot; jsxid=&quot;31&quot;/>   &lt;record jsxtext=&quot;+687&quot; jsxid=&quot;687&quot;/>   &lt;record jsxtext=&quot;+64&quot; jsxid=&quot;64&quot;/>   &lt;record jsxtext=&quot;+505&quot; jsxid=&quot;505&quot;/>   &lt;record jsxtext=&quot;+227&quot; jsxid=&quot;227&quot;/>   &lt;record jsxtext=&quot;+234&quot; jsxid=&quot;234&quot;/>   &lt;record jsxtext=&quot;+683&quot; jsxid=&quot;683&quot;/>   &lt;record jsxtext=&quot;+850&quot; jsxid=&quot;850&quot;/>   &lt;record jsxtext=&quot;+47&quot; jsxid=&quot;47&quot;/>   &lt;record jsxtext=&quot;+968&quot; jsxid=&quot;968&quot;/>   &lt;record jsxtext=&quot;+92&quot; jsxid=&quot;92&quot;/>   &lt;record jsxtext=&quot;+680&quot; jsxid=&quot;680&quot;/>   &lt;record jsxtext=&quot;+507&quot; jsxid=&quot;507&quot;/>   &lt;record jsxtext=&quot;+675&quot; jsxid=&quot;675&quot;/>   &lt;record jsxtext=&quot;+595&quot; jsxid=&quot;595&quot;/>   &lt;record jsxtext=&quot;+51&quot; jsxid=&quot;51&quot;/>   &lt;record jsxtext=&quot;+63&quot; jsxid=&quot;63&quot;/>   &lt;record jsxtext=&quot;+870&quot; jsxid=&quot;870&quot;/>   &lt;record jsxtext=&quot;+48&quot; jsxid=&quot;48&quot;/>   &lt;record jsxtext=&quot;+351&quot; jsxid=&quot;351&quot;/> &lt;record jsxtext=&quot;+974&quot; jsxid=&quot;974&quot;/>   &lt;record jsxtext=&quot;+40&quot; jsxid=&quot;40&quot;/>   &lt;record jsxtext=&quot;+7&quot; jsxid=&quot;7&quot;/>   &lt;record jsxtext=&quot;+250&quot; jsxid=&quot;250&quot;/>   &lt;record jsxtext=&quot;+590&quot; jsxid=&quot;590&quot;/>   &lt;record jsxtext=&quot;+685&quot; jsxid=&quot;685&quot;/>   &lt;record jsxtext=&quot;+378&quot; jsxid=&quot;378&quot;/>   &lt;record jsxtext=&quot;+239&quot; jsxid=&quot;239&quot;/>   &lt;record jsxtext=&quot;+966&quot; jsxid=&quot;966&quot;/>   &lt;record jsxtext=&quot;+221&quot; jsxid=&quot;221&quot;/>   &lt;record jsxtext=&quot;+381&quot; jsxid=&quot;381&quot;/>   &lt;record jsxtext=&quot;+248&quot; jsxid=&quot;248&quot;/>   &lt;record jsxtext=&quot;+232&quot; jsxid=&quot;232&quot;/>   &lt;record jsxtext=&quot;+65&quot; jsxid=&quot;65&quot;/>   &lt;record jsxtext=&quot;+421&quot; jsxid=&quot;421&quot;/>   &lt;record jsxtext=&quot;+386&quot; jsxid=&quot;386&quot;/>   &lt;record jsxtext=&quot;+677&quot; jsxid=&quot;677&quot;/>   &lt;record jsxtext=&quot;+252&quot; jsxid=&quot;252&quot;/>   &lt;record jsxtext=&quot;+27&quot; jsxid=&quot;27&quot;/>   &lt;record jsxtext=&quot;+82&quot; jsxid=&quot;82&quot;/>   &lt;record jsxtext=&quot;+34&quot; jsxid=&quot;34&quot;/>   &lt;record jsxtext=&quot;+94&quot; jsxid=&quot;94&quot;/>   &lt;record jsxtext=&quot;+290&quot; jsxid=&quot;290&quot;/>   &lt;record jsxtext=&quot;+508&quot; jsxid=&quot;508&quot;/>   &lt;record jsxtext=&quot;+249&quot; jsxid=&quot;249&quot;/>   &lt;record jsxtext=&quot;+597&quot; jsxid=&quot;597&quot;/>   &lt;record jsxtext=&quot;+268&quot; jsxid=&quot;268&quot;/>   &lt;record jsxtext=&quot;+46&quot; jsxid=&quot;46&quot;/>   &lt;record jsxtext=&quot;+41&quot; jsxid=&quot;41&quot;/>   &lt;record jsxtext=&quot;+963&quot; jsxid=&quot;963&quot;/>   &lt;record jsxtext=&quot;+886&quot; jsxid=&quot;886&quot;/>   &lt;record jsxtext=&quot;+992&quot; jsxid=&quot;992&quot;/>   &lt;record jsxtext=&quot;+255&quot; jsxid=&quot;255&quot;/>   &lt;record jsxtext=&quot;+66&quot; jsxid=&quot;66&quot;/>   &lt;record jsxtext=&quot;+228&quot; jsxid=&quot;228&quot;/>   &lt;record jsxtext=&quot;+690&quot; jsxid=&quot;690&quot;/>   &lt;record jsxtext=&quot;+676&quot; jsxid=&quot;676&quot;/>   &lt;record jsxtext=&quot;+216&quot; jsxid=&quot;216&quot;/>   &lt;record jsxtext=&quot;+90&quot; jsxid=&quot;90&quot;/>   &lt;record jsxtext=&quot;+993&quot; jsxid=&quot;993&quot;/>   &lt;record jsxtext=&quot;+688&quot; jsxid=&quot;688&quot;/>   &lt;record jsxtext=&quot;+971&quot; jsxid=&quot;971&quot;/>   &lt;record jsxtext=&quot;+256&quot; jsxid=&quot;256&quot;/>   &lt;record jsxtext=&quot;+44&quot; jsxid=&quot;44&quot;/>   &lt;record jsxtext=&quot;+380&quot; jsxid=&quot;380&quot;/>   &lt;record jsxtext=&quot;+598&quot; jsxid=&quot;598&quot;/>   &lt;record jsxtext=&quot;+998&quot; jsxid=&quot;998&quot;/>   &lt;record jsxtext=&quot;+678&quot; jsxid=&quot;678&quot;/>   &lt;record jsxtext=&quot;+39&quot; jsxid=&quot;39&quot;/>   &lt;record jsxtext=&quot;+58&quot; jsxid=&quot;58&quot;/>   &lt;record jsxtext=&quot;+84&quot; jsxid=&quot;84&quot;/>   &lt;record jsxtext=&quot;+681&quot; jsxid=&quot;681&quot;/>   &lt;record jsxtext=&quot;+967&quot; jsxid=&quot;967&quot;/>   &lt;record jsxtext=&quot;+260&quot; jsxid=&quot;260&quot;/>   &lt;record jsxtext=&quot;+263&quot; jsxid=&quot;263&quot;/> &lt;/data>" jsxname="codewhileAway" jsxmargin="0 4 0 0"/>
+          <events jsxselect="com.intalio.ria.validate(this, objEVENT);"/>
+        </object>
+        <object type="jsx3.gui.TextBox">
+          <variants jsxwidth="165" jsxrequired="1"/>
+          <strings jsxvalidationexpression="[0-9]{4,12}" jsxvalue="" jsxpadding="2 2 0 0" jsxname="numberWhileAway" jsxmargin="0 4 0 0"/>
+          <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+        </object>
+      </object>
+      <object type="com.intalio.ria.Field">
+        <variants/>
+        <strings jsxname="EmailWhileAway-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+        <dynamics riaLabelText="Email"/>
+        <object type="jsx3.gui.TextBox">
+          <variants jsxrequired="1"/>
+          <strings jsxvalue="" jsxpadding="2 2 0 0" jsxvalidationtype="email" jsxname="emailWhileAway" jsxmargin="0 4 0 0"/>
+          <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+        </object>
+      </object>
+    </object>
+    <object type="com.intalio.ria.Section">
+      <variants/>
+      <strings jsxstyleoverride="margin-top:0px;" riaTitleText="Leave Details" jsxname="LeaveDetails" jsxclassname="fieldset"/>
+      <object type="com.intalio.ria.Field">
+        <variants/>
+        <strings jsxheight="" riaLabelText="" jsxname="leaveDetails-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxheight="40" jsxwidth="600" jsxoverflow="3"/>
+          <strings jsxcolor="" jsxname="leaveType-block" jsxrelativeposition="1"/>
+          <object type="jsx3.gui.Matrix">
+            <variants jsxheaderheight="20" jsxheight="40" jsxsuppressvscroll="1" jsxautorow="1" jsxscalewidth="1" jsxresize="1" jsxxmlbind="1" jsxselectionmodel="0" jsxpagingmodel="1" jsxjsxxmlasync="1" jsxrequired="1" jsxrowheight="20"/>
+            <strings jsxsortdirection="descending" jsxheaderborder="1px solid #dfdfef" jsxbodyborder="1px solid #dfdfef" jsxxmlid="LeaveList" jsxsortpath="from" jsxsorttype="text" jsxname="LeaveList" jsxbgcolor="#efefff"/>
+            <events jsxaftercommit="resizeLeaveList();this.getParent().getParent().validate(this, objEVENT);"/>
+            <xslparameters jsx_rowbg2="#efefff" jsx_rowbg1="#ffffff"/>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants jsxwidth="55"/>
+              <strings jsxpath="deleteButtonColumn" jsxcellpadding="1" jsxtextalign="center" jsxpadding="2" jsxcelltextalign="center" jsxname="deleteButtonColumn" jsxvaluetemplate="@empty"/>
+              <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset" jsxtext="Delete"/>
+              <object type="jsx3.gui.ImageButton">
+                <variants jsxstate="0" jsxenabled="1" jsxheight="16" jsxwidth="16" jsxprefetch="1" jsxtype="0"/>
+                <strings jsximage="jsx:///images/list/delete.gif" jsxname="deleteButtonMask"/>
+                <events jsxexecute="var _recordId = this.emGetSession().recordId; var _deletedNode = this.getParent().getParent().deleteRecord(this.emGetSession().recordId, true);if(_deletedNode){this.getParent().getParent().doEvent('recordDeleted',{objNode:_deletedNode,strRECORDID:_recordId});};this.getParent().getParent().getParent().getParent().validate(this, objEVENT);resizeLeaveList();"/>
+              </object>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants jsxwidth="88"/>
+              <strings jsxpath="from" jsxcellpadding="2" jsxpadding="2" jsxformathandler="@date, yyyy-MM-dd" jsxname="fromColumn" jsxvaluetemplate="@empty"/>
+              <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset" jsxtext="From"/>
+              <object type="jsx3.gui.DatePicker">
+                <variants jsxtop="0" jsxleft="50" jsxheight="20" jsxwidth="84" jsxzindex="10" jsxrequired="1" jsxrelativeposition="0"/>
+                <strings jsxpath="from" jsxformat="yyyy-MM-dd" jsxdisplay="none" jsxname="from"/>
+                <dynamics jsxdateformat="@Medium"/>
+              </object>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants jsxwidth="87"/>
+              <strings jsxpath="to" jsxcellpadding="2" jsxpadding="2" jsxformathandler="@date, yyyy-MM-dd" jsxname="toColumn" jsxvaluetemplate="@empty"/>
+              <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset" jsxtext="To"/>
+              <object type="jsx3.gui.DatePicker">
+                <variants jsxtop="0" jsxleft="138" jsxheight="20" jsxwidth="87" jsxzindex="10" jsxyear="2013" jsxmonth="8" jsxrequired="1" jsxdate="9" jsxrelativeposition="0"/>
+                <strings jsxpath="to" jsxformat="yyyy-MM-dd" jsxdisplay="none" jsxname="to"/>
+                <dynamics jsxdateformat="@Medium"/>
+              </object>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants jsxwidth="100"/>
+              <strings jsxpath="leaveType" jsxcellpadding="3 0 0 4" jsxpadding="2" jsxformathandler="@lookup" jsxname="leaveTypeColumn" jsxvaluetemplate="@empty" jsxtext="Leave Type"/>
+              <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
+              <object type="jsx3.gui.Select">
+                <variants jsxtop="0" jsxleft="225" jsxheight="20" jsxwidth="100" jsxzindex="10" jsxtype="1" jsxrequired="1" jsxrelativeposition="0"/>
+                <strings jsxpath="leaveType" jsxxml="&lt;data jsxid=&quot;jsxroot&quot;> &lt;record jsxid=&quot;PTO&quot; jsxtext=&quot;{PTO (Paid Time Off)}&quot;/>  &lt;record jsxid=&quot;vacation&quot; jsxtext=&quot;{Vacation}&quot;/>  &lt;record jsxid=&quot;paidSabbatical&quot; jsxtext=&quot;{Paid Sabbatical}&quot;/>  &lt;record jsxid=&quot;juryDuty&quot; jsxtext=&quot;{Jury Duty}&quot;/>  &lt;record jsxid=&quot;leaveWithoutPay&quot; jsxtext=&quot;{Leave Without Pay}&quot;/>  &lt;record jsxid=&quot;pregnancyDisability&quot; jsxtext=&quot;{Pregnancy Disability}&quot;/>  &lt;record jsxid=&quot;personal&quot; jsxtext=&quot;{Personal}&quot;/>  &lt;record jsxid=&quot;militaryLeave&quot; jsxtext=&quot;{Military Leave}&quot;/>  &lt;record jsxid=&quot;otherDisability&quot; jsxtext=&quot;{Other Disability}&quot;/>  &lt;record jsxid=&quot;unpaidSabbatical&quot; jsxtext=&quot;{Unpaid Sabbatical}&quot;/>&lt;/data>" jsxdisplay="none" jsxname="leaveType" jsxxmlurl=""/>
+                <xslparameters jsxsortpath="jsxid"/>
+              </object>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants/>
+              <strings jsxpath="shortComment" jsxcellpadding="3" jsxwidth="100" jsxpadding="2" jsxname="shortCommentColumn"/>
+              <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset" jsxtext="Comments"/>
+              <object type="jsx3.gui.TextBox">
+                <variants jsxtop="0" jsxleft="325" jsxheight="20" jsxwidth="273" jsxzindex="10" jsxrelativeposition="0"/>
+                <strings jsxpath="shortComment" jsxvalue="jhlkj" jsxdisplay="none" jsxname="shortComment"/>
+                <events jsxkeydown="1;"/>
+              </object>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+    <object type="com.intalio.ria.Field">
+      <variants/>
+      <strings riaLabelText="[Text input label]" jsxdisplay="none" jsxname="textinput-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+      <object type="jsx3.gui.TextBox">
+        <variants/>
+        <strings jsxvalue="" jsxpadding="2 2 0 0" jsxname="caseId" jsxmargin="0 4 0 0"/>
+        <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+      </object>
+    </object>
+    <object type="com.intalio.ria.Field">
+      <variants/>
+      <strings riaLabelText="[Text input label]" jsxdisplay="none" jsxname="textinput-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+      <object type="jsx3.gui.TextBox">
+        <variants/>
+        <strings jsxpadding="2 2 0 0" jsxname="caseType" jsxmargin="0 4 0 0"/>
+        <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants/>
+      <strings jsxwidth="100%" jsxname="IntalioInternal_SpacerBlock" jsxmargin="15 0 0 0" jsxborder="1px solid gray; 0px solid; 0px solid; 0px solid;"/>
+    </object>
+    <object type="jsx3.gui.Button">
+      <variants jsxenabled="0" jsxheight="20"/>
+      <strings jsxpadding="3 10 3 10" jsxdisplay="none" jsxname="IntalioInternal_StartButton" jsxmargin="15 10 15 0"/>
+      <dynamics jsxtext="Intalio Start Button"/>
+      <events jsxexecute="Intalio.Internal.TMS.callInitProcess();"/>
+    </object>
+    <object type="jsx3.gui.Button">
+      <variants jsxenabled="0" jsxheight="20"/>
+      <strings jsxpadding="3 10 3 10" jsxdisplay="none" jsxname="IntalioInternal_DismissButton" jsxmargin="15 10 15 0"/>
+      <dynamics jsxtext="Intalio Dismiss Button"/>
+      <events jsxexecute="Intalio.Internal.TMS.callComplete();"/>
+    </object>
+    <object type="jsx3.gui.Button">
+      <variants jsxenabled="0" jsxheight="20"/>
+      <strings jsxpadding="3 10 3 10" jsxdisplay="none" jsxname="IntalioInternal_SaveButton" jsxmargin="15 10 15 0"/>
+      <dynamics jsxtext="Intalio Save Button"/>
+      <events jsxexecute="Intalio.Internal.TMS.callSetOutput();"/>
+    </object>
+    <object type="jsx3.gui.Button">
+      <variants jsxenabled="0" jsxheight="20"/>
+      <strings jsxpadding="3 10 3 10" jsxdisplay="none" jsxname="IntalioInternal_ClaimButton" jsxmargin="15 10 15 0"/>
+      <dynamics jsxtext="Intalio Claim Button"/>
+      <events jsxexecute="Intalio.Internal.TMP.callClaimTask();"/>
+    </object>
+    <object type="jsx3.gui.Button">
+      <variants jsxenabled="0" jsxheight="20"/>
+      <strings jsxpadding="3 10 3 10" jsxdisplay="none" jsxname="IntalioInternal_RevokeButton" jsxmargin="15 10 15 0"/>
+      <dynamics jsxtext="Intalio Revoke Button"/>
+      <events jsxexecute="Intalio.Internal.TMP.callRevokeTask();"/>
+    </object>
+    <object type="jsx3.gui.Button">
+      <variants jsxenabled="0" jsxheight="20"/>
+      <strings jsxpadding="3 10 3 10" jsxdisplay="none" jsxname="IntalioInternal_CompleteButton" jsxmargin="15 10 15 0"/>
+      <dynamics jsxtext="Intalio Complete Button"/>
+      <events jsxexecute="Intalio.Internal.TMP.callCompleteTask();"/>
+    </object>
+  </object>
+</serialization>

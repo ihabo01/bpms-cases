@@ -1,0 +1,8 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<dd:process xmlns:dd="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:diag="http://absencerequest.com/Status" xmlns:Pool="http://absencerequest.com/Status/Pool" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:this="http://absencerequest.com/Status/Absence_Request" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="this:Absence_Request" fileName="Status-Absence_Request.bpel">
+  <dd:property name="PATH">Status</dd:property>
+  <dd:property name="SVG">Status.svg</dd:property>
+  <dd:provide partnerLink="absence_RequestAndPoolPlkVar">
+    <dd:service name="this:CanonicServiceForPool" port="canonicPort"></dd:service>
+  </dd:provide>
+</dd:process>

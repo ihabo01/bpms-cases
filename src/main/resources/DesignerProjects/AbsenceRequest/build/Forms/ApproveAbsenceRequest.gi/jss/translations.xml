@@ -1,0 +1,212 @@
+<data jsxnamespace="propsbundle" locales="">
+  <locale>
+    <record jsxid="Intalio Start Button" jsxtext="Start"/>
+    <record jsxid="Intalio Dismiss Button" jsxtext="Dismiss"/>
+    <record jsxid="Intalio Save Button" jsxtext="Save"/>
+    <record jsxid="Intalio Claim Button" jsxtext="Claim"/>
+    <record jsxid="Intalio Revoke Button" jsxtext="Revoke"/>
+    <record jsxid="Intalio Complete Button" jsxtext="Complete"/>
+    <record jsxid="Operation Failed Error" jsxtext="Operation '{0}' failed.  The HTTP Status code is: {1}"/>
+    <record jsxid="Operation Invalid Error" jsxtext="Operation '{0}' failed.  The message failed validation."/>
+    <record jsxid="Operation Timeout Error" jsxtext="Operation '{0}' failed.  The operation timed out."/>
+    <record jsxid="Logging Error" jsxtext="An exception occurred while logging a previous exception."/>
+    <record jsxid="Task Type Parameter Missing Error" jsxtext="The task type parameter is missing."/>
+    <record jsxid="Path Parameter Missing Error" jsxtext="The path parameter is missing."/>
+    <record jsxid="Assembly Parameter Missing Error" jsxtext="The assembly parameter is missing."/>
+    <record jsxid="Form Parameter Missing Error" jsxtext="The form parameter is missing."/>
+    <record jsxid="Invalid Response Error" jsxtext="The server sent an invalid response."/>
+    <record jsxid="File Upload Error" jsxtext="There was a problem uploading the file: {0}"/>
+    <record jsxid="Incomplete Matrix Error" jsxtext="The form has an incomplete matrix field."/>
+    <record jsxid="Incomplete Field Error" jsxtext="Incomplete form field: {0}"/>
+    <record jsxid="Loading Text" jsxtext="Sending request, please wait..."/>
+    <record jsxid="Close Button" jsxtext="Close"/>
+    <record jsxid="Save Success Text" jsxtext="The task was successfully saved."/>
+    <record jsxid="Claim Success Text" jsxtext="The task was successfully claimed."/>
+    <record jsxid="Revoke Success Text" jsxtext="The task was successfully revoked."/>
+    <record jsxid="Get Task Error" jsxtext="Error while getting the Task."/>
+    <record jsxid="Submitter" jsxtext="Submitter"/>
+    <record jsxid="PTO (Paid Time Off)" jsxtext="PTO (Paid Time Off"/>
+    <record jsxid="Vacation" jsxtext="Vacation"/>
+    <record jsxid="Paid Sabbatical" jsxtext="Paid Sabbatical"/>
+    <record jsxid="Jury Duty" jsxtext="Jury Duty"/>
+    <record jsxid="Leave Without Pay" jsxtext="Leave Without Pay"/>
+    <record jsxid="Pregnancy Disability" jsxtext="Pregnancy Disability"/>
+    <record jsxid="Personal" jsxtext="Personal"/>
+    <record jsxid="Military Leave" jsxtext="Military Leave"/>
+    <record jsxid="Other Disability" jsxtext="Other Disability"/>
+    <record jsxid="Unpaid Sabbatical" jsxtext="Unpaid Sabbatical"/>
+    <record jsxid="Required Note" jsxtext="&lt;strong&gt;Note:&lt;/strong&gt; Required fields are marked with an asterisk (&lt;span class=&quot;required&quot;&gt;*&lt;/span&gt;)."/>
+    <record jsxid="On leave person details" jsxtext="On leave person details"/>
+    <record jsxid="I am the person going on leave" jsxtext="I am the person going on leave"/>
+    <record jsxid="I am doing this on behalf of someone" jsxtext="I am doing this on behalf of someone"/>
+    <record jsxid="Reporter" jsxtext="Reporter"/>
+    <record jsxid="Person on leave" jsxtext="Person on leave"/>
+    <record jsxid="Phone" jsxtext="Phone"/>
+    <record jsxid="Email" jsxtext="Email"/>
+    <record jsxid="Contact details while away" jsxtext="Contact details while away"/>
+    <record jsxid="Leave details" jsxtext="Leave details"/>
+    <record jsxid="Delete" jsxtext="Delete"/>
+    <record jsxid="From" jsxtext="From"/>
+    <record jsxid="To" jsxtext="To"/>
+    <record jsxid="Short comment" jsxtext="Short comment"/>
+    <record jsxid="Leave type" jsxtext="Leave type"/>
+    <record jsxid="Additional information" jsxtext="Additional information"/>
+    <record jsxid="Comments" jsxtext="Comments "/>
+    <record jsxid="Absence Request" jsxtext="Absence Request"/>
+    <record jsxid="Absence Request outcome" jsxtext="Absence Request outcome"/>
+    <record jsxid="Submitter comments" jsxtext="Submitter comments"/>
+    <record jsxid="Request outcome" jsxtext="Request outcome"/>
+    <record jsxid="Manager's Decision" jsxtext="Manager's Decision"/>
+    <record jsxid="Manager comments" jsxtext="Manager comments"/>
+    <record jsxid="Name" jsxtext="Name"/>
+    <record jsxid="Absence Request Validation" jsxtext="Absence Request Validation"/>
+    <record jsxid="I approve" jsxtext="I approve"/>
+    <record jsxid="I reject" jsxtext="I reject"/>
+  </locale>
+  <locale key="en_US">
+    <record jsxid="Intalio Start Button" jsxtext="Start"/>
+    <record jsxid="Intalio Dismiss Button" jsxtext="Dismiss"/>
+    <record jsxid="Intalio Save Button" jsxtext="Save"/>
+    <record jsxid="Intalio Claim Button" jsxtext="Claim"/>
+    <record jsxid="Intalio Revoke Button" jsxtext="Revoke"/>
+    <record jsxid="Intalio Complete Button" jsxtext="Complete"/>
+    <record jsxid="Operation Failed Error" jsxtext="Operation '{0}' failed.  The HTTP Status code is: {1}"/>
+    <record jsxid="Operation Invalid Error" jsxtext="Operation '{0}' failed.  The message failed validation."/>
+    <record jsxid="Operation Timeout Error" jsxtext="Operation '{0}' failed.  The operation timed out."/>
+    <record jsxid="Logging Error" jsxtext="An exception occurred while logging a previous exception."/>
+    <record jsxid="Task Type Parameter Missing Error" jsxtext="The task type parameter is missing."/>
+    <record jsxid="Path Parameter Missing Error" jsxtext="The path parameter is missing."/>
+    <record jsxid="Assembly Parameter Missing Error" jsxtext="The assembly parameter is missing."/>
+    <record jsxid="Form Parameter Missing Error" jsxtext="The form parameter is missing."/>
+    <record jsxid="Invalid Response Error" jsxtext="The server sent an invalid response."/>
+    <record jsxid="File Upload Error" jsxtext="There was a problem uploading the file: {0}"/>
+    <record jsxid="Incomplete Matrix Error" jsxtext="The form has an incomplete matrix field."/>
+    <record jsxid="Incomplete Field Error" jsxtext="Incomplete form field: {0}"/>
+    <record jsxid="Loading Text" jsxtext="Sending request, please wait..."/>
+    <record jsxid="Close Button" jsxtext="Close"/>
+    <record jsxid="Save Success Text" jsxtext="The task was successfully saved."/>
+    <record jsxid="Claim Success Text" jsxtext="The task was successfully claimed."/>
+    <record jsxid="Revoke Success Text" jsxtext="The task was successfully revoked."/>
+    <record jsxid="Get Task Error" jsxtext="Error while getting the Task."/>
+    <record jsxid="Submitter" jsxtext="Submitter"/>
+    <record jsxid="PTO (Paid Time Off)" jsxtext="PTO (Paid Time Off)"/>
+    <record jsxid="Vacation" jsxtext="Vacation"/>
+    <record jsxid="Paid Sabbatical" jsxtext="Paid Sabbatical"/>
+    <record jsxid="Jury Duty" jsxtext="Jury Duty"/>
+    <record jsxid="Leave Without Pay" jsxtext="Leave Without Pay"/>
+    <record jsxid="Pregnancy Disability" jsxtext="Pregnancy Disability"/>
+    <record jsxid="Personal" jsxtext="Personal"/>
+    <record jsxid="Military Leave" jsxtext="Military Leave"/>
+    <record jsxid="Other Disability" jsxtext="Other Disability"/>
+    <record jsxid="Unpaid Sabbatical" jsxtext="Unpaid Sabbatical"/>
+    <record jsxid="Required Note" jsxtext="&lt;strong&gt;Note:&lt;/strong&gt; Required fields are marked with an asterisk (&lt;span class=&quot;required&quot;&gt;*&lt;/span&gt;)."/>
+    <record jsxid="On leave person details" jsxtext="On leave person details"/>
+    <record jsxid="I am the person going on leave" jsxtext="I am the person going on leave"/>
+    <record jsxid="I am doing this on behalf of someone" jsxtext="I am doing this on behalf of someone"/>
+    <record jsxid="Reporter" jsxtext="Reporter"/>
+    <record jsxid="Person on leave" jsxtext="Person on leave"/>
+    <record jsxid="Phone" jsxtext="Phone"/>
+    <record jsxid="Email" jsxtext="Email"/>
+    <record jsxid="Contact details while away" jsxtext="Contact details while away"/>
+    <record jsxid="Leave details" jsxtext="Leave details"/>
+    <record jsxid="Delete" jsxtext="Delete"/>
+    <record jsxid="From" jsxtext="From"/>
+    <record jsxid="To" jsxtext="To"/>
+    <record jsxid="Short comment" jsxtext="Short comment"/>
+    <record jsxid="Leave type" jsxtext="Leave type"/>
+    <record jsxid="Additional information" jsxtext="Additional information"/>
+    <record jsxid="Comments" jsxtext="Comments "/>
+    <record jsxid="Absence Request" jsxtext="Absence Request"/>
+    <record jsxid="Absence Request outcome" jsxtext="Absence Request outcome"/>
+    <record jsxid="Submitter comments" jsxtext="Submitter comments"/>
+    <record jsxid="Request outcome" jsxtext="Request outcome"/>
+    <record jsxid="Manager's Decision" jsxtext="Manager's Decision"/>
+    <record jsxid="Manager comments" jsxtext="Manager comments"/>
+    <record jsxid="Name" jsxtext="Name"/>
+    <record jsxid="Absence Request Validation" jsxtext="Absence Request Validation"/>
+    <record jsxid="I approve" jsxtext="I approve"/>
+    <record jsxid="I reject" jsxtext="I reject"/>
+  </locale>
+  <locale key="fr">
+    <record jsxid="Intalio Start Button" jsxtext="Démarrer"/>
+    <record jsxid="Intalio Save Button" jsxtext="Sauvegarder"/>
+    <record jsxid="Intalio Complete Button" jsxtext="Compléter"/>
+    <record jsxid="Close Button" jsxtext="Fermer"/>
+    <record jsxid="Submitter" jsxtext="Soumis par"/>
+    <record jsxid="PTO (Paid Time Off)" jsxtext="Congé payé"/>
+    <record jsxid="Vacation" jsxtext="Vacances"/>
+    <record jsxid="Paid Sabbatical" jsxtext="Sabbatique payé"/>
+    <record jsxid="Jury Duty" jsxtext="Fonction de juré"/>
+    <record jsxid="Leave Without Pay" jsxtext="Congé non payé"/>
+    <record jsxid="Pregnancy Disability" jsxtext="Congé de Maternité/Paternité"/>
+    <record jsxid="Personal" jsxtext="Personel"/>
+    <record jsxid="Military Leave" jsxtext="Service militaire"/>
+    <record jsxid="Other Disability" jsxtext="Autre raison"/>
+    <record jsxid="Unpaid Sabbatical" jsxtext="Sabbatique non payé"/>
+    <record jsxid="Required Note" jsxtext="&lt;strong&gt;Note:&lt;/strong&gt; les champs requis sont marqués avec un (&lt;span class=&quot;required&quot;&gt;*&lt;/span&gt;)."/>
+    <record jsxid="On leave person details" jsxtext="Informations sur le commaborateur en congé"/>
+    <record jsxid="I am the person going on leave" jsxtext="Cette déclaration me concerne"/>
+    <record jsxid="I am doing this on behalf of someone" jsxtext="Déclaration au nom d'un autre collaborateur"/>
+    <record jsxid="Reporter" jsxtext="Soumis par"/>
+    <record jsxid="Person on leave" jsxtext="Collaborateur en congé"/>
+    <record jsxid="Phone" jsxtext="Téléphone"/>
+    <record jsxid="Email" jsxtext="Courriel"/>
+    <record jsxid="Contact details while away" jsxtext="Coordonnées du remplaçant"/>
+    <record jsxid="Leave details" jsxtext="Détails du congé"/>
+    <record jsxid="Delete" jsxtext="Supprimer"/>
+    <record jsxid="From" jsxtext="De"/>
+    <record jsxid="To" jsxtext="À"/>
+    <record jsxid="Short comment" jsxtext="Commentaire (court)"/>
+    <record jsxid="Leave type" jsxtext="Type de congé"/>
+    <record jsxid="Additional information" jsxtext="Informations complémentaires"/>
+    <record jsxid="Comments" jsxtext="Commentaires"/>
+    <record jsxid="Absence Request" jsxtext="Demande de congé"/>
+    <record jsxid="Absence Request outcome" jsxtext="Issue de votre demande de congé"/>
+    <record jsxid="Submitter comments" jsxtext="Commentaires du déclarant"/>
+    <record jsxid="Request outcome" jsxtext="Issue de votre demande"/>
+    <record jsxid="Manager's Decision" jsxtext="Decision du responsable"/>
+    <record jsxid="Manager comments" jsxtext="Commentaires du responsable"/>
+    <record jsxid="Name" jsxtext="Nom"/>
+    <record jsxid="Absence Request Validation" jsxtext="Validation d'une demande de congé"/>
+    <record jsxid="I approve" jsxtext="Demande approuvée"/>
+    <record jsxid="I reject" jsxtext="Demande rejetée"/>
+  </locale>
+  <locale key="de">
+    <record jsxid="Vacation" jsxtext=""/>
+    <record jsxid="Paid Sabbatical" jsxtext=""/>
+    <record jsxid="Jury Duty" jsxtext=""/>
+    <record jsxid="Leave Without Pay" jsxtext=""/>
+    <record jsxid="Pregnancy Disability" jsxtext=""/>
+    <record jsxid="Personal" jsxtext=""/>
+    <record jsxid="Military Leave" jsxtext=""/>
+    <record jsxid="Other Disability" jsxtext=""/>
+    <record jsxid="Unpaid Sabbatical" jsxtext=""/>
+    <record jsxid="Required Note" jsxtext=""/>
+    <record jsxid="On leave person details" jsxtext=""/>
+    <record jsxid="I am the person going on leave" jsxtext=""/>
+    <record jsxid="I am doing this on behalf of someone" jsxtext=""/>
+    <record jsxid="Reporter" jsxtext=""/>
+    <record jsxid="Person on leave" jsxtext=""/>
+    <record jsxid="Phone" jsxtext=""/>
+    <record jsxid="Email" jsxtext=""/>
+    <record jsxid="Contact details while away" jsxtext=""/>
+    <record jsxid="Leave details" jsxtext=""/>
+    <record jsxid="Delete" jsxtext=""/>
+    <record jsxid="From" jsxtext=""/>
+    <record jsxid="To" jsxtext=""/>
+    <record jsxid="Short comment" jsxtext=""/>
+    <record jsxid="Leave type" jsxtext=""/>
+    <record jsxid="Additional information" jsxtext=""/>
+    <record jsxid="Comments" jsxtext=""/>
+    <record jsxid="Absence Request" jsxtext=""/>
+    <record jsxid="Absence Request outcome" jsxtext=""/>
+    <record jsxid="Submitter comments" jsxtext=""/>
+    <record jsxid="Request outcome" jsxtext=""/>
+    <record jsxid="Manager's Decision" jsxtext=""/>
+    <record jsxid="Manager comments" jsxtext=""/>
+    <record jsxid="Name" jsxtext=""/>
+    <record jsxid="Absence Request Validation" jsxtext=""/>
+    <record jsxid="I approve" jsxtext=""/>
+    <record jsxid="I reject" jsxtext=""/>
+  </locale>
+</data>
