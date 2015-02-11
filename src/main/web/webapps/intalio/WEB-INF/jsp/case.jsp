@@ -214,7 +214,7 @@
 
 						</div>
 						<div id="status" class="tab-pane fade">
-							test
+							
 						</div>
 						<div id="discussions" class="tab-pane fade" style="overflow: auto;">
 							<div id="existingComments">
@@ -256,7 +256,7 @@
 						</div>
 
 						<div id="attachments" class="tab-pane fade">
-							test
+							
 						</div>
 					</div>
 				</div>

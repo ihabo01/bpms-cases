@@ -453,6 +453,12 @@ public class ACMRequestProcessor extends OMUnmarshaller {
 								.getStatus_diagram());
 						;
 						caseTypeElement.addChild(statusDiagramElement);
+						
+						OMElement caseFormElement = createElement("case_form");
+						caseFormElement.setText(caseType
+								.getCase_form());
+						;
+						caseTypeElement.addChild(caseFormElement);
 						response.addChild(caseTypeElement);
 						;
 					} catch (Exception e) {
@@ -500,6 +506,12 @@ public class ACMRequestProcessor extends OMUnmarshaller {
 								.getStatus_diagram());
 						;
 						caseTypeElement.addChild(statusDiagramElement);
+						
+						OMElement caseFormElement = createElement("case_form");
+						caseFormElement.setText(caseType
+								.getCase_form());
+						;
+						caseTypeElement.addChild(caseFormElement);
 						response.addChild(caseTypeElement);
 						;
 					} catch (Exception e) {

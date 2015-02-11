@@ -42,7 +42,18 @@ public class CaseType {
     @Basic
     public  String status_diagram;
     
+    @Column(name = "case_form")
+    @Basic
+    public  String case_form;
     
+    
+    public String getCase_form() {
+		return case_form;
+	}
+	public void setCase_form(String case_form) {
+		this.case_form = case_form;
+	}
+	
     public String getStatus_diagram() {
 		return status_diagram;
 	}

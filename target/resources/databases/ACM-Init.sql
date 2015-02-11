@@ -4,3 +4,5 @@ CREATE TABLE bpms.tempo_casetype (
 		description VARCHAR(250),
 		status_diagram VARCHAR(250)
 	);
+
+insert into module_action values(73,'Cases',NULL,0,NULL,1);
