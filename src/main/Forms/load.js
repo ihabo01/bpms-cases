@@ -1,5 +1,3 @@
-/* place JavaScript code here */
-
 jsx3.lang.Package.definePackage(
   "Intalio.Internal.Utilities",
   function(util) {
@@ -10,4 +8,4 @@ jsx3.lang.Package.definePackage(
 
 }
 }
-)	
+)
