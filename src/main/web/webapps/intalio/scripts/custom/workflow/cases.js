@@ -12,7 +12,8 @@ var casesOptions = {
     "bSort": false,
 	"aoColumns":[]
 }
-var tableWidth=100%;
+
+var tableWidth="100%";
 var relatedTaskOptions = {
     "bPaginate": false,
     "bStateSave": true,
@@ -271,8 +272,11 @@ var data= {
 //sendAjaxCall('/intalio/ode/processes/AdvancedCaseManagementServices', "POST", false, true, "json", data, handleAjaxError, populateCasesInSideBar);
 }
 
-function updateCaseHomeTab(caseType,caseId){
-
+function updateCaseHomeTab(caseType,caseId,caseTypeDetails){
+	
+var appPAth= caseTypeDetails.CaseType.case_form.trimRight('/');
+appPAth = appPAth.substring(0,appPAth.lastIndexOf('/'));
+$('#caseDetailsForm').attr('src',caseTypeDetails.CaseType.case_form+"?"+"user="+$("#userid").text()+"&jsxapppath="+appPAth);
 }
 function updateTasksTab(caseType,caseId){
 
