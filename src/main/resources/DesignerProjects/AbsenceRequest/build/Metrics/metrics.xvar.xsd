@@ -1,7 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:metrics="http://test.com/xvar/example" targetNamespace="http://test.com/xvar/example" elementFormDefault="qualified">
   <xs:annotation>
-    <xs:documentation>xml-schema derived from an external variable descriptor. Generated 12 Feb 2015 11:09:43 GMT</xs:documentation>
+    <xs:documentation>xml-schema derived from an external variable descriptor. Generated 12 Feb 2015 14:29:46 GMT</xs:documentation>
   </xs:annotation>
   <xs:element name="Absence_Request_History">
     <xs:annotation>

@@ -1,4 +1,4 @@
-var caseType;
+
 var casesOptions = {
     "bPaginate": false,
     "bStateSave": true,
@@ -12,7 +12,6 @@ var casesOptions = {
     "bSort": false,
 	"aoColumns":[]
 }
-
 var tableWidth="100%";
 var relatedTaskOptions = {
     "bPaginate": false,
@@ -75,7 +74,6 @@ function parse(index) {
 
     var result = "Not found",
         tmp = [];
-
 		var hash=location.hash;
 		var arguments=hash.substring(hash.indexOf("//")+2);
  
@@ -197,7 +195,7 @@ var participantToken=getCookie("singleLogin");
 //participantToken=participantToken.substring(1, participantToken.length - 1);;
 
 var data= {
-"getCaseTypeByIdRequest":{"@xmlns":acmNS,"participantToken":{"$":participantToken},"caseType":{"$":caseType}}};
+"getCaseTypeByIdRequest":{"@xmlns":acmNS,"participantToken":{"$":participantToken},"caseType":{"$":caseTypeId}}};
 
 
 	 var response=$.ajax({ 
@@ -332,14 +330,16 @@ function customRelatedTasksTable(tableId) {
 	 $('#' + tableId + '_wrapper .table_container').css("border",0);
 }
 
-function updateStatusTab(caseType,caseId, container){
+function updateStatusTab(caseTypeDetails,caseType,caseId, container){
+
 if (caseTypeDetails.CaseType.status_diagram && caseTypeDetails.CaseType.status_diagram!=null && caseTypeDetails.CaseType.status_diagram!=undefined){
 $(container).load(caseTypeDetails.CaseType.status_diagram,function(){
+$("svg").attr("width","100%");
 var history=getCaseHistory(caseType,caseId);
 var activityColor={"state":"blue","start_activity":"green","end_activity":"blue","fail":"red"}
 $.each(history.caseHistory.historyEntry, function(key, hitoryEntry) {
 $.each(hitoryEntry.STATUS_ACTIVITY.split(","), function(key1, state) {
-var activityType=hitoryEntry.STATUS_ACTIVITY_Type.split(",")[key1];
+var activityType=hitoryEntry.STATUS_ACTIVITY_TYPE.split(",")[key1];
 $("circle[opacity][opacity!=0][opacity!=null]").attr('display',"none");
 $("rect[opacity][opacity!=0][opacity!=null]").attr('display',"none");
 $("polygon[opacity][opacity!=0][opacity!=null]").attr('display',"none");

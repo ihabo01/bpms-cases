@@ -15,7 +15,7 @@
 		<script type="text/javascript">
 			var caseType=parse(0);
 			var caseId=parse(1);
-			var caseTypeDetails=getCaseTypeDetails();
+			var caseTypeDetails=getCaseTypeDetails(caseType);
 			$(document).ready(function(){
 
 			updateCaseHomeTab(caseType,caseId,caseTypeDetails);
@@ -90,7 +90,7 @@
 
 						<li class="">
 							<a data-toggle="tab" href="#status" aria-expanded="false"
-								onclick="updateStatusTab(caseType,caseId,'#status');">
+								onclick="updateStatusTab(caseTypeDetails,caseType,caseId,'#status');">
 								<i class="green ace-icon fa fa-info bigger-120"></i>
 								Status
 							</a>

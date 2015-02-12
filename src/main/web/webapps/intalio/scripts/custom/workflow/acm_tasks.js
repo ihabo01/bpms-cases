@@ -19,7 +19,14 @@ function addACMContent(obj,items){
 
 			var caseType=obj.task.customMetadata["caseType"];
 			var caseId=obj.task.customMetadata["caseId"];
+			if(caseType && caseType!="" && caseId && caseId!=""){
 			items[items.length]="<a href='/intalio/index.htm#/cases//"+caseType+"/"+caseId+"' onclick=\"javascript:selectMenuAndChangepage(this,\'cases\',\'cases.htm\');\">Case</a>";			
-			items[items.length]="<i class='green ace-icon fa fa-info bigger-120' onmouseover='updateStatusTab(\""+caseType+"\",\""+caseId+"\",\".information\");showInformation();'></i>";
+			items[items.length]="<i class='green ace-icon fa fa-info bigger-120' onmouseover='updateStatusTab(getCaseTypeDetails(\""+caseType+"\"),\""+caseType+"\",\""+caseId+"\",\".information\");showInformation();'></i>";
+			}
+			else
+			{
+			items[items.length]="";
+			items[items.length]="";
+			}
 			
 }
