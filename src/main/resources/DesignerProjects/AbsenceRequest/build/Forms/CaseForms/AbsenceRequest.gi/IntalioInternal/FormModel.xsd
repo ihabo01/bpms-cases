@@ -2,7 +2,19 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:us="http://www.intalio.com/UserSchema" xmlns:AbsenceRequest="http://www.intalio.com/gi/Forms/CaseForms/AbsenceRequest.gi" targetNamespace="http://www.intalio.com/gi/Forms/CaseForms/AbsenceRequest.gi" elementFormDefault="unqualified">
   <xs:element name="FormModel">
     <xs:complexType>
-      <xs:sequence></xs:sequence>
+      <xs:sequence>
+        <xs:element name="case_details" type="AbsenceRequest:case_detailsType"/>
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
+
+  <xs:complexType name="case_detailsType">
+    <xs:sequence>
+      <xs:element name="status_field">
+        <xs:complexType>
+          <xs:sequence></xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
 </xs:schema>

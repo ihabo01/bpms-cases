@@ -10,7 +10,7 @@
       <xjdbc:column key="no" name="Request_Identifier" sql-type="VARCHAR" xbpms:ddl-size="250" xbpms:type-label="string" xsd-type="xs:string"></xjdbc:column>
       <xjdbc:column key="no" name="Status" sql-type="VARCHAR" xbpms:ddl-size="250" xbpms:type-label="string" xsd-type="xs:string"></xjdbc:column>
       <xjdbc:column key="no" name="Validated_On" sql-type="TIMESTAMP" xbpms:type-label="timestamp" xsd-type="xs:dateTime"></xjdbc:column>
-      <xjdbc:column key="no" name="Submited_On" sql-type="TIMESTAMP" xbpms:type-label="timestamp" xsd-type="xs:dateTime"></xjdbc:column>
+      <xjdbc:column key="no" name="Submitted_On" sql-type="TIMESTAMP" xbpms:type-label="timestamp" xsd-type="xs:dateTime"></xjdbc:column>
       <xjdbc:column key="no" name="Validator" sql-type="VARCHAR" xbpms:ddl-size="250" xbpms:type-label="string" xsd-type="xs:string"></xjdbc:column>
       <xjdbc:column key="no" name="Requestor" sql-type="VARCHAR" xbpms:ddl-size="250" xbpms:type-label="string" xsd-type="xs:string"></xjdbc:column>
       <xjdbc:init mode="update-insert"></xjdbc:init>

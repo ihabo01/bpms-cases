@@ -1,7 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:metrics="http://test.com/xvar/example" targetNamespace="http://test.com/xvar/example" elementFormDefault="qualified">
   <xs:annotation>
-    <xs:documentation>xml-schema derived from an external variable descriptor. Generated 11 Feb 2015 15:13:29 GMT</xs:documentation>
+    <xs:documentation>xml-schema derived from an external variable descriptor. Generated 12 Feb 2015 11:02:30 GMT</xs:documentation>
   </xs:annotation>
   <xs:element name="Absence_Request_History">
     <xs:annotation>
@@ -90,7 +90,7 @@
             <xs:documentation>Value mapped to JDBC: TIMESTAMP</xs:documentation>
           </xs:annotation>
         </xs:element>
-        <xs:element name="Submited_On" type="xs:dateTime">
+        <xs:element name="Submitted_On" type="xs:dateTime">
           <xs:annotation>
             <xs:appinfo>Value</xs:appinfo>
             <xs:documentation>Value mapped to JDBC: TIMESTAMP</xs:documentation>

@@ -68,28 +68,41 @@
       <record jsxid="load" type="number">0</record>
       <record jsxid="src" type="string">IntalioInternal/FormModelMapping.xml</record>
     </record>
-    <record jsxid="1" type="map">
+    <record jsxid="0" type="map">
       <record jsxid="id" type="string">style_css</record>
       <record jsxid="type" type="string">css</record>
       <record jsxid="load" type="number">1</record>
       <record jsxid="src" type="string">css/style.css</record>
     </record>
-    <record jsxid="2" type="map">
+    <record jsxid="1" type="map">
       <record jsxid="id" type="string">translations_xml</record>
       <record jsxid="type" type="string">ljss</record>
       <record jsxid="load" type="number">1</record>
       <record jsxid="src" type="string">jss/translations.xml</record>
     </record>
-    <record jsxid="0" type="map">
+    <record jsxid="2" type="map">
       <record jsxid="id" type="string">appCanvas_component</record>
       <record jsxid="type" type="string">component</record>
+      <record jsxid="load" type="number">0</record>
       <record jsxid="src" type="string">components/appCanvas.xml</record>
     </record>
-    <record jsxid="0" type="map">
+    <record jsxid="3" type="map">
       <record jsxid="id" type="string">logic_js</record>
       <record jsxid="type" type="string">script</record>
       <record jsxid="load" type="number">1</record>
       <record jsxid="src" type="string">js/logic.js</record>
+    </record>
+    <record jsxid="4" type="map">
+      <record jsxid="id" type="string">ACM-Service</record>
+      <record jsxid="type" type="string">services</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">rules/ACM-Service</record>
+    </record>
+    <record jsxid="5" type="map">
+      <record jsxid="id" type="string">caseLoad_js</record>
+      <record jsxid="type" type="string">script</record>
+      <record jsxid="load" type="number">1</record>
+      <record jsxid="src" type="string">js/caseLoad.js</record>
     </record>
   </record>
   <record jsxid="addins" type="array">

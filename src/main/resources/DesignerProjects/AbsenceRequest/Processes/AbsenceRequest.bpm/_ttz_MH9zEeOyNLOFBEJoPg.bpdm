@@ -87,10 +87,6 @@
                         <bpel:to>$Absence_Request/tns:Status</bpel:to><mapper:mapperLink><mapper:vertice id="50938096" targetPath="$Absence_Request/tns:Status" targetedBy="1689538967-arg0"></mapper:vertice><mapper:vertice id="1689538967" dimension="79x24" location="252,108"><mapper:value>"In Review"</mapper:value></mapper:vertice></mapper:mapperLink>
                     </bpel:copy>
                     <bpel:copy>
-                        <bpel:from>current-dateTime()</bpel:from>
-                        <bpel:to>$Absence_Request/tns:Submited_On</bpel:to><mapper:mapperLink><mapper:vertice id="1229060153" targetPath="$Absence_Request/tns:Submited_On" targetedBy="1736842269-arg0"></mapper:vertice><mapper:vertice id="1736842269" dimension="109x24" location="180,216"><mapper:value>current-dateTime()</mapper:value></mapper:vertice></mapper:mapperLink>
-                    </bpel:copy>
-                    <bpel:copy>
                         <bpel:from>$EmployeeRequest.root/SubmitAbsenceRequest:user</bpel:from>
                         <bpel:to>$Absence_Request/tns:Requestor</bpel:to><mapper:mapperLink><mapper:vertice id="730200550" targetPath="$Absence_Request/tns:Requestor" targetedBy="1042235579-arg0"></mapper:vertice><mapper:vertice id="1042235579" sourcePath="$EmployeeRequest.root/SubmitAbsenceRequest:user"></mapper:vertice></mapper:mapperLink>
                     </bpel:copy>
@@ -117,6 +113,16 @@
                     <bpel:copy>
                         <bpel:from>$Absence_Request/tns:id</bpel:from>
                         <bpel:to>$Absence_Request_History/tns:caseId</bpel:to><mapper:mapperLink><mapper:vertice id="1237762322" targetPath="$Absence_Request_History/tns:caseId" targetedBy="1115471624-arg0"></mapper:vertice><mapper:vertice id="1115471624" sourcePath="$Absence_Request/tns:id"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>current-dateTime()</bpel:from>
+                        <bpel:to>$Absence_Request/tns:Submitted_On</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="349201283" targetPath="$Absence_Request/tns:Submitted_On" targetedBy="294080439-arg0"></mapper:vertice>
+  <mapper:vertice id="294080439" dimension="109x24" location="180,216">
+    <mapper:value>current-dateTime()</mapper:value>
+  </mapper:vertice>
+</mapper:mapperLink>
                     </bpel:copy>
                 </bpdm:linkset>
             </bpdm:messagingtask>

@@ -1,5 +1,5 @@
 ﻿#
-#Wed Feb 11 16:13:30 CET 2015
+#Thu Feb 12 12:02:31 CET 2015
 formURI=/intalio/gi/apppath/AbsenceRequest/Forms/SubmitAbsenceRequest.gi/IntalioInternal/ServerLaunch.html
 userProcessInitSOAPAction=http\://www.intalio.com/gi/Forms/SubmitAbsenceRequest.gi/Process/initProcess
 processEndpoint=/intalio/ode/processes/AbsenceRequest/Processes/AbsenceRequest/Absence_Request/Absence_RequestimplicitPartner/Absence_RequestimplicitPartnerAndAbsence_RequestForPortTypeProcessPlk

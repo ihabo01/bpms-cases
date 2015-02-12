@@ -297,10 +297,6 @@
         <bpel:to>$Absence_Request/tns:Status</bpel:to>
       </bpel:copy>
       <bpel:copy>
-        <bpel:from>current-dateTime()</bpel:from>
-        <bpel:to>$Absence_Request/tns:Submited_On</bpel:to>
-      </bpel:copy>
-      <bpel:copy>
         <bpel:from>$EmployeeRequest.root/SubmitAbsenceRequest:user</bpel:from>
         <bpel:to>$Absence_Request/tns:Requestor</bpel:to>
       </bpel:copy>
@@ -327,6 +323,10 @@
       <bpel:copy>
         <bpel:from>$Absence_Request-keys/tns:id</bpel:from>
         <bpel:to>$Absence_Request_History/tns:caseId</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>current-dateTime()</bpel:from>
+        <bpel:to>$Absence_Request/tns:Submitted_On</bpel:to>
       </bpel:copy>
     </bpel:assign>
     <bpel:scope bpmn:label="Approve absence request" name="Approve_absence_request" bpmn:id="_FAiewIA4EeOyNLOFBEJoPg">
@@ -382,28 +382,6 @@
           </bpel:copy>
         </bpel:assign>
         <bpel:assign>
-    <bpel:copy>
-        <bpel:from>$ode:pid</bpel:from>
-        <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:instanceId</bpel:to>
-    </bpel:copy>
-    <bpel:copy>
-        <bpel:from>"/intalio/ode/processes/AbsenceRequest/Processes/AbsenceRequest/Absence_Request/Absence_RequestimplicitPartner/WFmagic_FAliEIA4EeOyNLOFBEJoPg"</bpel:from>
-        <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:userProcessEndpoint</bpel:to>
-    </bpel:copy>
-    <bpel:copy>
-        <bpel:from>"http://www.intalio.com/gi/Forms/ApproveAbsenceRequest.gi/Process/notifyTaskCompletion"</bpel:from>
-        <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:userProcessCompleteSOAPAction</bpel:to>
-    </bpel:copy>
-    <bpel:copy>
-        <bpel:from>"_FAsPwIA4EeOyNLOFBEJoPg"</bpel:from>
-        <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:taskId</bpel:to>
-    </bpel:copy>
-    <bpel:copy>
-        <bpel:from>"examples\manager"</bpel:from>
-        <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:roleOwner</bpel:to>
-    </bpel:copy>
-  </bpel:assign>
-  <bpel:assign>
     <bpel:copy>
         <bpel:from>$ode:pid</bpel:from>
         <bpel:to>$RequestManagerDecision.root/ApproveAbsenceRequest1:taskMetaData/ApproveAbsenceRequest1:instanceId</bpel:to>
@@ -559,12 +537,6 @@
       </bpel:copy>
     </bpel:assign>
     <bpel:assign>
-    <bpel:copy>
-        <bpel:from>$ode:pid</bpel:from>
-        <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:metadata/NotifyAbsenceRequest1:instanceId</bpel:to>
-    </bpel:copy>
-  </bpel:assign>
-  <bpel:assign>
     <bpel:copy>
         <bpel:from>$ode:pid</bpel:from>
         <bpel:to>$EmployeeDecisionNotification.root/NotifyAbsenceRequest1:metadata/NotifyAbsenceRequest1:instanceId</bpel:to>

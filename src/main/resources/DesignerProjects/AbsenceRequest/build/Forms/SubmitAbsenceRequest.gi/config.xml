@@ -1,5 +1,4 @@
-﻿<?xml version='1.0' encoding='utf-8'?>
-<data>
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?><data>
   <record jsxid="version" type="string">1.0</record>
   <record jsxid="jsxversion" type="string">3.2</record>
   <record jsxid="caption" type="string">SubmitAbsenceRequest</record>

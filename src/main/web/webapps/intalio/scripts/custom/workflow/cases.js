@@ -276,7 +276,7 @@ function updateCaseHomeTab(caseType,caseId,caseTypeDetails){
 	
 var appPAth= caseTypeDetails.CaseType.case_form.trimRight('/');
 appPAth = appPAth.substring(0,appPAth.lastIndexOf('/'));
-$('#caseDetailsForm').attr('src',caseTypeDetails.CaseType.case_form+"?"+"user="+$("#userid").text()+"&jsxapppath="+appPAth);
+$('#caseDetailsForm').attr('src',caseTypeDetails.CaseType.case_form+"?"+"user="+$("#userid").text()+"&jsxapppath="+appPAth+"&token="+getCookie("singleLogin")+"&caseId="+caseId+"&caseType="+caseType);
 }
 function updateTasksTab(caseType,caseId){
 

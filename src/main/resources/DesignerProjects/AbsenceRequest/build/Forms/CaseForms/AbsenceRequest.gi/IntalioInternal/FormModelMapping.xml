@@ -5,10 +5,32 @@
       <record jsxid="mi_3" name="Content-Type" value="text/xml"/>
     </headers>
     <record jsxid="mi_4" jsxtext="Input (request)" type="I" jsxopen="1" src="../../../../Forms/CaseForms/AbsenceRequest.gi/IntalioInternal/FormModel.xsd">
-      <record jsxid="mi_5" jsxtext="FormModel" type="C" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/CaseForms/AbsenceRequest.gi']//jsx1:element[@name='FormModel']" datatype="" tns="http://www.intalio.com/gi/Forms/CaseForms/AbsenceRequest.gi"></record>
+      <record jsxid="mi_5" jsxtext="FormModel" type="C" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/CaseForms/AbsenceRequest.gi']//jsx1:element[@name='FormModel']" datatype="" tns="http://www.intalio.com/gi/Forms/CaseForms/AbsenceRequest.gi">
+        <record jsxid="mi_6" jsxtext="case_details" type="C" datatype="" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/CaseForms/AbsenceRequest.gi']//jsx1:element[@name='case_details']">
+          <restrictions>
+            <record jsxid="mi_7" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_8" jsxtext="status_field" type="C" datatype="" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/CaseForms/AbsenceRequest.gi']//jsx1:element[@name='status_field']">
+            <restrictions>
+              <record jsxid="mi_9" name="nillable" value="true"/>
+            </restrictions>
+          </record>
+        </record>
+      </record>
     </record>
-    <record jsxid="mi_6" jsxtext="Output (response)" type="O" jsxopen="1" src="../../../../Forms/CaseForms/AbsenceRequest.gi/IntalioInternal/FormModel.xsd">
-      <record jsxid="mi_7" jsxtext="FormModel" type="C" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/CaseForms/AbsenceRequest.gi']//jsx1:element[@name='FormModel']" datatype="" tns="http://www.intalio.com/gi/Forms/CaseForms/AbsenceRequest.gi"></record>
+    <record jsxid="mi_10" jsxtext="Output (response)" type="O" jsxopen="1" src="../../../../Forms/CaseForms/AbsenceRequest.gi/IntalioInternal/FormModel.xsd">
+      <record jsxid="mi_11" jsxtext="FormModel" type="C" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/CaseForms/AbsenceRequest.gi']//jsx1:element[@name='FormModel']" datatype="" tns="http://www.intalio.com/gi/Forms/CaseForms/AbsenceRequest.gi">
+        <record jsxid="mi_12" jsxtext="case_details" type="C" datatype="" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/CaseForms/AbsenceRequest.gi']//jsx1:element[@name='case_details']">
+          <restrictions>
+            <record jsxid="mi_13" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_14" jsxtext="status_field" type="C" datatype="" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/Forms/CaseForms/AbsenceRequest.gi']//jsx1:element[@name='status_field']">
+            <restrictions>
+              <record jsxid="mi_15" name="nillable" value="true"/>
+            </restrictions>
+          </record>
+        </record>
+      </record>
     </record>
   </record>
 </data>
