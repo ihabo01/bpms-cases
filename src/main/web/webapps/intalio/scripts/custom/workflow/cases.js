@@ -75,8 +75,9 @@ function parse(index) {
 
     var result = "Not found",
         tmp = [];
-		var hash=location.href.substring(location.href.indexOf("#")+1);
-		var arguments=hash.substring(location.href.indexOf("//")+3);
+
+		var hash=location.hash;
+		var arguments=hash.substring(hash.indexOf("//")+2);
  
     return arguments.split("/")[index];
 }

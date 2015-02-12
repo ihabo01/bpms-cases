@@ -10,6 +10,7 @@
 <body>
 <script type="text/javascript">
 
+
 $(document).ready(function(){
 caseType=parse(0);
 if(parse(1))selectMenuAndChangepage(this,'case','case.htm');
@@ -19,7 +20,7 @@ updateCasesTable(caseType);
      
 		var newLocation="#/cases//"+caseType+"/"+this.id;
 
-		selectMenuAndChangepage(this,'case','case.htm');
+		changePage(this,'case.htm');
 		location.href=newLocation;
     } );
 }
@@ -31,6 +32,9 @@ updateCasesTable(caseType);
 		<li class="active"><a href="#" class="noDecoration" onclick="javascript:getTasksData();">Cases</a></li>
 		<li class=""><a href="#" class="noDecoration" onclick="javascript:getTasksData();">Absence Request</a></li>
 		<div style="display:inline-block" id="breadcrumbTaskFilter" class="hide"> <i class="fa fa-angle-right"></i>&nbsp;&nbsp; <span id="bcTaskFilterName"></span>&nbsp;&nbsp;<a href="#" class="noDecoration" onclick="removeTaskAppliedFilter();"><i class="fa fa-times"></i></a></div>
+
+
+
 
 	</ul>
 	<div style="display:inline-block" id="breadcrumbName" class="hide"> <i class="fa fa-angle-right"></i>&nbsp;&nbsp; <span id="caseName"></span>&nbsp;&nbsp;<a href="#" class="noDecoration" onclick="removeBreadCrumbName();"><i class="fa fa-times"></i></a></div>
@@ -51,6 +55,7 @@ updateCasesTable(caseType);
 </div>
 	
 </div>
+
 
 
 	

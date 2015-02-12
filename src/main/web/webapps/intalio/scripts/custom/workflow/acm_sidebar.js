@@ -48,7 +48,7 @@ var data= {
 		 for (var i=0;i<response.CaseType.length;i++){
 		var caseType=response.CaseType[i];
 		
-		submenu+='<li  id="moduleID'+caseType.ID+'"><a href="#/cases//'+caseType.ID+'" onclick="javascript:selectMenuAndChangepage(this,\'cases\',\'cases.htm\');"> <i class="menu-icon fa fa-caret-right"></i>'+caseType.description+'</a></li>';
+		submenu+='<li  id="moduleID'+caseType.ID+'"><a href="#/cases//'+caseType.ID+'" onclick="javascript:changePage(0,\'cases.htm\');"> <i class="menu-icon fa fa-caret-right"></i>'+caseType.description+'</a></li>';
 		}
 		$("#moduleID73 .arrow").removeClass("hide");
 		}

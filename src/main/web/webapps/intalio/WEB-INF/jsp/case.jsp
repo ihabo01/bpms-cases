@@ -112,7 +112,6 @@
 					</ul>
 					<div class="tab-content">
 						<div id="caseDetails" class="tab-pane fade in active" style="height:100%">
-
 							<iframe src="" name="caseDetailsForm" frameborder="0" id="caseDetailsForm"
 								scrolling="auto" style="height:500px;width:100%">No Case Details have been found</iframe>
 							
